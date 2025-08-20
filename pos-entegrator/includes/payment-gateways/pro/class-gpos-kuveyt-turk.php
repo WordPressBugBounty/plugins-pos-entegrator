@@ -36,7 +36,7 @@ class GPOS_Kuveyt_Turk extends GPOS_Gateway {
 	 *
 	 * @var array $supports
 	 */
-	public $supports = array( 'threed', 'regular' );
+	public $supports = array( 'threed', 'regular', 'refund' );
 
 	/**
 	 * Firma müşteri panel bilgisi
@@ -100,9 +100,9 @@ class GPOS_Kuveyt_Turk extends GPOS_Gateway {
 				'brand'        => 'mastercard',
 				'type'         => 'credit',
 				'bin'          => '5188 9619 3919 2544',
-				'expiry_year'  => '2025',
+				'expiry_year'  => '2029',
 				'expiry_month' => '06',
-				'cvv'          => '929',
+				'cvv'          => '588',
 				'secure'       => '123456',
 			),
 		);

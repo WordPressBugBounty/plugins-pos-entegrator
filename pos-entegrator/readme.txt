@@ -7,7 +7,7 @@ Plugin URI: https://posentegrator.com/
 Tags: kredi kartı, sanal pos, ödeme, banka, pos
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 3.7.82
+Stable tag: 3.7.83
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ Kolay, hızlı entegre edilebilir wordpress ödeme eklentisi. bankalar, ödeme k
 POS Entegratör, e-ticaret sitelerinde, bağış toplama süreçlerinde, formlarda ve diğer çevrimiçi işlemlerde kullanılabilir. 
 Kullanıcılara farklı ödeme yöntemleriyle (sanal poslar) işlem yapma, kolay ve güvenli bir şekilde ödeme almalarını sağlar..
 
-PRO sürüm ile 50+ fazla banka, alternatif ödeme yöntemleri ve ödeme kuruluşları ile 10+ uyumlu eklenti ile ödeme almaya başlayabilirsiniz. 
+PRO sürüm ile 60+ fazla banka, alternatif ödeme yöntemleri ve ödeme kuruluşları ile 10+ uyumlu eklenti ile ödeme almaya başlayabilirsiniz. 
 Gelişmiş özellikler ile kullanıcılarınızın kusursuz ödeme deneyimi yaşamalarını sağlayın.
 
 WordPress Ödeme Eklentisi [WordPress Ödeme Eklentisi](https://posentegrator.com/?utm_campaign=wporg&utm_source=baslik&utm_medium=readme)
@@ -59,8 +59,9 @@ https://www.youtube.com/watch?v=xj1uj1ETyhY
  - Erpapay
  - Moka
  - Hepsipay
- - ZiraatPay (Yeni 🚀)	
- - Tami (Yeni 🚀)
+ - ZiraatPay	
+ - Tami 
+ - Papel (Yeni 🚀)
 
 ## Banka Ödeme Entegrasyonları
  - Akbank (Yeni JSON API)
@@ -166,17 +167,19 @@ POS Entegratör; bazı telemetri verilerini toplar. Bu, sorunları daha hızlı 
 Özel Teklifler ve Promosyonlar: Zaman zaman ürünlerimizle ilgili özel teklifler ve promosyonlar sunabiliriz.
 E-posta adresinizi, ürün tanıtımı dışında başka bir amaçla kullanmayacağımızın güvencesini veriyoruz. Ayrıca, herhangi bir zamanda bu tür iletileri almak istemiyorsanız, e-posta ile iletişime geçerek aboneliğinizi iptal edebilirsiniz.
 
+*Ücretsiz eklentimizde yalnızca partner ödeme kuruluşları ve WooCommerce entegrasyonu yer almaktadır. Tüm ödeme kuruluşlarına ve diğer eklenti entegrasyonlarına erişim için PRO pakete ihtiyaç duyulmaktadır.
 
 == Screenshots ==
 
-1. Sanal POS Entegrayonları
-2. Ödeme kuruluşu Ekleme
-3. Ödeme Formu özelleştirme Ayarları
-4. Bildirimler
-5. WooCommerce Özelleştirme Ayarları
-6. Taksitli Satış Özelliği
-7. Sanal POS Ekleme sayfası ve Test Modu
-8. Ödeme Formu
+1. Ödeme Kuruluşları
+2. Taksitli Satış
+3. Gelişmiş İşlem Raporu
+4. Form Ayarları
+5. Bildirimler
+6. Taksit Görüntüleme
+7. Ödeme Yönlendirme (Gate)
+8. Döviz Çevirici
+8. Kayıtlı Kart
 
 
 == Installation ==
