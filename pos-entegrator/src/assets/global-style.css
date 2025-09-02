@@ -1,0 +1,39 @@
+/*
+* Genel kullanıma ihtiyaç duyulan cssler toplanmış hali yarn css:build ile derlenebilir
+*/
+
+.gposform-class input, button,select,
+.gposform-class::before,
+.gposform-class::after {
+  border-width: 1;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', currentColor);
+}
+.gposform-class button,
+.gposform-class::before,
+.gposform-class::after {
+  border-width: 0;
+}
+
+.gpos-alert-box{
+  @apply !items-center !p-4 !mb-4 !text-sm 
+}
+
+.gpos-alert-danger{
+  @apply text-red-800 rounded-lg bg-red-50 flex
+}
+.gpos-alert-success{
+  @apply text-green-800 rounded-lg bg-green-50 flex
+}
+.gpos-submit-button{
+  cursor:pointer;
+  @apply font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center focus:ring-4 focus:outline-none
+}
+
+.gpos-default-button{
+  @apply bg-blue-700 hover:bg-green-800  focus:ring-blue-300 text-white 
+}
+
+.gpos-svg{
+    @apply flex-shrink-0 inline w-4 h-4 mr-3
+}

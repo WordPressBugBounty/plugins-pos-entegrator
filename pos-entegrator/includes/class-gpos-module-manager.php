@@ -29,41 +29,4 @@ class GPOS_Module_Manager {
 			}
 		}
 	}
-
-	/**
-	 * GurmePOS update edilebilir mi ? kontrollerini gerçekleştirme.
-	 *
-	 * @param stdClass $plugin_updates Güncellemeler.
-	 *
-	 * @return stdClass
-	 */
-	public function transient_update_plugins( $plugin_updates ) {
-		$show_alert   = false;
-		$pro_basename = defined( 'GPOSPRO_PLUGIN_BASENAME' ) ? GPOSPRO_PLUGIN_BASENAME : 'gurmepos-pro/gurmepos-pro.php';
-		if ( isset( $plugin_updates->response[ $pro_basename ] ) ) {
-			unset( $plugin_updates->response[ GPOS_PLUGIN_BASENAME ] );
-			$show_alert = true;
-		}
-
-		$form_basename = defined( 'GPOSFORM_PLUGIN_BASENAME' ) ? GPOSFORM_PLUGIN_BASENAME : 'gurmepos-form/gurmepos-form.php';
-		if ( isset( $plugin_updates->response[ $form_basename ] ) ) {
-			unset( $plugin_updates->response[ GPOS_PLUGIN_BASENAME ] );
-			$show_alert = true;
-		}
-
-		if ( $show_alert ) {
-			add_action( 'after_plugin_row_' . GPOS_PLUGIN_BASENAME, array( $this, 'after_plugin_row' ) );
-		}
-
-		return $plugin_updates;
-	}
-
-	/**
-	 * GurmePOS modüller güncellenmeden güncellenemiyor notu.
-	 *
-	 * @return void
-	 */
-	public function after_plugin_row() {
-		gpos_get_view( 'cannot-update-notice.php' );
-	}
 }

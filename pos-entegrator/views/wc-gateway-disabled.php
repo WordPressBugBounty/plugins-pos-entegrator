@@ -5,6 +5,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <div class="notice notice-info" style="padding: 10px;">
 	<div style="display: flex; gap:20px; align-items:center;">

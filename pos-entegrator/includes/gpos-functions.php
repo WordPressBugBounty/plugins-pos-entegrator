@@ -282,7 +282,6 @@ function gpos_load_plugin_text_domain() {
 	$locale = determine_locale();
 	unload_textdomain( 'gurmepos' );
 	load_textdomain( 'gurmepos', GPOS_PLUGIN_DIR_PATH . 'languages/gurmepos-' . $locale . '.mo' );
-	load_plugin_textdomain( 'gurmepos', false, plugin_basename( dirname( GPOS_PLUGIN_BASEFILE ) ) . '/languages' );
 }
 
 /**

@@ -7,6 +7,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <div class="transaction-amount">

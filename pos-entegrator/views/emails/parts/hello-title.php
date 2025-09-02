@@ -7,6 +7,8 @@
  * @var string $period
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <table style="width: 100%; border-style: none; padding: 0" cellpadding="0" cellspacing="0" role="none">
 	<tbody>

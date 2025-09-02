@@ -58,7 +58,8 @@ class GPOS_IyziPOS {
 	public function update_gateway() {
 
 		global $wpdb;
-		if ( $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}wc_orders'" ) === "{$wpdb->prefix}wc_orders" ) {
+
+		if ( $wpdb->get_var( "SHOW TABLES LIKE '{$wpdb->prefix}wc_orders'" ) === "{$wpdb->prefix}wc_orders" ) { // phpcs:ignore
 			$wpdb->query( "UPDATE {$wpdb->prefix}wc_orders SET payment_method = 'gpos' WHERE payment_method = 'iyziposplus" ); // phpcs:ignore
 			$wpdb->query( "DELETE FROM {$wpdb->prefix}wc_orders_meta WHERE meta_key = '_iyzico_request'" ); // phpcs:ignore
 		}

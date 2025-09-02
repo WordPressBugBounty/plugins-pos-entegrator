@@ -5,6 +5,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 return array(
 	'kargo_entegrator'                          => 'Kargo Entegratör',
 	'fatura_entegrator'                         => 'Fatura Entegratör',
@@ -338,7 +340,7 @@ return array(
 	'support'                                   => __( 'Support', 'gurmepos' ),
 	'tag_manager_desc'                          => __( 'By turning on this setting, you can enable Google tag manager submissions for payment transactions.', 'gurmepos' ),
 	'tag_manager_id_desc'                       => __( 'Enter your code as GTM-XXXXX here.', 'gurmepos' ),
-	'tag_manager_events'                        => __( 'Tag Manager Events', 'gurmeoos' ),
+	'tag_manager_events'                        => __( 'Tag Manager Events', 'gurmepos' ),
 	'tag_manager_events_desc'                   => __( 'For e-commerce transactions, you can only use plugins that deal with this task. Example: GTMKit, GA4WP. You can only use this section for refund transactions in the admin panel.', 'gurmepos' ),
 	'event_refund'                              => __( 'This event is triggered when a refund is made in the transactions section.', 'gurmepos' ),
 	'monday'                                    => __( 'Monday', 'gurmepos' ),

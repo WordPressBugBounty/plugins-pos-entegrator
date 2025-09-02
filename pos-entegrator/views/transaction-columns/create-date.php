@@ -7,6 +7,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $timestamp = strtotime( $transaction->get_date() );
 
 if ( ! $timestamp ) {

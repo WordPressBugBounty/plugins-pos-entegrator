@@ -10,6 +10,8 @@
  * @var string $period
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <!DOCTYPE html>

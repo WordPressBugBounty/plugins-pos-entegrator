@@ -7,6 +7,8 @@
  * @var string $token
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <div style="width:100%; padding:20px;">

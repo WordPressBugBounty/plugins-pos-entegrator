@@ -5,6 +5,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 return array(
 	'AF' => __( 'Afghanistan', 'gurmepos' ),
 	'AL' => __( 'Albania', 'gurmepos' ),

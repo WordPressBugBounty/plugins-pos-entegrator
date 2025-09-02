@@ -1,13 +1,13 @@
-=== POS Entegratör - WordPress Ödeme Eklentisi ===
+=== POS Entegratör - Gurmehub Ödeme Eklentisi ===
 Authors: GurmeHub
 Contributors: ftpyz, cinfikret, fatihcelebi1, alihanayd
 Donate link: https://gurmehub.com/
-Plugin Name: POS Entegratör; WordPress Ödeme Eklentisi
+Plugin Name: POS Entegratör; Gurmehub Ödeme Eklentisi
 Plugin URI: https://posentegrator.com/
 Tags: kredi kartı, sanal pos, ödeme, banka, pos
 Requires at least: 6.0
-Tested up to: 6.7
-Stable tag: 3.7.83
+Tested up to: 6.8
+Stable tag: 3.7.87
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -168,6 +168,24 @@ POS Entegratör; bazı telemetri verilerini toplar. Bu, sorunları daha hızlı 
 E-posta adresinizi, ürün tanıtımı dışında başka bir amaçla kullanmayacağımızın güvencesini veriyoruz. Ayrıca, herhangi bir zamanda bu tür iletileri almak istemiyorsanız, e-posta ile iletişime geçerek aboneliğinizi iptal edebilirsiniz.
 
 *Ücretsiz eklentimizde yalnızca partner ödeme kuruluşları ve WooCommerce entegrasyonu yer almaktadır. Tüm ödeme kuruluşlarına ve diğer eklenti entegrasyonlarına erişim için PRO pakete ihtiyaç duyulmaktadır.
+
+
+== Harici Servisler ==
+
+Bu eklenti, ödemelerin işlenmesi, iade ve iptal işlemlerinin gerçekleştirilmesi amacıyla çeşitli banka ve ödeme sağlayıcıları ile entegre çalışmaktadır.
+
+Eklenti, bir ödeme, iade veya iptal işlemi gerçekleştiğinde aşağıdaki verileri ilgili servislere iletmektedir:  
+- İşlem tutarı ve para birimi  
+- Ödeme yöntemi ve banka bilgileri  
+- Müşteri bilgileri (isim, e-posta, adres gibi gerekli bilgiler)  
+- İşlem kimliği (transaction ID) ve işlemle ilgili diğer gerekli bilgiler  
+
+Tüm veriler güvenli bir şekilde, şifreli HTTPS bağlantıları üzerinden iletilmektedir. Kullanılan spesifik servis, seçilen ödeme yöntemi veya banka/ödeme sağlayıcısına bağlı olarak değişiklik göstermektedir.
+
+Her bir banka ve ödeme sağlayıcısının kendi **Hizmet Şartları (Terms of Service)** ve **Gizlilik Politikası (Privacy Policy)** bulunmaktadır. Kullanıcılar, ilgili servislerin resmi web siteleri üzerinden bu bilgilere ulaşabilirler.
+
+Bu açıklama, eklentimizin üçüncü taraf servislerle veri alışverişini şeffaf bir şekilde sunmak ve kullanıcıların veri işleme süreçlerinden haberdar olmasını sağlamak amacıyla yapılmıştır.
+
 
 == Screenshots ==
 

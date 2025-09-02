@@ -5,6 +5,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <div style="font-size: 14px; color: #6b7280; padding: 30px 0 30px 0;">

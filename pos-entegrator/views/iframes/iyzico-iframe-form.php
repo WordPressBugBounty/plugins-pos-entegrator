@@ -8,6 +8,8 @@
  * @var string $type
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <div style="width:100%; padding:20px;">

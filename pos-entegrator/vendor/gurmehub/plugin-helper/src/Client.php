@@ -45,7 +45,9 @@ class Client {
 	 * @return void
 	 */
 	public function updater() {
-		$this->updater = new \GurmeHub\Updater( $this->plugin );
+		if ( class_exists( 'GurmeHub\Updater' ) ) {
+			$this->updater = new \GurmeHub\Updater( $this->plugin );
+		}
 	}
 
 	/**
@@ -54,6 +56,8 @@ class Client {
 	 * @return void
 	 */
 	public function insights() {
-		$this->insights = new \GurmeHub\Insights( $this->plugin );
+		if ( class_exists( 'GurmeHub\Insights' ) ) {
+			$this->insights = new \GurmeHub\Insights( $this->plugin );
+		}
 	}
 }

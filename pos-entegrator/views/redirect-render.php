@@ -7,6 +7,8 @@
  * @var array $args Redirect fonksiyonundan gelen parametreler.
  */
 
+defined( 'ABSPATH' ) || exit;
+
 if ( $args['content'] ) {
 	if ( $args['is_iframe'] ) {
 		get_header();

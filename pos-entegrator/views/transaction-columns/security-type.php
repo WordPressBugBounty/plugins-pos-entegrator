@@ -7,6 +7,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $security_type = $transaction->get_security_type();
 $process_type  = $transaction->get_type();
 $form_type     = $transaction->get_payment_form_type();

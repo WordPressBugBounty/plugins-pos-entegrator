@@ -7,6 +7,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $process_type = $transaction->get_type();
 $taxonomies   = gpos_post_operations()->get_post_taxonomies();
 

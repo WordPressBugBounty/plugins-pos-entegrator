@@ -6,6 +6,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 return array(
 	'paratika'             => array(
 		'description' => __('Institution/Company ID and user information are required to integrate your Paratika POS. You can access the Institution/Company ID information on the Paratika Pos Panel by following the steps: My Information -> Basic Information. If you have not created a user before, you need to create a user by following the Users -> Add User steps in the same panel.', 'gurmepos'),

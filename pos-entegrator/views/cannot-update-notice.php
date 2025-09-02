@@ -3,7 +3,11 @@
  * GurmePOS güncellenemiyor şablonu
  *
  * @package Gurmehub
+ *
+ * @var string $plugin_name
  */
+
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <tr class="plugin-update-tr active">
@@ -15,7 +19,7 @@
 				sprintf(
 					// translators: Plugin name
 					__( 'Please complete the update of the <strong>%s</strong> plugin\plugins first.', 'gurmepos' ),
-					'POS Entegratör PRO & POS Entegratör Business',
+					$plugin_name,
 				),
 			);
 			?>

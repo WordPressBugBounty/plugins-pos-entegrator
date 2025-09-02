@@ -7,6 +7,8 @@
  * @var string $url
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <a href="<?php echo esc_url( $url ); ?>" target="_blank" class="gpos-admin-order-action button wc-action-button">
 	<img src="<?php echo esc_url( GPOS_ASSETS_DIR_URL . '/images/icon.svg' ); ?>" alt="">

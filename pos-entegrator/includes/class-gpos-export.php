@@ -64,7 +64,7 @@ class GPOS_Export {
 	public function export_transaction_excel( $transactions ) {
 		$all_statuses = gpos_post_operations()->get_post_statuses();
 		$headers      = array(
-			__( 'ID' ),
+			'ID',
 			__( 'Date', 'gurmepos' ),
 			__( 'Payment ID', 'gurmepos' ),
 			__( 'Plugin Transaction ID', 'gurmepos' ),

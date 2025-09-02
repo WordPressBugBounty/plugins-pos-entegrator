@@ -6,7 +6,7 @@ namespace GurmeHub;
  *
  * Eklentinin kimliğinin tanımlandığı sınıf
  */
-class Plugin extends \GurmeHub\Api {
+class Plugin {
 
 	/**
 	 * Eklenti lisans anahtarı.
@@ -92,32 +92,14 @@ class Plugin extends \GurmeHub\Api {
 		return get_plugin_data( $this->basefile )['Version'];
 	}
 
-
 	/**
 	 * Eklenti son versiyon bilgilerini döndürür.
 	 *
-	 * @return false|object $latest_info Eklenti güncel bilgileri.
+	 * DEPRECATED: Bu method kaldırılacak.
+	 *
+	 * @return false
 	 */
 	public function get_latest_info() {
-
-		$latest_info_data = $this->request(
-			array(
-				'plugin' => $this->get_plugin_slug(),
-				'url'    => str_replace( array( 'https://', 'http://' ), '', esc_url( home_url() ) ),
-			),
-			'checkUpdateV2'
-		);
-
-		if ( ! is_object( $latest_info_data ) || ! property_exists( $latest_info_data, 'plugin' ) || true === is_wp_error( $latest_info_data ) ) {
-			return false;
-		}
-
-		$latest_info              = $latest_info_data->plugin;
-		$latest_info->banners_rtl = (array) $latest_info->banners_rtl;
-		$latest_info->banners     = (array) $latest_info->banners;
-		$latest_info->icons       = (array) $latest_info->icons;
-		$latest_info->sections    = (array) $latest_info->sections;
-
-		return $latest_info;
+		return false;
 	}
 }

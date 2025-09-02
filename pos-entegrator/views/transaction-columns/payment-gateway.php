@@ -7,6 +7,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $payment_gateway = $transaction->get_payment_gateway_id();
 ?>
 

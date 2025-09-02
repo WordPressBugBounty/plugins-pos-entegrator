@@ -5,6 +5,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <div id="gpos-installment-container">
 	<div id="gpos-installment-main">

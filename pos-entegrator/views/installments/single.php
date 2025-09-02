@@ -5,6 +5,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <div id="gpos-installment-container">
 	<div id="gpos-installment-single-main">
@@ -13,7 +15,7 @@
 			<div class="rates">
 				<?php foreach ( $rates['months'] as $month ) : ?>
 				<div class="box">
-					<span class="number"><?php echo esc_html( $month ); ?>&nbsp;<?php esc_html_e( 'Installment', 'gurmehub' ); ?> </span>
+					<span class="number"><?php echo esc_html( $month ); ?>&nbsp;<?php esc_html_e( 'Installment', 'gurmepos' ); ?> </span>
 				</div>
 				<?php endforeach; ?>
 			</div>
@@ -28,7 +30,7 @@
 					<div class="box">
 					<?php if ( isset( $data[ $month ] ) ) : ?>
 						<span class="month"><?php echo esc_html( $data[ $month ]['installment_number'] ); ?> x <?php echo esc_html( $data[ $month ]['amount_per_month'] . $data[ $month ]['currency_symbol'] ); ?></span>
-						<span class="gpos-price"><?php esc_html_e( 'Total', 'gurmehub' ); ?>:<?php echo esc_html( $data[ $month ]['amount_total'] . $data[ $month ]['currency_symbol'] ); ?></span>
+						<span class="gpos-price"><?php esc_html_e( 'Total', 'gurmepos' ); ?>:<?php echo esc_html( $data[ $month ]['amount_total'] . $data[ $month ]['currency_symbol'] ); ?></span>
 					<?php else : ?>
 						---
 					<?php endif; ?>

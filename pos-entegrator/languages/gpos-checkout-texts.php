@@ -5,6 +5,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 return array(
 	'gateway_error'             => __( 'You have not activated any pos integration, please complete your settings.', 'gurmepos' ),
 	'pay_with_diff'             => __( 'Pay with different card', 'gurmepos' ),

@@ -66,8 +66,9 @@ class GPOS_Redirect extends GPOS_Model {
 				'transaction_id'      => $this->transaction_id,
 				'gpos_redirect_nonce' => $this->init_vector,
 				'gpos_redirect_key'   => $this->forge_key,
+				'_wpnonce'            => wp_create_nonce( 'gpos-redirect' ),
 			),
-			home_url() . '/gpos-redirect/'
+			home_url( '/gpos-redirect/' )
 		);
 	}
 

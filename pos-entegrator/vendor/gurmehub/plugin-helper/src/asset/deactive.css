@@ -1,0 +1,58 @@
+.gph-modal-area{
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 98;
+}
+.gph-modal{
+    padding: 20px;
+    min-width: 20%;
+    max-width: 20%;
+    position: fixed;
+    background-color: #FFFFFF;
+    box-shadow: 3px 8px 15px #888888;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+}
+.gph-modal-title{
+    font-weight: 600;
+    font-size: large;
+}
+.gph-modal-title p{
+    font-weight: 400;
+    margin: 5px 0 !important;
+}
+.gph-modal-content{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 10px 0;
+}
+
+.gph-modal-content textarea{
+    width: 100%;
+}
+
+.gph-modal-content p{
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 5px 0 !important;
+}
+
+.gph-modal-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gph-modal-footer a{
+    font-size: 10px;
+}

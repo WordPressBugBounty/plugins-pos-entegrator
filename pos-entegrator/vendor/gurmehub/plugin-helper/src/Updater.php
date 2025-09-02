@@ -8,7 +8,7 @@ use stdClass;
  *
  * Eklentilerin son versiyonununa güncellenmesini sağlar
  */
-class Updater {
+class Updater extends \GurmeHub\Api {
 
 	/**
 	 * Eklenti tanımlayıcı sınıf
@@ -31,6 +31,34 @@ class Updater {
 		add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'check_plugin_update' ) );
 		add_filter( 'plugins_api', array( $this, 'plugins_api_filter' ), 10, 3 );
 		add_action( 'in_plugin_update_message-' . $this->plugin->get_basename(), array( $this, 'plugin_update_message' ), 10, 2 );
+	}
+
+	/**
+	 * Eklenti son versiyon bilgilerini döndürür.
+	 *
+	 * @return false|object $latest_info Eklenti güncel bilgileri.
+	 */
+	public function get_latest_info() {
+
+		$latest_info_data = $this->request(
+			array(
+				'plugin' => $this->plugin->get_plugin_slug(),
+				'url'    => str_replace( array( 'https://', 'http://' ), '', esc_url( home_url() ) ),
+			),
+			'checkUpdateV2'
+		);
+
+		if ( ! is_object( $latest_info_data ) || ! property_exists( $latest_info_data, 'plugin' ) || true === is_wp_error( $latest_info_data ) ) {
+			return false;
+		}
+
+		$latest_info              = $latest_info_data->plugin;
+		$latest_info->banners_rtl = (array) $latest_info->banners_rtl;
+		$latest_info->banners     = (array) $latest_info->banners;
+		$latest_info->icons       = (array) $latest_info->icons;
+		$latest_info->sections    = (array) $latest_info->sections;
+
+		return $latest_info;
 	}
 
 	/**
@@ -71,7 +99,7 @@ class Updater {
 		}
 
 		$basename        = $this->plugin->get_basename();
-		$latest_info     = $this->plugin->get_latest_info();
+		$latest_info     = $this->get_latest_info();
 		$current_version = $this->plugin->get_current_version();
 
 		if ( ! $latest_info ) {
@@ -101,7 +129,7 @@ class Updater {
 			return $data;
 		}
 
-		$latest_info = $this->plugin->get_latest_info();
+		$latest_info = $this->get_latest_info();
 
 		return false === $latest_info ? $data : $latest_info;
 	}

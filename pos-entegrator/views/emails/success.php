@@ -8,6 +8,8 @@
  * @var GPOS_Transaction $transaction İşlem sınıfı.
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $texts                 = gpos_get_i18n_texts()['en'];
 $plugin                = $transaction->get_plugin();
 $plugin_transaction_id = $transaction->get_plugin_transaction_id();

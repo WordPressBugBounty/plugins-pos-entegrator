@@ -420,7 +420,7 @@ trait GPOS_Plugin_Payment_Gateway {
 	public function iframe_redirect( $redirect_url ) {
 		?>
 		<script>
-			window.parent.location.href = '<?php echo esc_url_raw( $redirect_url ); ?>';
+			window.parent.location.href = '<?php echo esc_url( $redirect_url ); ?>';
 		</script>
 		<?php
 		exit;

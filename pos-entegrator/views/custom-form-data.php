@@ -10,9 +10,7 @@
  * @var array $form_data
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <!DOCTYPE html>

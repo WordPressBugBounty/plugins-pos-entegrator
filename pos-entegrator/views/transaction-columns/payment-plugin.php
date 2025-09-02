@@ -7,6 +7,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $plugin                = $transaction->get_plugin();
 $plugin_transaction_id = $transaction->get_plugin_transaction_id();
 $edit_url              = apply_filters( 'gpos_payment_plugin_edit_page_link', get_edit_post_link( $plugin_transaction_id ), $plugin, $plugin_transaction_id );

@@ -7,6 +7,8 @@
  * @package GurmeHub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 
 <a href="<?php echo esc_url( $transaction->get_edit_link() ); ?>" class="transaction">

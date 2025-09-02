@@ -78,7 +78,6 @@ class GPOS_WordPress {
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 		add_action( 'restrict_manage_posts', array( $this, 'restrict_manage_posts' ) );
 		add_action( 'upgrader_process_complete', array( $this, 'upgrader_process_complete' ), 1, 2 );
-		add_filter( 'wp_plugin_dependencies_slug', array( $this, 'wp_plugin_dependencies_slug' ) );
 		add_filter( 'plugins_api_args', array( $this, 'plugins_api_args' ), 10, 2 );
 
 		// comment dan transaction noteları kaldırma
@@ -88,7 +87,6 @@ class GPOS_WordPress {
 
 		// Other callbacks
 		add_action( 'admin_menu', array( gpos_admin(), 'admin_menu' ) );
-		add_filter( 'site_transient_update_plugins', array( gpos_module_manager(), 'transient_update_plugins' ), 100 );
 		add_action( 'add_meta_boxes', array( gpos_meta_boxes(), 'add_meta_box' ), 10 );
 		add_action( 'admin_bar_menu', array( gpos_admin(), 'admin_bar_menu' ), 10001 );
 		add_filter( "bulk_actions-edit-{$this->prefix}_transaction", array( gpos_post_tables(), 'bulk_actions_edit' ) );
@@ -253,11 +251,29 @@ class GPOS_WordPress {
 	 * @SuppressWarnings(PHPMD.NPathComplexity)
 	 */
 	public function template_include( $template ) {
-		$post_data = gpos_clean( wp_unslash( $_POST ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
 		// 3D Yönlendirmeleri için kullanılacak blok.
-		if ( get_query_var( $this->redirect_query_var_key ) && isset( $_GET['transaction_id'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			return gpos_redirect( gpos_clean( $_GET['transaction_id'] ) )->render(); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if (
+			get_query_var( $this->redirect_query_var_key )
+			&& isset( $_GET['transaction_id'] )
+			&& isset( $_GET['_wpnonce'] )
+			&& wp_verify_nonce( gpos_clean( $_GET['_wpnonce'] ), 'gpos-redirect' ) ) {
+			return gpos_redirect( gpos_clean( $_GET['transaction_id'] ) )->render();
 		}
+
+		// phpcs:disable WordPress.Security.NonceVerification.Missing
+
+		/**
+		 * Handle payment gateway callback
+		 *
+		 * Note for WP Review Team:
+		 * This endpoint receives POST data from external payment gateway without nonce.
+		 * This is standard practice for payment gateway callbacks where third-party
+		 * services cannot provide WordPress nonces. Security is ensured through:
+		 *
+		 * 1- We are using gpos_clean function to sanitize the POST data.
+		 * 2- Gateway check_notify | process_callback (check_hash etc.) method is used to verify the callback data.
+		 */
 
 		// Geri dönüş noktası için kullanılacak blok.
 		if ( get_query_var( $this->callback_query_var_key ) && get_query_var( 'transaction_id' ) ) {
@@ -268,15 +284,15 @@ class GPOS_WordPress {
 
 		// Bildirim noktası için kullanılacak blok.
 		if ( get_query_var( $this->notify_query_var_key ) && get_query_var( 'transaction_id' ) ) {
-			$post_data      = gpos_clean( wp_unslash( $_POST ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$post_data      = gpos_clean( $_POST );
 			$transaction    = gpos_transaction( gpos_clean( get_query_var( 'transaction_id' ) ) );
 			$plugin_gateway = gpos_get_plugin_gateway_by_transaction( $transaction );
 			$gateway        = gpos_payment_gateways()->get_gateway_by_account_id( $transaction->get_account_id(), $transaction );
 			$gateway->check_notify( $post_data );
 		}
 		// PayTR bildirimleri için kullanılacak blok.
-		if ( get_query_var( $this->paytr_callback_query_var_key ) && isset( $post_data['merchant_oid'] ) ) { //phpcs:ignore WordPress.
-
+		if ( get_query_var( $this->paytr_callback_query_var_key ) && isset( $_POST['merchant_oid'] ) ) {
+			$post_data      = gpos_clean( $_POST );
 			$transaction_id = $post_data['merchant_oid'];
 			$settings       = gpos_other_settings()->get_setting_by_key( 'payment_id_settings' );
 			if ( $settings && $settings->active ) {
@@ -284,15 +300,17 @@ class GPOS_WordPress {
 			}
 			$transaction = gpos_transaction( $transaction_id );
 			$gateway     = gpos_payment_gateways()->get_gateway_by_account_id( $transaction->get_account_id(), $transaction );
-			if ( $gateway && ( $gateway instanceof GPOSPRO_PayTR_Gateway || $gateway instanceof GPOS_PayTR_IFrame_Gateway ) && $gateway->check_hash( $post_data ) ) { // @phpstan-ignore-line
-				$gateway->check_notify( $post_data ); // @phpstan-ignore-line
+			if ( $gateway && ( $gateway instanceof GPOSPRO_PayTR_Gateway || $gateway instanceof GPOS_PayTR_IFrame_Gateway ) && $gateway->check_hash( $post_data ) ) {
+				$gateway->check_notify( $post_data );
 			}
 		}
 
-		if ( get_query_var( $this->test_callback_query_var_key ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( get_query_var( $this->test_callback_query_var_key ) ) {
 			echo 'OK';
 			exit();
 		}
+
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
 
 		/**
 		* Harici eklentiler ile şablon dahil etmeyi sağlar.
@@ -518,18 +536,6 @@ class GPOS_WordPress {
 				}
 			}
 		}
-	}
-
-	/**
-	 * WordPress için eklentinin tanım slug'ını eklemeye yarayan filter.
-	 *
-	 * @param string $slug The plugin kısa adı.
-	 */
-	public function wp_plugin_dependencies_slug( $slug ) {
-		if ( 'gurmepos' === $slug ) {
-			$slug = dirname( GPOS_PLUGIN_BASENAME );
-		}
-		return $slug;
 	}
 
 	/**

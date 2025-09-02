@@ -7,6 +7,8 @@
  * @package Gurmehub
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $status       = $transaction->get_status();
 $all_statuses = gpos_post_operations()->get_post_statuses();
 ?>
