@@ -1,5 +1,6 @@
 <script setup>
 import SettingsTab from "@/layouts/SettingsTab.vue";
+import SaveInfo from "@/components/Settings/CardSave/SaveInfo.vue";
 import Active from "@/components/Settings/CardSave/Active.vue";
 import SaveStep from "@/components/Settings/CardSave/SaveStep.vue";
 import ShortCode from "@/components/Settings/CardSave/ShortCode.vue";
@@ -29,6 +30,9 @@ const { cardSave } = storeToRefs(store);
       </div>
       <div class="w-1/2">
         <ShortCode />
+      </div>
+      <div>
+        <SaveInfo v-model="cardSave.save_info" />
       </div>
     </template>
 

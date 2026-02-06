@@ -123,7 +123,7 @@ return array(
 		'description' => __('You can access API information from the Integration & API information page in the Settings menu in your QNBpay merchant panel.', 'gurmepos'),
 	),
 	'garanti-pay'          => array(
-		'description' => __('You can learn your GarantiPAY integration information by sending an e-mail to <strong>eticaretdestek@garantibbva.com.tr</strong>.', 'gurmepos'),
+		'description' => "Firma adı, sunucu IP adresi, Merchant K Değeri ve Merchant KID Değeri bilgileri gereklidir.K ve KID değerleri JWK içerisindedir, <a class='text-blue-500 underline' href='https://dev.garantibbva.com.tr/garantipay-sanal-pos-jwk-dosya-yaratilmasi-listelenmesi-ve-indirilmesi' target='_blank'>Dev GarantiBBVA</a> adresinden JWK dosyasını nasıl alacağınızı öğrenebilirsiniz.",
 	),
 	'isbank-girogate'      => array(
 		'description' => __('After logging into the İşbank virtual pos system, if no API user has been created before, an API user must be created by entering the "Add New User" section under the "Management" heading. Then, API user information should be filled in the relevant places.', 'gurmepos'),

@@ -39,6 +39,7 @@ class GPOS_Tracker {
 	public function __construct() {
 		$this->http = gpos_http_request();
 	}
+
 	/**
 	 * Sitenin notify vs gibi callback adreslerinenin düzgün çalışıp çalışmadığını test eden servise çağrı yapar
 	 *
@@ -58,10 +59,29 @@ class GPOS_Tracker {
 	 * @param string $card_bin Kartın ilk 8 hanesi.
 	 */
 	public function bin_retrieve( $card_bin ) {
-		return $this->http->request(
-			"{$this->url}/binRetrieve?bin={$card_bin}",
-			'GET',
-		);
+		try {
+			return $this->http->request(
+				"{$this->url}/binRetrieve?bin={$card_bin}",
+				'GET',
+			);
+		} catch ( Exception $e ) {
+			return [
+				'country' => [
+					'code' => '',
+					'name' => '',
+				],
+				'bank'    => [
+					'code' => '',
+					'name' => '',
+				],
+				'bin'     => $card_bin,
+				'card'    => [
+					'type'   => '',
+					'family' => '',
+					'brand'  => '',
+				],
+			];
+		}
 	}
 
 	/**

@@ -170,9 +170,11 @@ trait GPOS_Plugin_Payment_Gateway {
 			$this->transaction->set_saved_card_id( $this->saved_card );
 			do_action( 'gpos_transaction_use_saved_card', $this->transaction, $this->saved_card );
 		} else {
+			$subs      = ( class_exists( 'WC_Subscriptions_Cart' ) && WC_Subscriptions_Cart::cart_contains_subscription() );
+			$funnelkit = function_exists( 'gpospro_is_funnelkit_enabled' ) && gpospro_is_funnelkit_enabled() && is_checkout();
 			$this->transaction->set_save_card(
-				( class_exists( 'WC_Subscriptions_Cart' ) && WC_Subscriptions_Cart::cart_contains_subscription() ) || // Sepette abonelik ürünü varsa kaydetmeye zorlamak için eklendi.
-					$this->save_card
+				// sepette abonelik ürünü varsa veya funnelkit varsa veya kullanıcı kendi seçim yaptıysa kart kaydetmek için eklendi.
+				$subs || $funnelkit || $this->save_card
 			);
 			$this->card_setter( $this->transaction );
 		}

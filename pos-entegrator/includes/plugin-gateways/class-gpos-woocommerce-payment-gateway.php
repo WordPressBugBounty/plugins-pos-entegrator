@@ -100,14 +100,17 @@ class GPOS_WooCommerce_Payment_Gateway extends WC_Payment_Gateway_CC implements 
 	 * @SuppressWarnings(PHPMD.ExitExpression)
 	 */
 	public function success_process( GPOS_Gateway_Response $response, $on_checkout ) {
-		$this->order  = wc_get_order( $this->transaction->get_plugin_transaction_id() );
-		$received_url = $this->order->get_checkout_order_received_url();
-		$this->set_fee();
+
+		$this->order = wc_get_order( $this->transaction->get_plugin_transaction_id() );
 
 		if ( $response->get_payment_id() && $this->order->needs_payment() ) {
 			$this->order->payment_complete( $response->get_payment_id() );
 			$this->order->add_order_note( gpos_transaction_note( $response ) );
 		}
+
+		$received_url = $this->get_return_url( $this->order );
+
+		$this->set_fee();
 
 		if ( $on_checkout ) {
 			return array(
@@ -196,18 +199,18 @@ class GPOS_WooCommerce_Payment_Gateway extends WC_Payment_Gateway_CC implements 
 	 */
 	public function set_properties() {
 		$this->transaction
-		->set_total( $this->order->get_total() )
-		->set_currency( $this->order->get_currency() )
-		->set_customer_id( $this->order->get_customer_id() )
-		->set_customer_first_name( $this->order->get_billing_first_name() )
-		->set_customer_last_name( $this->order->get_billing_last_name() )
-		->set_customer_address( "{$this->order->get_billing_address_1()} {$this->order->get_billing_address_2()}" )
-		->set_customer_state( WC()->countries->get_states( $this->order->get_billing_country() )[ $this->order->get_billing_state() ] )
-		->set_customer_city( $this->order->get_billing_city() )
-		->set_customer_country( $this->order->get_billing_country() )
-		->set_customer_phone( $this->order->get_billing_phone() )
-		->set_customer_email( $this->order->get_billing_email() )
-		->set_customer_ip_address( $this->order->get_customer_ip_address() );
+			->set_total( $this->order->get_total() )
+			->set_currency( $this->order->get_currency() )
+			->set_customer_id( $this->order->get_customer_id() )
+			->set_customer_first_name( $this->order->get_billing_first_name() )
+			->set_customer_last_name( $this->order->get_billing_last_name() )
+			->set_customer_address( "{$this->order->get_billing_address_1()} {$this->order->get_billing_address_2()}" )
+			->set_customer_state( WC()->countries->get_states( $this->order->get_billing_country() )[ $this->order->get_billing_state() ] )
+			->set_customer_city( $this->order->get_billing_city() )
+			->set_customer_country( $this->order->get_billing_country() )
+			->set_customer_phone( $this->order->get_billing_phone() )
+			->set_customer_email( $this->order->get_billing_email() )
+			->set_customer_ip_address( $this->order->get_customer_ip_address() );
 
 		if ( false === $this->form_settings->get_setting_by_key( 'holder_name_field' ) ) {
 			$this->transaction->set_card_holder_name( $this->order->get_billing_first_name() . ' ' . $this->order->get_billing_last_name() );

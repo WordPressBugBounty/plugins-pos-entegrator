@@ -39,13 +39,6 @@ class GPOS_PayNKolay extends GPOS_Gateway {
 	public $check_connection_is_available = false;
 
 	/**
-	 * Taksitin vade farkı manuel eklenmeli mi ?
-	 *
-	 * @var boolean $add_fee_for_installment
-	 */
-	public $add_fee_for_installment = false;
-
-	/**
 	 * Logo urli
 	 *
 	 * @var string $logo

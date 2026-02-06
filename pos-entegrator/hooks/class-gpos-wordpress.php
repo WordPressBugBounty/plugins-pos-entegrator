@@ -69,7 +69,7 @@ class GPOS_WordPress {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_filter( 'query_vars', array( $this, 'query_vars' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notice' ) );
-		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ), 2 );
 		add_filter( 'template_include', array( $this, 'template_include' ) );
 		add_filter( 'script_loader_tag', array( $this, 'script_loader' ), 10, 2 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
@@ -150,7 +150,11 @@ class GPOS_WordPress {
 			add_rewrite_rule( $rule['regex'], $rule['query'], 'top' );
 		}
 
-		flush_rewrite_rules();
+		$version = str_replace( '.', '_', GPOS_VERSION );
+		if ( false === get_option( "gpos_{$version}", false ) ) {
+			flush_rewrite_rules();
+			update_option( "gpos_{$version}", true );
+		}
 
 		gpos_notifications()->register();
 

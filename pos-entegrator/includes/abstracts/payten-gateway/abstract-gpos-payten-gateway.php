@@ -112,6 +112,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			'MERCHANT'         => $is_test_mode ? $settings->test_merchant : $settings->merchant,
 			'MERCHANTUSER'     => $is_test_mode ? $settings->test_merchant_user : $settings->merchant_user,
 			'MERCHANTPASSWORD' => $is_test_mode ? $settings->test_merchant_password : $settings->merchant_password,
+			'MERCHANTNOTE'     => 'GURMESOFT',
 		);
 		$this->http_request->set_headers(
 			array( 'Content-Type' => 'application/x-www-form-urlencoded; charset=utf-8' )
@@ -145,7 +146,14 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			$card     = $this->prepare_credit_card();
 			$url      = "{$this->request_url}/post/sale3d/{$response['sessionToken']}";
 			$response = $this->http_request->request( $url, 'POST', $card );
-			$this->log( GPOS_Transaction_Utils::LOG_PROCESS_REDIRECT, array( 'url' => $url ), array( 'html_content' => $response ) );
+			$this->log(
+				GPOS_Transaction_Utils::LOG_PROCESS_REDIRECT,
+				array(
+					'url'  => $url,
+					'card' => $card,
+				),
+				array( 'html_content' => $response )
+			);
 			$this->gateway_response->set_success( true )->set_html_content( $response );
 		} else {
 			$this->gateway_response
@@ -206,13 +214,16 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 	 * @param string $payment_id Ödeme işlem numarası.
 	 */
 	public function check_payment_status( $payment_id ) {
-		$request  = array_merge(
+		$request = array_merge(
 			array(
 				'ACTION'   => 'QUERYTRANSACTION',
 				'PGTRANID' => $payment_id,
 			),
 			$this->settings
 		);
+
+		unset( $request['MERCHANTNOTE'] );
+
 		$response = $this->http_request->request( $this->request_url, 'POST', $request );
 
 		$this->log( GPOS_Transaction_Utils::LOG_PROCESS_FINISH, $request, $response );

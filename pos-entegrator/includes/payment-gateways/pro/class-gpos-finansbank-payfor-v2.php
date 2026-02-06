@@ -29,7 +29,7 @@ class GPOS_Finansbank_Payfor_V2 extends GPOS_Gateway {
 	 *
 	 * @var string $logo
 	 */
-	public $logo = GPOS_ASSETS_DIR_URL . '/images/logo/finansbank.svg';
+	public $logo = GPOS_ASSETS_DIR_URL . '/images/logo/qnbfinansbank-payfor-v2.svg';
 
 	/**
 	 * Desteklenen özellikler

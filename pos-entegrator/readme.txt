@@ -6,8 +6,8 @@ Plugin Name: POS Entegratör; Gurmehub Ödeme Eklentisi
 Plugin URI: https://posentegrator.com/
 Tags: kredi kartı, sanal pos, ödeme, banka, pos
 Requires at least: 6.0
-Tested up to: 6.8
-Stable tag: 3.7.88
+Tested up to: 6.9
+Stable tag: 3.7.93
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,7 +37,6 @@ https://www.youtube.com/watch?v=xj1uj1ETyhY
  - United Payment
  - Lidio
  - Tosla (Aköde)
- - Ozan
  - Param
  - PayTR (Direct API)
  - Pay N Kolay
@@ -54,14 +53,15 @@ https://www.youtube.com/watch?v=xj1uj1ETyhY
  - Mollie
  - Shoiper
  - İşyerimPOS
- - Papara
  - Rubikpara
  - Erpapay
  - Moka
  - Hepsipay
  - ZiraatPay	
  - Tami 
- - Papel (Yeni 🚀)
+ - Papel
+ - ~~Ozan~~ (Kaldırıldı)
+ - ~~Papara~~ (Kaldırıldı)
 
 ## Banka Ödeme Entegrasyonları
  - Akbank (Yeni JSON API)

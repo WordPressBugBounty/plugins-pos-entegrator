@@ -3,7 +3,7 @@ import { ExclamationCircleIcon } from "@heroicons/vue/24/outline";
 import { useCheckout } from "@/stores/CheckoutStore";
 import { storeToRefs } from "pinia";
 import CardName from "@/components/Checkout/CreditDebitCard/CardFormWithSavedCards/CardForm/SaveCard/CardName.vue";
-const { userId, cardSaveSettings, wcSubsSettings } = useCheckout();
+const { userId, cardSaveSettings } = useCheckout();
 const { saveCurrentCard, virtualPOS } = storeToRefs(useCheckout());
 const isCheckout = window.wc_checkout_params || false;
 </script>
@@ -14,7 +14,7 @@ const isCheckout = window.wc_checkout_params || false;
   >
     <div
       v-if="
-        cardSaveSettings.force_save && wcSubsSettings.save_info && isCheckout
+        cardSaveSettings.force_save && cardSaveSettings.save_info && isCheckout
       "
       class="w-full flex items-center justify-start p-2 gap-2 bg-blue-50 border-blue-600 text-blue-800 border rounded"
     >
@@ -22,7 +22,7 @@ const isCheckout = window.wc_checkout_params || false;
         class="!w-6 !h-6 mt-1"
         aria-hidden="true"
       />
-      {{ wcSubsSettings.save_info }}
+      {{ cardSaveSettings.save_info }}
     </div>
     <label
       v-if="userId && !cardSaveSettings.force_save"

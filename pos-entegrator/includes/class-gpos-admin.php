@@ -265,7 +265,8 @@ class GPOS_Admin {
 		}
 		if ( $nonce && isset( $_GET['gateway'] ) && 'add-payment-method' === $page ) {
 
-			$localize['gateway_account'] = gpos_gateway_account()->load_by_gateway_id( gpos_clean( $_GET['gateway'] ) );
+			$localize['gateway_account']           = gpos_gateway_account()->load_by_gateway_id( gpos_clean( $_GET['gateway'] ) );
+			$localize['hide_installment_settings'] = true;
 		}
 		if ( $nonce && isset( $_GET['transaction'] ) && 'transaction' === $page ) {
 			$localize['transaction'] = gpos_transaction( (int) gpos_clean( $_GET['transaction'] ) )->to_array();

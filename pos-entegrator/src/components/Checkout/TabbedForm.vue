@@ -3,6 +3,7 @@ import { useCheckout } from "@/stores/CheckoutStore";
 import { onMounted, ref, shallowRef } from "vue";
 import Single from "@/components/Checkout/CreditDebitCard.vue";
 import Alternatives from "@/components/Checkout/Alternatives.vue";
+import inputsChanged from "@/plugins/inputs-changed.js";
 
 const { alternativePayments, bankTransfers, shoppingCredits } = useCheckout();
 const component = shallowRef(Single);
@@ -23,6 +24,9 @@ const tabToActive = async (title) => {
       tab.active = false;
     }
   });
+  setTimeout(() => {
+    inputsChanged();
+  }, 100);
 };
 
 onMounted(() => {

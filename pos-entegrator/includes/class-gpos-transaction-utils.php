@@ -28,6 +28,7 @@ class GPOS_Transaction_Utils {
 	const PMPRO              = 'paid_memberships_pro';
 	const TRAVELERWP         = 'travelerwp';
 	const LATEPOINT          = 'latepoint';
+	const FUNNELKIT          = 'funnelkit';
 	/**
 	 * İşlem tipleri.
 	 */

@@ -109,7 +109,7 @@ class GPOS_Tami extends GPOS_Gateway {
 				'expiry_year'  => '2025',
 				'expiry_month' => '12',
 				'cvv'          => '460',
-				'secure'       => '',
+				'secure'       => '147852',
 			),
 			array(
 				'brand'        => 'visa',
@@ -118,7 +118,7 @@ class GPOS_Tami extends GPOS_Gateway {
 				'expiry_year'  => '2026',
 				'expiry_month' => '12',
 				'cvv'          => '000',
-				'secure'       => '',
+				'secure'       => '147852',
 			),
 			array(
 				'brand'        => 'visa',
@@ -127,7 +127,7 @@ class GPOS_Tami extends GPOS_Gateway {
 				'expiry_year'  => '2025',
 				'expiry_month' => '10',
 				'cvv'          => '329',
-				'secure'       => '',
+				'secure'       => '147852',
 			),
 			array(
 				'brand'        => 'visa',
@@ -136,7 +136,7 @@ class GPOS_Tami extends GPOS_Gateway {
 				'expiry_year'  => '2029',
 				'expiry_month' => '12',
 				'cvv'          => '767',
-				'secure'       => '',
+				'secure'       => '147852',
 			),
 		);
 	}

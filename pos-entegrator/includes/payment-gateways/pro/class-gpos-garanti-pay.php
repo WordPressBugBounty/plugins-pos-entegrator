@@ -79,47 +79,23 @@ class GPOS_Garanti_Pay extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
-				'model' => 'merchant_id',
+				'label' => 'Garanti Pay Ödeme Ekranında Gösterilecek Firma Adı',
+				'model' => 'company_name',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal ID', 'gurmepos' ),
-				'model' => 'terminal_id',
+				'label' => 'Garanti Pay\'e kayıtlı sunucu IP adresi',
+				'model' => 'server_ip',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Payment User', 'gurmepos' ),
-				'model' => 'merchant_user',
+				'label' => 'Merchant K Değeri',
+				'model' => 'merchant_k_value',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Payment User Password', 'gurmepos' ),
-				'model' => 'merchant_password',
-			),
-			array(
-				'type'  => 'text',
-				'label' => __( '3D Key', 'gurmepos' ),
-				'model' => 'merchant_threed_store_key',
-			),
-			array(
-				'type'    => 'select',
-				'options' => array(
-					'3d'     => '3D',
-					'3d_pay' => '3D Pay',
-				),
-				'label'   => __( '3D Type', 'gurmepos' ),
-				'model'   => 'merchant_threed_type',
-			),
-			array(
-				'type'  => 'text',
-				'label' => __( 'Refund User', 'gurmepos' ),
-				'model' => 'refund_user',
-			),
-			array(
-				'type'  => 'text',
-				'label' => __( 'Refund User Password', 'gurmepos' ),
-				'model' => 'refund_password',
+				'label' => 'Merchant KID Değeri',
+				'model' => 'merchant_kid_value',
 			),
 		);
 	}

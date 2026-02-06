@@ -13,7 +13,7 @@ import { storeToRefs } from "pinia";
 
 const { gatewayAccount } = storeToRefs(useGatewayAccount());
 const { paymentGateways } = useMainStore();
-
+const  hideInstallmentSettings  = window.gpos.hide_installment_settings || false;
 onBeforeMount(() => {
   gatewayAccount.value.gateway_property = paymentGateways.find(
     (gateway) => gateway.id === gatewayAccount.value.gateway_id
@@ -48,7 +48,7 @@ const prevPage = () => {
       <TestDelete />
       <ApiFields />
       <WorldPAYExtra v-if="gatewayAccount.gateway_property.id === 'worldpay'" />
-      <Installments v-if="gatewayAccount.gateway_property.payment_method_type === 'virtual_pos'" />
+      <Installments v-if="gatewayAccount.gateway_property.payment_method_type === 'virtual_pos' && !hideInstallmentSettings" />
       <Supports />
     </div>
   </page>
