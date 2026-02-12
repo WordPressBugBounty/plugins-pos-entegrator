@@ -3,7 +3,7 @@
  * Plugin Name: POS Entegratör
  * Plugin URI: https://posentegrator.com
  * Description: 50+ ödeme kuruluşu, 10+ eklenti ile beraber çalışalabilen en gelişmiş ödeme eklentisi. Tüm ödeme alma süreçlerinizi yönetir, kusursuz çalışmasını sağlar. E-Ticaret Ödemeleri, Tek Sayfada Ödeme, Tekrarlı Ödemeler, Taksitli Ödemeler,Bağış Ödemeleri, Özel Tutarlı Ödemeler ve daha fazlası <strong>POS Entegratör</strong> ile çok kolay.
- * Version: 3.7.93
+ * Version: 3.7.94
  * Author: GurmeHub
  * Author URI: https://gurmehub.com
  * Text Domain: gurmepos
@@ -41,7 +41,7 @@ final class GurmePOS {
 	 *
 	 * @var string
 	 */
-	public $version = '3.7.93';
+	public $version = '3.7.94';
 
 	/**
 	 * Veritabanı versiyonu.
@@ -301,8 +301,10 @@ final class GurmePOS {
 
 		register_activation_hook( GPOS_PLUGIN_BASEFILE, array( new GPOS_Installer(), 'install' ) );
 
-		$gurmehub_client = new \GurmeHub\Client( GPOS_PLUGIN_BASEFILE );
-		$gurmehub_client->insights();
+		if ( class_exists( '\GurmeHub\Client' ) ) {
+			$gurmehub_client = new \GurmeHub\Client( GPOS_PLUGIN_BASEFILE );
+			$gurmehub_client->insights();
+		}
 	}
 
 	/**

@@ -7,7 +7,7 @@ Plugin URI: https://posentegrator.com/
 Tags: kredi kartı, sanal pos, ödeme, banka, pos
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 3.7.93
+Stable tag: 3.7.94
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
