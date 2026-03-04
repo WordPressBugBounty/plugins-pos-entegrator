@@ -67,22 +67,22 @@ class GPOS_Yapi_Kredi extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal ID', 'gurmepos' ),
+				'label' => 'Terminal ID',
 				'model' => 'terminal_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( '3D Key (ENCKey)', 'gurmepos' ),
+				'label' => '3D Key (ENCKey)',
 				'model' => 'merchant_threed_store_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'PosNet ID', 'gurmepos' ),
+				'label' => 'PosNet ID',
 				'model' => 'posnet_id',
 			),
 		);

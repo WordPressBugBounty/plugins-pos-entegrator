@@ -334,6 +334,13 @@ class GPOS_Transaction extends GPOS_Customer {
 	protected $error_message;
 
 	/**
+	 * AI dan gelen yanıt.
+	 *
+	 * @var string $ai_consult_response
+	 */
+	protected $ai_consult_response;
+
+	/**
 	 * Post meta verileri.
 	 *
 	 * @var array $meta_data
@@ -398,6 +405,7 @@ class GPOS_Transaction extends GPOS_Customer {
 		'gateway_commission_rate',
 		'transaction_commission_fee',
 		'refunded_from_payment_plugin',
+		'ai_consult_response',
 	);
 
 
@@ -1386,6 +1394,26 @@ class GPOS_Transaction extends GPOS_Customer {
 		return $this->get_prop( __FUNCTION__ );
 	}
 
+	/**
+	 * AI dan gelen yanıt.
+	 *
+	 * @param string $value AI dan gelen yanıt.
+	 *
+	 * @return GPOS_Transaction
+	 */
+	public function set_ai_consult_response( $value ) {
+		$this->set_prop( __FUNCTION__, $value );
+		return $this;
+	}
+
+	/**
+	 * AI dan gelen yanıt.
+	 *
+	 * @return string
+	 */
+	public function get_ai_consult_response() {
+		return $this->get_prop( __FUNCTION__ );
+	}
 	/**
 	 * Kart kayıt etme
 	 *

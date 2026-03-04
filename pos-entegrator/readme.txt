@@ -7,7 +7,7 @@ Plugin URI: https://posentegrator.com/
 Tags: kredi kartı, sanal pos, ödeme, banka, pos
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 3.7.95
+Stable tag: 3.7.96
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -51,15 +51,16 @@ https://www.youtube.com/watch?v=xj1uj1ETyhY
  - Vepara
  - Weepay
  - Mollie
- - Shoiper
  - İşyerimPOS
  - Rubikpara
  - Erpapay
  - Moka
  - Hepsipay
- - ZiraatPay	
+ - ZiraatPay
+ - VakifPay
  - Tami 
  - Papel
+ - ~~Shoiper~~ (Kaldırıldı)
  - ~~Ozan~~ (Kaldırıldı)
  - ~~Papara~~ (Kaldırıldı)
 

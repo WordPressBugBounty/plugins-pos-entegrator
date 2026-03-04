@@ -21,6 +21,7 @@ class GPOS_Transaction_Utils {
 	const EDD                = 'edd';
 	const NINJA_FORMS        = 'ninja_forms';
 	const WPFORMS            = 'wpforms';
+	const WPFORMS_V2         = 'wpforms_v2';
 	const ELEMENTOR          = 'elementor';
 	const ELEMENTOR_PRO      = 'elementor_pro';
 	const LEARNPRESS         = 'learn_press';
@@ -29,6 +30,7 @@ class GPOS_Transaction_Utils {
 	const TRAVELERWP         = 'travelerwp';
 	const LATEPOINT          = 'latepoint';
 	const FUNNELKIT          = 'funnelkit';
+	const COLLECTION_FORM    = 'collection_form';
 	/**
 	 * İşlem tipleri.
 	 */

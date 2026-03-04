@@ -89,12 +89,12 @@ class GPOS_Papara extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Key', 'gurmepos' ),
+				'label' => 'API Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Secure Key', 'gurmepos' ),
+				'label' => 'Secure Key',
 				'model' => 'secure_key',
 			),
 		);

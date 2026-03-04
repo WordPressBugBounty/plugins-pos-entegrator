@@ -1,6 +1,6 @@
 <?php
 /**
- * WooCommerce Ödeme Geçici için PRO ile tüm istek gönderme ve cevap alma işlemlerini yapan sınıfı (GPOS_WooCommerce_Payment_Gateway) barındırır.
+ * WooCommerce Ödeme Geçici için PRO ile tüm istek gönderme ve cevap alma işlemlerini yapan sınıfı (GPOS_WooCommerce_Blocks_Payment_Gateway) barındırır.
  *
  * @package Gurmehub
  */
@@ -9,7 +9,7 @@ use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodTyp
 
 if ( class_exists( 'GPOS_WooCommerce_Payment_Gateway' ) ) {
 	/**
-	 * GPOSPRO_WooCommerce_Payment_Gateway sınıfı.
+	 * GPOS_WooCommerce_Blocks_Payment_Gateway sınıfı.
 	 */
 	class GPOS_WooCommerce_Blocks_Payment_Gateway extends AbstractPaymentMethodType {
 

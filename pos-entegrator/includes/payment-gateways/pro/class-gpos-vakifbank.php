@@ -68,17 +68,17 @@ class GPOS_Vakifbank extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Password', 'gurmepos' ),
+				'label' => 'Merchant Password',
 				'model' => 'merchant_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal ID', 'gurmepos' ),
+				'label' => 'Terminal ID',
 				'model' => 'terminal_id',
 			),
 

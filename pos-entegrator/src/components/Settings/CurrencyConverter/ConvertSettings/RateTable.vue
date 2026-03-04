@@ -17,7 +17,7 @@ const deleteRate = (rate) => {
           scope="col"
           class="px-6 py-3 w-2/12"
         >
-          {{ $t("currency") }}
+          {{ $t("currencies") }}
         </th>
         <th
           scope="col"

@@ -35,7 +35,7 @@ onMounted(() => {
     href="https://yardim.gurmehub.com/docs/pos-entegrator/ozellikler/islemler/?utm_source=wp_plugin&utm_medium=referal&utm_campaign=footer"
     video="https://www.youtube.com/watch?v=mE8Omd1S0Fo"
   >
-    <div class="w-full flex justify-between items-center">
+    <div class="w-full flex md:justify-between  md:flex-row flex-col md:items-center">
       <a :href="`${adminUrl}edit.php?post_type=gpos_transaction`">
         <span class="w-max flex gap-1 items-center my-4 cursor-pointer">
           <ArrowLeftCircleIcon class="text-blue-600 w-6 h-6" />
@@ -50,8 +50,8 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="flex w-full gap-8 mt-4">
-      <div class="flex flex-col gap-8 w-3/4">
+    <div class="flex flex-col md:flex-row w-full gap-8 mt-4">
+      <div class="flex flex-col gap-8 w-full md:w-3/4">
         <Detail :transaction="transaction" />
         <Customer
           :transaction="transaction"
@@ -67,7 +67,7 @@ onMounted(() => {
         />
       </div>
 
-      <div class="flex flex-col w-1/4 gap-8">
+      <div class="flex flex-col w-full md:w-1/4 gap-8">
         <Timeline
           v-if="transaction.notes.length > 0"
           :transaction="transaction"

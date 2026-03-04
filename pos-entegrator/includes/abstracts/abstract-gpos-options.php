@@ -88,6 +88,8 @@ abstract class GPOS_Options {
 					'installment_tab_active'   => false,
 					'installment_tab_title'    => __( 'Installment Options', 'gurmepos' ),
 					'installment_tab_priority' => 8,
+					'update_refund_status'     => false,
+					'refund_status'            => 'refunded',
 				),
 				'gpos_other_settings'        => array(
 					'admin_bar_menu'      => true,

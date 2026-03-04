@@ -68,12 +68,12 @@ class GPOS_Ozan extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Key', 'gurmepos' ),
+				'label' => 'API Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Secret', 'gurmepos' ),
+				'label' => 'API Secret',
 				'model' => 'api_secret',
 			),
 		);

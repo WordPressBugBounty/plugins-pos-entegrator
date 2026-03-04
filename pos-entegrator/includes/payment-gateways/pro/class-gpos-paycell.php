@@ -68,27 +68,27 @@ class GPOS_Paycell extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Application name', 'gurmepos' ),
+				'label' => 'Application name',
 				'model' => 'application_name',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Application password', 'gurmepos' ),
+				'label' => 'Application password',
 				'model' => 'application_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Secure code', 'gurmepos' ),
+				'label' => 'Secure code',
 				'model' => 'secure_code',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Eulaid', 'gurmepos' ),
+				'label' => 'Eulaid',
 				'model' => 'eulaid',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Code', 'gurmepos' ),
+				'label' => 'Merchant Code',
 				'model' => 'merchant_code',
 			),
 		);

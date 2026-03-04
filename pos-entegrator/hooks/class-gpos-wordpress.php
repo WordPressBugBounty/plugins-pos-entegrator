@@ -79,6 +79,8 @@ class GPOS_WordPress {
 		add_action( 'restrict_manage_posts', array( $this, 'restrict_manage_posts' ) );
 		add_action( 'upgrader_process_complete', array( $this, 'upgrader_process_complete' ), 1, 2 );
 		add_filter( 'plugins_api_args', array( $this, 'plugins_api_args' ), 10, 2 );
+		add_filter( 'auto_update_plugin', array( $this, 'disable_auto_update' ), 10, 2 );
+		add_filter( 'plugin_auto_update_setting_html', array( $this, 'disable_auto_update_setting_html' ), 10, 2 );
 
 		// comment dan transaction noteları kaldırma
 		add_action( 'pre_get_comments', array( $this, 'pre_get_comments' ) );
@@ -93,6 +95,8 @@ class GPOS_WordPress {
 		add_filter( "manage_edit-{$this->prefix}_transaction_columns", array( gpos_post_tables(), 'transaction_columns' ) );
 		add_action( "manage_{$this->prefix}_transaction_posts_custom_column", array( gpos_post_tables(), 'transaction_custom_column' ) );
 		add_action( "handle_bulk_actions-edit-{$this->prefix}_transaction", array( gpos_post_tables(), 'export_bulk_actions' ), 10, 3 );
+		add_filter( 'list_table_primary_column', array( gpos_post_tables(), 'list_table_primary_column' ), 10, 2 );
+		add_filter( 'post_row_actions', array( gpos_post_tables(), 'post_row_actions' ), 10, 2 );
 
 		if ( function_exists( 'gpos_shortcode' ) ) {
 			add_shortcode( "{$this->prefix}_installment_table", array( gpos_shortcode(), 'installment_table' ) );
@@ -175,16 +179,13 @@ class GPOS_WordPress {
 	 * WordPress admin init kancası
 	 *
 	 * @return void
+	 * @SuppressWarnings("PHPMD.ExitExpression")
 	 */
 	public function admin_init() {
-		if ( isset( $_GET['post_type'] ) && ( 'gpos_transaction' === $_GET['post_type'] || 'gpos_saved_card' === $_GET['post_type'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			?>
-			<style>
-				.page-title-action{
-					display: none !important;
-				}
-			</style>
-			<?php
+		if ( isset( $_GET['gpos_force_update_check'] ) && check_admin_referer( 'gpos_force_update_check' ) ) {
+			gpos_force_check_plugin_updates();
+			wp_safe_redirect( remove_query_arg( array( 'gpos_force_update_check', '_wpnonce' ) ) );
+			exit;
 		}
 	}
 
@@ -367,7 +368,8 @@ class GPOS_WordPress {
 	public function actions_links( $links ) {
 
 		$new_links = array(
-			'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=gpos-settings' ), __( 'Settings', 'gurmepos' ) ),
+			'settings'     => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=gpos-settings' ), __( 'Settings', 'gurmepos' ) ),
+			'update-check' => sprintf( '<a href="%s">%s</a>', wp_nonce_url( add_query_arg( 'gpos_force_update_check', '1' ), 'gpos_force_update_check' ), __( 'Force Check Updates', 'gurmepos' ) ),
 		);
 
 		if ( ! gpos_is_pro_active() ) {
@@ -474,11 +476,11 @@ class GPOS_WordPress {
 	 */
 	public function upgrader_process_complete( $upgrader, $hook_extra ) {
 
-		if ( $upgrader instanceof Plugin_Upgrader && false === $upgrader->bulk && array_key_exists( 'plugin', $hook_extra ) && GPOS_PLUGIN_BASENAME === $hook_extra['plugin'] ) {
-			call_user_func( array( new GPOS_Installer(), 'install' ) );
-		}
+		$is_upgrader = $upgrader instanceof Plugin_Upgrader;
+		$single      = $is_upgrader && array_key_exists( 'plugin', $hook_extra ) && false === $upgrader->bulk && GPOS_PLUGIN_BASENAME === $hook_extra['plugin'];
+		$bulk        = $is_upgrader && array_key_exists( 'plugins', $hook_extra ) && true === $upgrader->bulk && in_array( GPOS_PLUGIN_BASENAME, $hook_extra['plugins'], true );
 
-		if ( $upgrader instanceof Plugin_Upgrader && true === $upgrader->bulk && array_key_exists( 'plugins', $hook_extra ) && in_array( GPOS_PLUGIN_BASENAME, $hook_extra['plugins'], true ) ) {
+		if ( $single || $bulk ) {
 			call_user_func( array( new GPOS_Installer(), 'install' ) );
 		}
 	}
@@ -553,5 +555,52 @@ class GPOS_WordPress {
 			$args->slug = 'pos-entegrator';
 		}
 		return $args;
+	}
+
+	/**
+	 * Ödeme eklentisinin otomatik güncellenmesini devre dışı bırakır.
+	 * Kullanıcı "Otomatik güncellemeleri etkinleştir" seçeneğini açmış olsa bile
+	 * bu eklenti için otomatik güncelleme yapılmaz.
+	 *
+	 * @param bool|null $update Mevcut otomatik güncelleme kararı.
+	 * @param object    $item   Güncelleme nesnesi.
+	 *
+	 * @return bool|null
+	 */
+	public function disable_auto_update( $update, $item ) {
+
+		if ( ! isset( $item->plugin ) ) {
+			return $update;
+		}
+
+		$lite     = GPOS_PLUGIN_BASENAME === $item->plugin;
+		$pro      = defined( 'GPOSPRO_PLUGIN_BASENAME' ) && GPOSPRO_PLUGIN_BASENAME === $item->plugin;
+		$business = defined( 'GPOSFORM_PLUGIN_BASENAME' ) && GPOSFORM_PLUGIN_BASENAME === $item->plugin;
+
+		if ( $lite || $pro || $business ) {
+			return false;
+		}
+
+		return $update;
+	}
+
+	/**
+	 * Ödeme eklentisinin otomatik güncellenmesini devre dışı bırakır.
+	 *
+	 * @param string $html HTML kodu.
+	 * @param string $plugin_file Plugin dosya yolu.
+	 *
+	 * @return string
+	 */
+	public function disable_auto_update_setting_html( $html, $plugin_file ) {
+		$lite     = strpos( $plugin_file, GPOS_PLUGIN_BASENAME ) !== false;
+		$pro      = defined( 'GPOSPRO_PLUGIN_BASENAME' ) && strpos( GPOSPRO_PLUGIN_BASENAME, $plugin_file ) !== false;
+		$business = defined( 'GPOSFORM_PLUGIN_BASENAME' ) && strpos( GPOSFORM_PLUGIN_BASENAME, $plugin_file ) !== false;
+
+		if ( $lite || $pro || $business ) {
+			return __( 'Auto-updates disabled by author', 'gurmepos' );
+		}
+
+		return $html;
 	}
 }

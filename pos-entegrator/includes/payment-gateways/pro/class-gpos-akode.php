@@ -68,17 +68,17 @@ class GPOS_Akode extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Client ID', 'gurmepos' ),
+				'label' => 'Client ID',
 				'model' => 'client_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API User', 'gurmepos' ),
+				'label' => 'API User',
 				'model' => 'api_user',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Password', 'gurmepos' ),
+				'label' => 'API Password',
 				'model' => 'api_password',
 			),
 		);

@@ -14,7 +14,7 @@ const assetsUrl = window.gpos.assets_url;
       v-text="$t('card_info')"
     />
     <div class="border border-[#F7F7F7] my-4" />
-    <div class="flex flex-wrap gap-y-4">
+    <div class="flex flex-col md:flex-row flex-wrap gap-y-4">
       <div
         v-for="key in ['card_holder_name', 'masked_card_bin']"
         :key="key"

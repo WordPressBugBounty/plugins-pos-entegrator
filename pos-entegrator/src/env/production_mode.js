@@ -1,5 +1,5 @@
-var { glob } = require("glob");
-var fs = require("fs");
+import { glob } from "glob";
+import fs from "fs";
 
 const production = async () => {
   const files = await glob("gurmepos.php");

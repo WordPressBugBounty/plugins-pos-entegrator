@@ -4,8 +4,11 @@ import "@/plugins/platform-data-listener.js";
 import { createApp } from "vue";
 import { createI18n } from "vue-i18n";
 import VueCreditCardValidation from "vue-credit-card-validation";
+import VueNumberFormat from "vue-number-format";
+import MoneyFormat from "@/components/MoneyFormat.vue";
 import pinia from "@/plugins/store.js";
 import "@/assets/checkout.css";
+
 
 switch (window.gpos?.plugin) {
   case "elementor":
@@ -29,6 +32,8 @@ export default function init(App) {
       legacy: false,
     });
     const app = createApp(App);
+    app.component("MoneyFormat", MoneyFormat);
+    app.use(VueNumberFormat, { prefix: "", decimal: ".", thousand: "," });
     app.use(VueCreditCardValidation);
     app.use(pinia);
     app.use(i18n);

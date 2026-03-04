@@ -108,6 +108,9 @@ class GPOS_Post_Operations {
 					'not_found'          => __( 'No Transactions found.', 'gurmepos' ),
 					'not_found_in_trash' => __( 'No Transactions found in Trash.', 'gurmepos' ),
 				),
+				'capabilities'        => [
+					'create_posts' => false,
+				],
 				'public'              => false,
 				'show_ui'             => true,
 				'map_meta_cap'        => true,

@@ -100,17 +100,17 @@ class GPOS_PayTR_IFrame extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Password', 'gurmepos' ),
+				'label' => 'Merchant Password',
 				'model' => 'merchant_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Salt', 'gurmepos' ),
+				'label' => 'Merchant Salt',
 				'model' => 'merchant_salt',
 			),
 

@@ -67,22 +67,22 @@ class GPOS_Denizbank extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Code', 'gurmepos' ),
+				'label' => 'Merchant Code',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Password', 'gurmepos' ),
+				'label' => 'Merchant Password',
 				'model' => 'merchant_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'User Code', 'gurmepos' ),
+				'label' => 'User Code',
 				'model' => 'client_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'User Password', 'gurmepos' ),
+				'label' => 'User Password',
 				'model' => 'client_password',
 			),
 			array(
@@ -91,7 +91,7 @@ class GPOS_Denizbank extends GPOS_Gateway {
 					'3DModel' => '3D',
 					'3DPay'   => '3D Pay',
 				),
-				'label'   => __( '3D Type', 'gurmepos' ),
+				'label'   => '3D Type',
 				'model'   => 'merchant_threed_type',
 			),
 		);

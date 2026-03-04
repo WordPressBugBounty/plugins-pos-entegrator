@@ -86,17 +86,17 @@ class GPOS_Paidora extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Api Key', 'gurmepos' ),
+				'label' => 'Api Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Api Secret', 'gurmepos' ),
+				'label' => 'Api Secret',
 				'model' => 'api_secret',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Host ( https://<host>/ )', 'gurmepos' ),
+				'label' => 'Host ( https://<host>/ )',
 				'model' => 'host',
 			),
 

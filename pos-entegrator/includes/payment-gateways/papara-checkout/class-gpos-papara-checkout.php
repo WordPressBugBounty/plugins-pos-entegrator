@@ -115,12 +115,12 @@ class GPOS_Papara_Checkout extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Api Key', 'gurmepos' ),
+				'label' => 'Api Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Secure Key', 'gurmepos' ),
+				'label' => 'Secure Key',
 				'model' => 'secure_key',
 			),
 		);

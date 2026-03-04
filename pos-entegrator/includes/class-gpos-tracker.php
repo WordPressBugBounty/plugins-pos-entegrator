@@ -151,6 +151,22 @@ class GPOS_Tracker {
 	}
 
 	/**
+	 * AI dan gelen yanıt.
+	 *
+	 * @param string $log Log.
+	 */
+	public function consult_ai_assistant( $log ) {
+		return $this->http->request(
+			"{$this->url}/consultAIAssistant",
+			'POST',
+			[
+				'message' => $log,
+				'domain'  => home_url(),
+			]
+		);
+	}
+
+	/**
 	 * Zamanlayıcı method.
 	 * Tip olarak 'success', 'error', 'info' gönderilebilir.
 	 *

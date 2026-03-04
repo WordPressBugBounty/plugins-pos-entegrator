@@ -39,4 +39,7 @@ return array(
 	'advace'                    => __( 'Advace', 'gurmepos' ),
 	'other_installment_options' => __( 'Other Installment Options', 'gurmepos' ),
 	'hide'                      => __( 'Hide', 'gurmepos' ),
+	'custom_amount'				=> __( 'Custom amount', 'gurmepos' ),
+	'enter_payment_amount'      => __( 'Enter payment amount', 'gurmepos' ),
+	'currency'                  => __( 'Currency', 'gurmepos' ),
 );

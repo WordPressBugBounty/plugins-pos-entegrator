@@ -86,12 +86,12 @@ class GPOS_Wyld extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Username', 'gurmepos' ),
+				'label' => 'Username',
 				'model' => 'username',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Password', 'gurmepos' ),
+				'label' => 'Password',
 				'model' => 'password',
 			),
 		);

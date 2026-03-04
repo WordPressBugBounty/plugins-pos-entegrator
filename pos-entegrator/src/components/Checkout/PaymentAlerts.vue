@@ -20,6 +20,7 @@ const successMessage = ref(false);
 const errorMessage = ref(false);
 const force =
   [
+    "collection_form",
     "elementor",
     "elementor_pro",
     "wpforms",
@@ -28,20 +29,24 @@ const force =
   ].includes(plugin) && !formSettings.value.show_alerts;
 
 const afterSubmit = (result) => {
-  if (result.isConfirmed && plugin !== "givewp_v3") {
+  if (
+    result.isConfirmed &&
+    plugin !== "givewp_v3" &&
+    plugin !== "collection_form"
+  ) {
     window.location.href = window.gpos.checkout_link;
   }
 };
 
 if (urlParams.has("gpos-success")) {
   successMessage.value = forge.util.createBuffer(
-    forge.util.hexToBytes(urlParams.get("gpos-success"), "utf-8")
+    forge.util.hexToBytes(urlParams.get("gpos-success"), "utf-8"),
   );
 }
 
 if (urlParams.has("gpos-error")) {
   errorMessage.value = forge.util.createBuffer(
-    forge.util.hexToBytes(urlParams.get("gpos-error"), "utf-8")
+    forge.util.hexToBytes(urlParams.get("gpos-error"), "utf-8"),
   );
 }
 if (formSettings.value.show_alerts === "with_alert" || force) {

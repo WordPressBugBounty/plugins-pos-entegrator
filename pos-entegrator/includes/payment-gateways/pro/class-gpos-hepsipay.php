@@ -79,17 +79,17 @@ class GPOS_Hepsipay extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant No', 'gurmepos' ),
+				'label' => 'Merchant No',
 				'model' => 'merchant_no',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal No', 'gurmepos' ),
+				'label' => 'Terminal No',
 				'model' => 'terminal_no',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Store Key', 'gurmepos' ),
+				'label' => 'Store Key',
 				'model' => 'store_key',
 			),
 		);

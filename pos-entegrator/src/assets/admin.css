@@ -15,6 +15,8 @@ tbody tr:hover {
   display: none !important;
 }
 
+body.admin_page_gpos-collection,
+body.admin_page_gpos-collection-form,
 body.pos-entegrator_page_gpos-settings,
 body.admin_page_gpos-transaction,
 body.toplevel_page_gurmepos,

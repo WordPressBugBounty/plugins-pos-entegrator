@@ -4,13 +4,12 @@ import { ExclamationTriangleIcon } from "@heroicons/vue/24/solid";
 
 <template>
   <div
-    id="alert-additional-content-4"
-    class="p-4 mb-4 text-red-600 border border-red-200 rounded-lg bg-red-50 "
+    class="p-4 mb-4 text-red-600 border border-red-200 rounded-lg bg-red-50 gpos-alert-danger"
     role="alert"
   >
     <div class="flex items-center">
       <ExclamationTriangleIcon class="w-4 h-4 mr-2" />
-      <h3 class="text-red-600  text-lg font-medium">
+      <h3 class="text-red-600  text-lg font-medium w-full">
         <slot />
       </h3>
     </div>

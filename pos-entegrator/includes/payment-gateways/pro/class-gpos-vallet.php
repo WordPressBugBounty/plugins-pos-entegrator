@@ -86,22 +86,22 @@ class GPOS_Vallet extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Kullanıcı Adı', 'gurmepos' ),
+				'label' => 'Kullanıcı Adı',
 				'model' => 'user_name',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Parola', 'gurmepos' ),
+				'label' => 'Parola',
 				'model' => 'password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Mağaza Kodu', 'gurmepos' ),
+				'label' => 'Mağaza Kodu',
 				'model' => 'shop_code',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Hash Anahtarı', 'gurmepos' ),
+				'label' => 'Hash Anahtarı',
 				'model' => 'hash_key',
 			),
 		);

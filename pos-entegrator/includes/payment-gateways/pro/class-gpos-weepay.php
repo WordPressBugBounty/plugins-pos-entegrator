@@ -68,17 +68,17 @@ class GPOS_Weepay extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Seller Id', 'gurmepos' ),
+				'label' => 'Seller Id',
 				'model' => 'seller_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Api Key', 'gurmepos' ),
+				'label' => 'Api Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Secret Key', 'gurmepos' ),
+				'label' => 'Secret Key',
 				'model' => 'secret_key',
 			),
 		);

@@ -76,6 +76,9 @@ class GPOS_Admin {
 				'menu_slug'  => "{$this->prefix}-settings",
 			),
 		);
+
+		$menu_pages = apply_filters( 'gpos_admin_menu_pages', $menu_pages );
+
 		add_menu_page(
 			$this->parent_title,
 			$this->parent_title,
@@ -88,7 +91,7 @@ class GPOS_Admin {
 
 		foreach ( $menu_pages as $sub_menu_page ) {
 			add_submenu_page(
-				isset( $sub_menu_page['hidden'] ) && true === $sub_menu_page['hidden'] ? '' : $this->parent_slug,
+				isset( $sub_menu_page['hidden'] ) && true === $sub_menu_page['hidden'] ? '/admin.php' : $this->parent_slug,
 				$sub_menu_page['menu_title'],
 				$sub_menu_page['menu_title'],
 				gpos_capability(),
@@ -214,49 +217,59 @@ class GPOS_Admin {
 	 * @return array
 	 *
 	 * @SuppressWarnings("CyclomaticComplexity")
+	 * @SuppressWarnings("PHPMD.NPathComplexity")
 	 */
 	private function get_localize_data( $page ) {
 		$localize = array(
-			'prefix'                       => GPOS_PREFIX,
-			'assets_url'                   => GPOS_ASSETS_DIR_URL,
-			'version'                      => GPOS_VERSION,
-			'home_url'                     => home_url(),
-			'admin_url'                    => admin_url(),
-			'ajaxurl'                      => admin_url( 'admin-ajax.php' ),
-			'nonce'                        => wp_create_nonce( GPOS_AJAX_ACTION ),
-			'is_pro_active'                => gpos_is_pro_active(),
-			'is_form_active'               => gpos_is_form_active(),
-			'is_test_mode'                 => gpos_is_test_mode(),
-			'payment_gateways'             => gpos_get_payment_gateways(),
-			'virtual_pos_accounts'         => gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_VIRTUAL_POS ),
-			'alternative_payment_accounts' => gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_ALTERNATIVE ),
-			'common_form_accounts'         => gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_COMMON ),
-			'iframe_accounts'              => gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_IFRAME ),
-			'wc_order_statuses'            => gpos_get_wc_order_statuses(),
-			'woocommerce_settings'         => gpos_woocommerce_settings()->get_settings(),
-			'form_settings'                => gpos_form_settings()->get_settings(),
-			'tag_manager_settings'         => gpos_tag_manager_settings()->get_settings(),
-			'notification_settings'        => gpos_notification_settings()->get_settings(),
-			'other_settings'               => gpos_other_settings()->get_settings(),
-			'total_error_count'            => gpos_status_check()->get_total_error_count(),
-			'strings'                      => gpos_get_i18n_texts(),
-			'alert_texts'                  => gpos_get_alert_texts(),
-			'status'                       => gpos_get_env_info(),
-			'dashboard'                    => gpos_dashboard(),
-			'ins_display_settings'         => gpos_ins_display_settings()->get_settings(),
-			'hide_rating_message'          => (bool) get_user_meta( get_current_user_id(), 'gpos_hide_rating_message', true ),
-			'iyzipos'                      => gpos_iyzipos()->check(),
-			'locale_languages'             => apply_filters(
+			'prefix'              => GPOS_PREFIX,
+			'assets_url'          => GPOS_ASSETS_DIR_URL,
+			'version'             => GPOS_VERSION,
+			'home_url'            => home_url(),
+			'admin_url'           => admin_url(),
+			'ajaxurl'             => admin_url( 'admin-ajax.php' ),
+			'nonce'               => wp_create_nonce( GPOS_AJAX_ACTION ),
+			'is_pro_active'       => gpos_is_pro_active(),
+			'is_form_active'      => gpos_is_form_active(),
+			'is_test_mode'        => gpos_is_test_mode(),
+			'total_error_count'   => gpos_status_check()->get_total_error_count(),
+			'strings'             => gpos_get_i18n_texts(),
+			'alert_texts'         => gpos_get_alert_texts(),
+			'status'              => gpos_get_env_info(),
+			'payment_gateways'    => gpos_get_payment_gateways(),
+			'hide_rating_message' => (bool) get_user_meta( get_current_user_id(), 'gpos_hide_rating_message', true ),
+			'iyzipos'             => gpos_iyzipos()->check(),
+			'locale_languages'    => apply_filters(
 				'gpos_locale_languages',
 				array(
 					'tr' => 'Türkçe',
 					'en' => 'English',
 				)
 			),
-			'integrations'                 => array(
+			'integrations'        => array(
 				GPOS_Transaction_Utils::WOOCOMMERCE => gpos_is_woocommerce_enabled(),
 			),
 		);
+
+		if ( 'gurmepos' === $page ) {
+			$localize['dashboard'] = gpos_dashboard();
+		}
+		if ( 'payment-methods' === $page || 'payment-method' === $page || 'add-payment-method' === $page || 'settings' === $page ) {
+			$localize['virtual_pos_accounts']         = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_VIRTUAL_POS );
+			$localize['alternative_payment_accounts'] = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_ALTERNATIVE );
+			$localize['common_form_accounts']         = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_COMMON );
+			$localize['iframe_accounts']              = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_IFRAME );
+		}
+
+		if ( 'settings' === $page ) {
+			$localize['wc_order_statuses']     = gpos_get_wc_all_order_statuses();
+			$localize['woocommerce_settings']  = gpos_woocommerce_settings()->get_settings();
+			$localize['form_settings']         = gpos_form_settings()->get_settings();
+			$localize['tag_manager_settings']  = gpos_tag_manager_settings()->get_settings();
+			$localize['notification_settings'] = gpos_notification_settings()->get_settings();
+			$localize['other_settings']        = gpos_other_settings()->get_settings();
+			$localize['ins_display_settings']  = gpos_ins_display_settings()->get_settings();
+
+		}
 
 		$nonce = isset( $_GET['_wpnonce'] ) && wp_verify_nonce( gpos_clean( $_GET['_wpnonce'] ), GPOS_AJAX_ACTION );
 
@@ -264,11 +277,11 @@ class GPOS_Admin {
 			$localize['gateway_account'] = gpos_gateway_account( (int) gpos_clean( $_GET['id'] ) );
 		}
 		if ( $nonce && isset( $_GET['gateway'] ) && 'add-payment-method' === $page ) {
-
 			$localize['gateway_account']           = gpos_gateway_account()->load_by_gateway_id( gpos_clean( $_GET['gateway'] ) );
 			$localize['hide_installment_settings'] = true;
 		}
 		if ( $nonce && isset( $_GET['transaction'] ) && 'transaction' === $page ) {
+
 			$localize['transaction'] = gpos_transaction( (int) gpos_clean( $_GET['transaction'] ) )->to_array();
 		}
 

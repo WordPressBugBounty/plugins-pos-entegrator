@@ -75,22 +75,22 @@ class GPOS_Akbank extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Username', 'gurmepos' ),
+				'label' => 'Username',
 				'model' => 'merchant_user',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Password', 'gurmepos' ),
+				'label' => 'Password',
 				'model' => 'merchant_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( '3D Key', 'gurmepos' ),
+				'label' => '3D Key',
 				'model' => 'merchant_threed_store_key',
 			),
 			array(
@@ -99,7 +99,7 @@ class GPOS_Akbank extends GPOS_Gateway {
 					'3d'     => '3D',
 					'3d_pay' => '3D Pay',
 				),
-				'label'   => __( '3D Type', 'gurmepos' ),
+				'label'   => '3D Type',
 				'model'   => 'merchant_threed_type',
 			),
 		);

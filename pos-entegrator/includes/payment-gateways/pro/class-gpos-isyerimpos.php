@@ -68,17 +68,17 @@ class GPOS_IsyerimPOS extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'User ID', 'gurmepos' ),
+				'label' => 'User ID',
 				'model' => 'user_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Key', 'gurmepos' ),
+				'label' => 'API Key',
 				'model' => 'api_key',
 			),
 

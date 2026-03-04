@@ -68,17 +68,17 @@ class GPOS_Rubikpara extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Public Key', 'gurmepos' ),
+				'label' => 'Public Key',
 				'model' => 'public_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Private Key', 'gurmepos' ),
+				'label' => 'Private Key',
 				'model' => 'private_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Number', 'gurmepos' ),
+				'label' => 'Merchant Number',
 				'model' => 'merchant_number',
 			),
 		);

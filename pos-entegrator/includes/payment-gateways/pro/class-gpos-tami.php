@@ -68,27 +68,27 @@ class GPOS_Tami extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal ID', 'gurmepos' ),
+				'label' => 'Terminal ID',
 				'model' => 'terminal_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Secret Key', 'gurmepos' ),
+				'label' => 'API Secret Key',
 				'model' => 'merchant_api_secret_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Sabit KID Değeri', 'gurmepos' ),
+				'label' => 'Sabit KID Değeri',
 				'model' => 'merchant_kid_value',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Sabit K Değeri', 'gurmepos' ),
+				'label' => 'Sabit K Değeri',
 				'model' => 'merchant_k_value',
 			),
 

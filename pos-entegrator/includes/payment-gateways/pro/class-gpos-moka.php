@@ -68,17 +68,17 @@ class GPOS_Moka extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Bayii Kodu', 'gurmepos' ),
+				'label' => 'Bayii Kodu',
 				'model' => 'api_store_code',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Username', 'gurmepos' ),
+				'label' => 'API Username',
 				'model' => 'api_username',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'API Password', 'gurmepos' ),
+				'label' => 'API Password',
 				'model' => 'api_password',
 			),
 		);

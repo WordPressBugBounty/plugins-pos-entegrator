@@ -36,20 +36,22 @@ const setCard = (test) => {
       v-if="virtualPOS.test_cards.length > 0"
       class="text-xs"
     >
-      <tr>
-        <th />
-        <th>{{ $t("card_bin") }}</th>
-        <th class="hidden md:table-cell">
-          {{ $t("month_year") }}
-        </th>
-        <th class="hidden md:table-cell">
-          Cvc
-        </th>
-        <th class="hidden md:table-cell">
-          3ds
-        </th>
-        <th />
-      </tr>
+      <thead>
+        <tr>
+          <th />
+          <th>{{ $t("card_bin") }}</th>
+          <th class="hidden md:table-cell">
+            {{ $t("month_year") }}
+          </th>
+          <th class="hidden md:table-cell">
+            Cvc
+          </th>
+          <th class="hidden md:table-cell">
+            3ds
+          </th>
+          <th />
+        </tr>
+      </thead>
       <tbody>
         <tr
           v-for="(testCard, key) in virtualPOS.test_cards"

@@ -37,7 +37,6 @@ class GPOS_Dashboard {
 	public function __construct() {
 		$this->set_transaction_counter();
 		$this->last_transactions();
-		$this->banners();
 	}
 
 	/**
@@ -84,20 +83,5 @@ class GPOS_Dashboard {
 			ORDER BY ID DESC LIMIT 10"
 		);
 		$this->last_transactions = array_map( fn( $post ) => gpos_transaction( $post->ID )->to_array(), $this->last_transactions );
-	}
-
-	/**
-	 * Banner ve kontentleri getirir.
-	 *
-	 * @return void
-	 */
-	private function banners() {
-		try {
-			$this->banners = gpos_http_request()->request( 'https://api.posentegrator.com/dashboard.json', 'GET' );
-		} catch ( Exception $e ) {
-			/**
-			 * TODO: Empty block
-			 */
-		}
 	}
 }

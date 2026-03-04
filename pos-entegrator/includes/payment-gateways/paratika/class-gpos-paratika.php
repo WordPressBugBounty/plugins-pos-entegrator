@@ -104,17 +104,17 @@ class GPOS_Paratika extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Institution/Company ID', 'gurmepos' ),
+				'label' => 'Institution/Company ID',
 				'model' => 'merchant',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Username/E-mail', 'gurmepos' ),
+				'label' => 'Username/E-mail',
 				'model' => 'merchant_user',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Password', 'gurmepos' ),
+				'label' => 'Password',
 				'model' => 'merchant_password',
 			),
 		);

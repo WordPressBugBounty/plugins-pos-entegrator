@@ -8,7 +8,7 @@
 /**
  * WooCommerce ödeme sınıfları arasına eklenen GPOS_WooCommerce_Payment_Gateway ödeme sınıfı.
  *
- * @method GPOS_Gateway_Response create_new_payment_process( $post_data, $plugin_transaction_id, $plugin, $account_id = 0 )
+ * @method GPOS_Gateway_Response create_new_payment_process( $post_data, $plugin_transaction_id, $plugin)
  */
 class GPOS_WooCommerce_Payment_Gateway extends WC_Payment_Gateway_CC implements GPOS_Plugin_Gateway {
 

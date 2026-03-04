@@ -36,13 +36,13 @@ const getClassForStatus = (status) => {
       v-text="$t('refunded_from_payment_plugin')"
     />
     <div class="border border-[#F7F7F7] my-2" />
-    <div class="flex">
+    <div class="flex overflow-x-auto">
       <table class="w-full text-sm text-left text-gray-500 relative">
         <thead class="text-xs text-gray-700 bg-gray-50">
           <tr>
             <th
               scope="col"
-              class="px-6 py-3 w-4/12"
+              class="px-6 py-3 !w-4/12"
             />
             <th
               scope="col"
@@ -82,7 +82,7 @@ const getClassForStatus = (status) => {
           >
             <th
               scope="row"
-              class="px-6 py-4 font-medium text-gray-900 break-all"
+              class="px-6 py-4 font-medium text-gray-900"
             >
               {{ line.name }}
             </th>

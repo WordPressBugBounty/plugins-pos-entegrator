@@ -1,12 +1,12 @@
 <?php
 /**
- * PayTR ile tüm istek gönderme ve cevap alma işlemlerini yapan sınıfı (GPOSPRO_PayTR_Gateway) barındırır.
+ * PayTR ile tüm istek gönderme ve cevap alma işlemlerini yapan sınıfı (GPOS_PayTR_IFrame_Gateway) barındırır.
  *
  * @package Gurmehub
  */
 
 /**
- * GPOSPRO_PayTR_Gateway sınıfı.
+ * GPOS_PayTR_IFrame_Gateway sınıfı.
  */
 class GPOS_PayTR_IFrame_Gateway extends GPOS_Payment_Gateway {
 
@@ -33,7 +33,7 @@ class GPOS_PayTR_IFrame_Gateway extends GPOS_Payment_Gateway {
 	public $gurmehub_ref_number = 'ad05b23df5438f3661bdf3298391ee46a1118d83bdfcfb0bbbc1942b55e3ec11';
 
 	/**
-	 * GPOSPRO_PayTR_Settings kurucu fonksiyon değerindedir gerekli ayarlamaları yapar.
+	 * GPOS_PayTR_IFrame_Settings kurucu fonksiyon değerindedir gerekli ayarlamaları yapar.
 	 *
 	 * @param GPOS_PayTR_IFrame_Settings|stdClass $settings Ödeme geçidi ayarlarını içerir.
 	 *

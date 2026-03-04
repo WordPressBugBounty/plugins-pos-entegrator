@@ -2,6 +2,12 @@
 import { useCheckout } from "@/stores/CheckoutStore";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
+
+const decodeHtml = (html) => {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+};
 defineProps({
   rates: {
     required: true,
@@ -38,7 +44,7 @@ const { selectedInstallment } = storeToRefs(useCheckout());
         >
           {{ getInstallmentText(rate) }} {{ $t("installment") }} x
           {{ rate.amount_per_month }} {{ $t("total") }}:
-          {{ rate.amount_total }} <span v-html="rate.currency_symbol" />&nbsp;
+          {{ rate.amount_total }} {{ decodeHtml(rate.currency_symbol) }}
         </option>
         <option
           v-else

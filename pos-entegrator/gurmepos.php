@@ -2,8 +2,8 @@
 /**
  * Plugin Name: POS Entegratör
  * Plugin URI: https://posentegrator.com
- * Description: 50+ ödeme kuruluşu, 10+ eklenti ile beraber çalışalabilen en gelişmiş ödeme eklentisi. Tüm ödeme alma süreçlerinizi yönetir, kusursuz çalışmasını sağlar. E-Ticaret Ödemeleri, Tek Sayfada Ödeme, Tekrarlı Ödemeler, Taksitli Ödemeler,Bağış Ödemeleri, Özel Tutarlı Ödemeler ve daha fazlası <strong>POS Entegratör</strong> ile çok kolay.
- * Version: 3.7.95
+ * Description: The most advanced payment plugin, compatible with 50+ payment institutions and 10+ plugins. Easily manage all your payment processes and ensure seamless operation. E-Commerce Payments, One Page Checkout, Recurring Payments, Installment Payments, Donation Payments, Custom Amount Payments, and much more are made easy with <strong>POS Entegratör</strong>.
+ * Version: 3.7.96
  * Author: GurmeHub
  * Author URI: https://gurmehub.com
  * Text Domain: gurmepos
@@ -39,7 +39,7 @@ final class GurmePOS {
 	 *
 	 * @var string
 	 */
-	public $version = '3.7.95';
+	public $version = '3.7.96';
 
 	/**
 	 * Veritabanı versiyonu.
@@ -162,9 +162,9 @@ final class GurmePOS {
 			'includes/payment-gateways/paytr-iframe/class-gpos-paytr-iframe-gateway.php',
 			'includes/payment-gateways/paytr-iframe/class-gpos-paytr-iframe.php',
 			// Papara Checkout
-			'includes/payment-gateways/papara-checkout/class-gpos-papara-checkout-settings.php',
-			'includes/payment-gateways/papara-checkout/class-gpos-papara-checkout-gateway.php',
-			'includes/payment-gateways/papara-checkout/class-gpos-papara-checkout.php',
+			// 'includes/payment-gateways/papara-checkout/class-gpos-papara-checkout-settings.php',
+			// 'includes/payment-gateways/papara-checkout/class-gpos-papara-checkout-gateway.php',
+			// 'includes/payment-gateways/papara-checkout/class-gpos-papara-checkout.php',
 			// Dummy Payment
 			'includes/payment-gateways/dummy-payment/class-gpos-dummy-payment-settings.php',
 			'includes/payment-gateways/dummy-payment/class-gpos-dummy-payment-gateway.php',
@@ -176,7 +176,7 @@ final class GurmePOS {
 			// Pro ile gelecekler
 			'includes/payment-gateways/pro/class-gpos-albaraka.php',
 			'includes/payment-gateways/pro/class-gpos-ingbank.php',
-			'includes/payment-gateways/pro/class-gpos-ozan.php',
+			// 'includes/payment-gateways/pro/class-gpos-ozan.php',
 			'includes/payment-gateways/pro/class-gpos-sekerbank.php',
 			'includes/payment-gateways/pro/class-gpos-sipay.php',
 			'includes/payment-gateways/pro/class-gpos-param.php',
@@ -209,7 +209,7 @@ final class GurmePOS {
 			'includes/payment-gateways/pro/class-gpos-paynkolay.php',
 			'includes/payment-gateways/pro/class-gpos-garanti-pay.php',
 			'includes/payment-gateways/pro/class-gpos-weepay.php',
-			'includes/payment-gateways/pro/class-gpos-shopier.php',
+			// 'includes/payment-gateways/pro/class-gpos-shopier.php',
 			'includes/payment-gateways/pro/class-gpos-worldpay.php',
 			'includes/payment-gateways/pro/class-gpos-vepara.php',
 			'includes/payment-gateways/pro/class-gpos-ziraat-katilim.php',
@@ -226,6 +226,7 @@ final class GurmePOS {
 			'includes/payment-gateways/pro/class-gpos-hepsipay.php',
 			'includes/payment-gateways/pro/class-gpos-vakif-katilim.php',
 			'includes/payment-gateways/pro/class-gpos-tami.php',
+			'includes/payment-gateways/pro/class-gpos-vakifpay.php',
 			// Functions
 			'includes/gpos-class-functions.php',
 			'includes/gpos-functions.php',

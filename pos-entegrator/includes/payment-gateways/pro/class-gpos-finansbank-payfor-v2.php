@@ -62,27 +62,27 @@ class GPOS_Finansbank_Payfor_V2 extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Corporate Code', 'gurmepos' ),
+				'label' => 'Corporate Code',
 				'model' => 'corporate_code',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Number', 'gurmepos' ), // translator: Üye İşyeri Numarası
+				'label' => 'Merchant Number', // translator: Üye İşyeri Numarası
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Username', 'gurmepos' ),
+				'label' => 'Username',
 				'model' => 'merchant_user',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Password', 'gurmepos' ),
+				'label' => 'Password',
 				'model' => 'merchant_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( '3D Key', 'gurmepos' ),
+				'label' => '3D Key',
 				'model' => 'merchant_threed_store_key',
 			),
 			array(
@@ -91,7 +91,7 @@ class GPOS_Finansbank_Payfor_V2 extends GPOS_Gateway {
 					'3DModel' => '3D',
 					'3DPay'   => '3D Pay',
 				),
-				'label'   => __( '3D Type', 'gurmepos' ),
+				'label'   => '3D Type',
 				'model'   => 'merchant_threed_type',
 			),
 		);

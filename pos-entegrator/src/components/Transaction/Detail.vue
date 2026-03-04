@@ -63,9 +63,9 @@ const copy = async (text) => {
 </script>
 <template>
   <div class="p-5 bg-white rounded flex flex-col shadow-md relative">
-    <div class="flex items-start justify-between text-gray-400 text-xs">
+    <div class="flex items-start justify-between text-gray-400 text-xs gap-2 relative">
       <div class="flex items-center">
-        <span class="text-2xl text-gray-900 font-semibold">
+        <span class="text-md md:text-2xl text-gray-900 font-semibold">
           <MoneyFormat
             :number="transaction.total"
             :currency="transaction.currency"
@@ -92,7 +92,7 @@ const copy = async (text) => {
         class="flex gap-2 items-center cursor-pointer"
         @click="copy(transaction.payment_id)"
       >
-        <span class="font-semibold">{{ $t("payment_id") }}: </span>
+        <span class="font-semibold hidden md:block">{{ $t("payment_id") }}: </span>
         {{ transaction.payment_id }}
         <ClipboardDocumentIcon
           v-if="copied"
@@ -111,10 +111,10 @@ const copy = async (text) => {
       </div>
     </div>
     <div class="border border-[#F7F7F7] my-4" />
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center overflow-x-auto">
       <div class="flex gap-12">
         <div class="flex flex-col gap-2 items-start justify-start">
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("process")
           }}</span>
           <span>{{ $t(transaction.type) }}</span>
@@ -123,13 +123,13 @@ const copy = async (text) => {
           v-if="transaction.threed_type"
           class="flex flex-col gap-2 items-start justify-start"
         >
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("threed_type")
           }}</span>
           <span>{{ transaction.threed_type }}</span>
         </div>
         <div class="flex flex-col gap-2 items-start justify-start">
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("payment_gateway")
           }}</span>
           <img
@@ -138,7 +138,7 @@ const copy = async (text) => {
           >
         </div>
         <div class="flex flex-col gap-2 items-start justify-start">
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("plugin")
           }}</span>
           <img
@@ -147,7 +147,7 @@ const copy = async (text) => {
           >
         </div>
         <div class="flex flex-col gap-2 items-start justify-start">
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("plugin_transaction_id")
           }}</span>
           <a
@@ -160,7 +160,7 @@ const copy = async (text) => {
           v-if="transaction.payment_transaction_id"
           class="flex flex-col gap-2 items-start justify-start"
         >
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("payment_transaction_id")
           }}</span>
 
@@ -172,7 +172,7 @@ const copy = async (text) => {
             <ArrowTopRightOnSquareIcon class="w-4 h-4 text-blue-700" /></a>
         </div>
         <div class="flex flex-col gap-2 items-start justify-start">
-          <span class="text-base font-semibold text-gray-900">{{
+          <span class="text-sm md:text-base font-semibold text-gray-900">{{
             $t("date")
           }}</span>
           <span>{{ transaction.date }}</span>
@@ -182,7 +182,7 @@ const copy = async (text) => {
         v-if="transaction.type === 'payment'"
         class="flex flex-col gap-2 items-start justify-start"
       >
-        <span class="text-base font-semibold text-gray-900">{{
+        <span class="text-sm md:text-base font-semibold text-gray-900">{{
           $t("cancel_refund_status")
         }}</span>
         <span

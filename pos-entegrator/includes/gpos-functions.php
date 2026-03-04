@@ -133,7 +133,7 @@ function gpos_get_payment_gateways() {
  *
  * @return array $gpos_statuses
  */
-function gpos_get_wc_order_statuses() {
+function gpos_get_wc_success_order_statuses() {
 	$gpos_statuses     = array();
 	$disabled_statuses = array(
 		'wc-cancelled',
@@ -159,6 +159,27 @@ function gpos_get_wc_order_statuses() {
 	return $gpos_statuses;
 }
 
+
+/**
+ * WooCommerce sipariş durumlarını döndürür.
+ *
+ * @return array
+ */
+function gpos_get_wc_all_order_statuses() {
+	$gpos_statuses = array();
+
+	if ( function_exists( 'wc_get_order_statuses' ) ) {
+		foreach ( wc_get_order_statuses() as $status_key => $status_text ) {
+			$status = array(
+				'value' => str_replace( 'wc-', '', $status_key ),
+				'text'  => $status_text,
+			);
+			array_push( $gpos_statuses, $status );
+		}
+	}
+
+	return $gpos_statuses;
+}
 
 /**
  * Gönderilen mesajı WooCommerce hata mesajına çevirerek html döndürür.
@@ -782,4 +803,14 @@ function gpos_calculate_group_product_price( $products ) {
 		'total'    => $total,
 		'currency' => get_woocommerce_currency_symbol(),
 	];
+}
+
+/**
+ * Ödeme eklentisinin güncellemelerini kontrol eder.
+ *
+ * @return void
+ */
+function gpos_force_check_plugin_updates() {
+	delete_site_transient( 'update_plugins' );
+	wp_update_plugins();
 }

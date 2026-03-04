@@ -4,7 +4,6 @@ import Status from "@/components/GurmePOS/Status.vue";
 import LastTransactions from "@/components/GurmePOS/LastTransactions.vue";
 import Support from "@/components/GurmePOS/Support.vue";
 import UnlockPro from "@/components/GurmePOS/UnlockPro.vue";
-import Banners from "@/components/GurmePOS/Banners.vue";
 const assetsUrl = window.gpos.assets_url;
 </script>
 <template>
@@ -18,7 +17,7 @@ const assetsUrl = window.gpos.assets_url;
         <img
           :src="`${assetsUrl}/images/fatura-entegrator-banner.png`"
           class="w-full rounded"
-        >
+        />
       </a>
       <div class="flex w-full">
         <div class="flex w-1/2 p-2 flex-col gap-4">
@@ -26,7 +25,6 @@ const assetsUrl = window.gpos.assets_url;
           <LastTransactions />
         </div>
         <div class="flex w-1/2 p-2 flex-col gap-4">
-          <Banners />
           <Support />
         </div>
       </div>

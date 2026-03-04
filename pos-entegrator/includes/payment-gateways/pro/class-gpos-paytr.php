@@ -75,22 +75,22 @@ class GPOS_PayTR extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Password', 'gurmepos' ),
+				'label' => 'Merchant Password',
 				'model' => 'merchant_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Salt', 'gurmepos' ),
+				'label' => 'Merchant Salt',
 				'model' => 'merchant_salt',
 			),
 			array(
 				'type'    => 'select',
-				'label'   => __( 'Sync Mode', 'gurmepos' ),
+				'label'   => 'Sync Mode',
 				'model'   => 'sync_mode',
 				'options' => array(
 					'0' => __( 'Off', 'gurmepos' ),

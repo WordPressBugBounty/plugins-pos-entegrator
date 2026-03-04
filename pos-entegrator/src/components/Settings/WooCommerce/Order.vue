@@ -1,6 +1,7 @@
 <script setup>
 import SettingsCard from "@/components/Settings/SettingsCard.vue";
 import SuccessStatus from "@/components/Settings/WooCommerce/Order/SuccessStatus.vue";
+import RefundStatus from "@/components/Settings/WooCommerce/Order/RefundStatus.vue";
 import Switch from "@/components/Inputs/Switch.vue";
 import { useSettingsStore } from "@/stores/SettingsStore";
 import { storeToRefs } from "pinia";
@@ -24,6 +25,10 @@ const { wooCommerceSettings } = storeToRefs(useSettingsStore());
           {{ $t("set_fee_desc") }}
         </template>
       </Switch>
+      <RefundStatus
+        v-model="wooCommerceSettings"
+        class="w-1/3"
+      />
     </div>
   </SettingsCard>
 </template>

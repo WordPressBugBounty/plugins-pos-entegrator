@@ -18,44 +18,6 @@ class GPOS_Shortcode {
 	protected $prefix = GPOS_PREFIX;
 
 	/**
-	 * Kullanıcıların kayıtlı kartlarının listelendiği kısa kod
-	 */
-	public function user_saved_cards() {
-		if ( gpos_is_pro_active() && get_current_user_id() ) {
-			ob_start();
-			gpos_vue()
-			->set_vue_page( 'user-saved-cards' )
-			->set_localize( $this->get_localize_data( 'user-saved-cards' ) )
-			->require_style()
-			->require_script()
-			->create_app_div();
-			return ob_get_clean();
-		}
-	}
-
-	/**
-	 * Kullanıcıların kayıtlı kartlarının listelendiği kısa kod
-	 *
-	 * @param array $args Kısa kod argümanları
-	 */
-	public function user_transactions( $args = array() ) {
-		if ( gpos_is_form_active() && get_current_user_id() ) {
-			ob_start();
-			gpos_vue()
-			->set_vue_page( 'user-transactions' )
-			->set_localize( $this->get_localize_data( 'user-transactions', $args ) )
-			->require_style()
-			->require_script()
-			->create_app_div();
-			return ob_get_clean();
-		} else {
-			?>
-				<h4><?php esc_html_e( 'Please login to view your transactions.', 'gurmepos' ); ?> </h4>
-			<?php
-		}
-	}
-
-	/**
 	 * Taksit tablosunu bağımsız şekilde gösterim
 	 *
 	 * @param array $args Kısa kod argümanları
@@ -107,7 +69,7 @@ class GPOS_Shortcode {
 	 * @param array  $args Kısa kod argümanları
 	 * @return array
 	 */
-	private function get_localize_data( $vue_page, $args = array() ) {
+	protected function get_localize_data( $vue_page, $args = array() ) {
 
 		return apply_filters(
 			"gpos_vue_{$vue_page}_localize_data",

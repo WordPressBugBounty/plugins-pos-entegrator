@@ -84,6 +84,7 @@ class GPOS_Ajax {
 				'get_iyzipos_saved_cards'       => array( $this, 'get_iyzipos_saved_cards' ),
 				'iyzipos_save_card'             => array( $this, 'iyzipos_save_card' ),
 				'iyzipos_update_gateway'        => array( $this, 'iyzipos_update_gateway' ),
+				'consult_ai_assistant'          => array( $this, 'consult_ai_assistant' ),
 			)
 		);
 
@@ -458,5 +459,21 @@ class GPOS_Ajax {
 	 */
 	public function iyzipos_update_gateway() {
 		return gpos_iyzipos()->update_gateway();
+	}
+
+	/**
+	 * Geri dönüş fonksiyonu; consult_ai_assistant.
+	 *
+	 * @param stdClass $request İstek parametreleri.
+	 *
+	 * @return mixed
+	 */
+	public function consult_ai_assistant( $request ) {
+		$transaction = gpos_transaction( $request->transaction_id );
+		$response    = gpos_tracker()->consult_ai_assistant( $request->log );
+		if ( isset( $response['success'] ) && $response['success'] && isset( $response['output'] ) ) {
+			$transaction->set_ai_consult_response( $response['output'] );
+		}
+		return $response['output'];
 	}
 }

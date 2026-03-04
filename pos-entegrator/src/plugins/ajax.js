@@ -28,7 +28,7 @@ const request = (method, action, data) => {
       loading.value = false;
       if (e.statusText !== "abort") {
         Swal.fire({
-          html: e.responseJSON.error_message,
+          html: e.responseJSON.error_message ?? e.responseJSON.data.error_message,
           icon: "error",
           confirmButtonText: window.gpos.alert_texts.ok,
           confirmButtonColor: "#C81E1E",

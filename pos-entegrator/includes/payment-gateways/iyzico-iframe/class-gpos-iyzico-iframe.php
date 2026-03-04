@@ -114,17 +114,17 @@ class GPOS_Iyzico_IFrame extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Api Key', 'gurmepos' ),
+				'label' => 'Api Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Security Key', 'gurmepos' ),
+				'label' => 'Security Key',
 				'model' => 'api_secret',
 			),
 			array(
 				'type'    => 'select',
-				'label'   => __( 'View Type', 'gurmepos' ),
+				'label'   => 'View Type',
 				'model'   => 'type',
 				'options' => array(
 					'popup'      => __( 'Popup', 'gurmepos' ),

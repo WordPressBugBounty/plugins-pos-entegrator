@@ -68,12 +68,12 @@ class GPOS_Esnekpos extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant', 'gurmepos' ),
+				'label' => 'Merchant',
 				'model' => 'merchant',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Key', 'gurmepos' ),
+				'label' => 'Merchant Key',
 				'model' => 'merchant_key',
 			),
 		);

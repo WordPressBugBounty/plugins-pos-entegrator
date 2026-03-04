@@ -51,15 +51,13 @@ a.upgrade-pro:hover {
 
 /* İşlemler tablosu için stiller*/
 .process-type {
-  padding: 8px 16px;
   text-align: center;
   text-transform: capitalize;
   width: fit-content;
   cursor: pointer;
 }
 
-.transaction {
-  padding: 8px 16px;
+.transaction-edit-link {
   text-align: center;
   width: fit-content;
   cursor: pointer;
@@ -68,8 +66,8 @@ a.upgrade-pro:hover {
 }
 
 .status-type {
-  font-size: 10px;
   padding: 8px 16px;
+  font-size: 10px;
   text-align: center;
   border-radius: 4px;
   text-transform: capitalize;
@@ -137,4 +135,19 @@ a.upgrade-pro:hover {
 	line-height: 1.6 !important;
 	text-align: center !important;
 	z-index: 26 !important;
+}
+
+.status-type.gpos_c_completed {
+  color: #5b841b !important;
+  background-color: #c6e1c6 !important;
+}
+
+.status-type.gpos_c_pending {
+  color: #94660c !important;
+  background-color: #f8dda7 !important;
+}
+
+.status-type.gpos_c_failed {
+  color: #761919 !important;
+  background-color: #eba3a3 !important;
 }

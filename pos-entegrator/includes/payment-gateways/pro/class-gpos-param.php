@@ -68,22 +68,22 @@ class GPOS_Param extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Client Username', 'gurmepos' ),
+				'label' => 'Client Username',
 				'model' => 'client_username',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Client Password', 'gurmepos' ),
+				'label' => 'Client Password',
 				'model' => 'client_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Client Code', 'gurmepos' ),
+				'label' => 'Client Code',
 				'model' => 'client_code',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'GUID', 'gurmepos' ),
+				'label' => 'GUID',
 				'model' => 'guid',
 			),
 

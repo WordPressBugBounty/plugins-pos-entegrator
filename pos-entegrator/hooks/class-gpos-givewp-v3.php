@@ -1,6 +1,6 @@
 <?php
 /**
- * GPOSPRO_GiveWP sınıfını barındıran dosya.
+ * GPOS_GiveWP sınıfını barındıran dosya.
  *
  * @package GurmeHub
  */
@@ -19,7 +19,7 @@ class GPOS_GiveWP_V3 {
 	public $prefix = GPOS_PREFIX;
 
 	/**
-	 * GPOSPRO_GiveWP kurucu fonksiyonu
+	 * GPOS_GiveWP kurucu fonksiyonu
 	 *
 	 * @return void
 	 */

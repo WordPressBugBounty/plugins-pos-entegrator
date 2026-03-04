@@ -11,7 +11,7 @@ export const useTransactionStore = defineStore("TransactionStore", {
       const data = await ajax.post("process_cancel", {
         transaction_id: this.transaction.id,
       });
-      data.total=this.transaction.total;
+      data.total = this.transaction.total;
       this.refundEnd(data);
     },
     async totallyRefund() {
@@ -44,36 +44,36 @@ export const useTransactionStore = defineStore("TransactionStore", {
         line_id,
         total,
       });
-      data.total=total;
+      data.total = total;
       if (false === bulk) {
         this.refundEnd(data);
       }
-      
+
       return data;
     },
 
     // İşlem bazlı ödeme kuruluşları için geri ödeme.
     async refund() {
-      
+
       const data = await ajax.post("process_refund", {
         transaction_id: this.transaction.id,
         payment_id: this.transaction.payment_id,
-        total:this.transaction.total
+        total: this.transaction.total
       });
-      data.total=this.transaction.total;
+      data.total = this.transaction.total;
       this.refundEnd(data);
     },
 
     async refundEnd(data, callback) {
-      if(typeof(window.dataLayer) === 'object'){
+      if (typeof (window.dataLayer) === 'object') {
         window.dataLayer.push({
-          'event':window.gpos.tag_manager_settings.event_refund ? window.gpos.tag_manager_settings.event_refund : 'refund',
-          "currency":this.transaction.currency,
-          'transaction_id':this.transaction.plugin_transaction_id,
-          'value':data.total,
+          'event': window.gpos.tag_manager_settings.event_refund ? window.gpos.tag_manager_settings.event_refund : 'refund',
+          "currency": this.transaction.currency,
+          'transaction_id': this.transaction.plugin_transaction_id,
+          'value': data.total,
         });
       }
-      
+
       Swal.fire({
         html: data.success
           ? window.gpos.alert_texts.process_success
@@ -85,9 +85,18 @@ export const useTransactionStore = defineStore("TransactionStore", {
         callback
           ? callback
           : function () {
-              window.location.reload();
-            }
+            window.location.reload();
+          }
       );
     },
+    async consultAIAssistant(log) {
+      const data = await ajax.post("consult_ai_assistant", {
+        transaction_id: this.transaction.id,
+        log,
+      });
+      return data;
+    },
   },
+
+
 });

@@ -328,14 +328,12 @@ trait GPOS_Plugin_Payment_Gateway {
 	 * @param array      $post_data Ön yüzden alınmış form verileri.
 	 * @param int|string $plugin_transaction_id Ödeme eklentisindeki benzersiz kimlik numarası.
 	 * @param string     $plugin Ödeme eklentisi.
-	 * @param int|string $account_id Ödemenin yapılacağı geçit.
 	 *
 	 * @return GPOS_Gateway_Response
 	 */
-	public function create_new_payment_process( $post_data, $plugin_transaction_id, $plugin, $account_id = 0 ) {
+	public function create_new_payment_process( $post_data, $plugin_transaction_id, $plugin ) {
 		$this->form_settings         = gpos_form_settings();
 		$this->plugin_transaction_id = $plugin_transaction_id;
-		$this->account_id            = $account_id;
 		$this->plugin                = $plugin;
 
 		/**

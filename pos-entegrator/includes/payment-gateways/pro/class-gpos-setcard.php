@@ -77,17 +77,17 @@ class GPOS_Setcard extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal ID', 'gurmepos' ),
+				'label' => 'Terminal ID',
 				'model' => 'terminal_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Secret Key', 'gurmepos' ),
+				'label' => 'Secret Key',
 				'model' => 'secret_key',
 			),
 		);

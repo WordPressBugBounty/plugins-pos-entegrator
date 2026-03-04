@@ -88,6 +88,34 @@ abstract class GPOS_Customer extends GPOS_Post {
 	protected $customer_ip_address;
 
 	/**
+	 * Müşterinin şirket adı
+	 *
+	 * @var string $customer_company_name
+	 */
+	protected $customer_company_name;
+
+	/**
+	 * Müşterinin vergi numarası
+	 *
+	 * @var string $customer_tax_number
+	 */
+	protected $customer_tax_number;
+
+	/**
+	 * Müşterinin vergi türü
+	 *
+	 * @var string $customer_tax_type
+	 */
+	protected $customer_tax_type;
+
+	/**
+	 * Müşterinin vergi dairesi
+	 *
+	 * @var string $customer_tax_office
+	 */
+	protected $customer_tax_office;
+
+	/**
 	 * Siparişin müşteri kimliğini ayarlar
 	 *
 	 * @param int $value Müşteri kimliği.
@@ -325,5 +353,85 @@ abstract class GPOS_Customer extends GPOS_Post {
 	public function get_customer_ip_address() {
 		$ip_address = $this->get_prop( __FUNCTION__ );
 		return filter_var( $ip_address, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 ) ? $ip_address : gpos_get_user_ip();
+	}
+
+	/**
+	 * Müşteri şirket adını ayarlar
+	 *
+	 * @param string $value Müşteri şirket adı.
+	 * @return $this
+	 */
+	public function set_customer_company_name( $value ) {
+		$this->set_prop( __FUNCTION__, $value );
+		return $this;
+	}
+
+	/**
+	 * Müşteri şirket adını döndürür
+	 *
+	 * @return string
+	 */
+	public function get_customer_company_name() {
+		return $this->get_prop( __FUNCTION__ );
+	}
+
+	/**
+	 * Müşteri vergi numarasını ayarlar
+	 *
+	 * @param string $value Müşteri vergi numarası.
+	 * @return $this
+	 */
+	public function set_customer_tax_number( $value ) {
+		$this->set_prop( __FUNCTION__, $value );
+		return $this;
+	}
+
+	/**
+	 * Müşteri vergi numarasını döndürür
+	 *
+	 * @return string
+	 */
+	public function get_customer_tax_number() {
+		return $this->get_prop( __FUNCTION__ );
+	}
+
+	/**
+	 * Müşteri vergi türünü ayarlar
+	 *
+	 * @param string $value Müşteri vergi türü.
+	 * @return $this
+	 */
+	public function set_customer_tax_type( $value ) {
+		$this->set_prop( __FUNCTION__, $value );
+		return $this;
+	}
+
+	/**
+	 * Müşteri vergi türünü döndürür
+	 *
+	 * @return string
+	 */
+	public function get_customer_tax_type() {
+		return $this->get_prop( __FUNCTION__ );
+	}
+
+	/**
+	 * Müşteri vergi dairesini ayarlar
+	 *
+	 * @param string $value Müşteri vergi dairesi.
+	 * @return $this
+	 */
+	public function set_customer_tax_office( $value ) {
+		$this->set_prop( __FUNCTION__, $value );
+		return $this;
+	}
+
+	/**
+	 * Müşteri vergi dairesini döndürür
+	 *
+	 * @return string
+	 */
+	public function get_customer_tax_office() {
+		return $this->get_prop( __FUNCTION__ );
 	}
 }

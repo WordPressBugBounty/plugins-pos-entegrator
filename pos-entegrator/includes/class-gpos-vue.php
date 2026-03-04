@@ -269,6 +269,6 @@ class GPOS_Vue {
 	 * @return bool
 	 */
 	private function at_checkout() {
-		return '' === $this->vue_page || 'checkout' === $this->vue_page || 'wc-add-payment-method-page' === $this->vue_page;
+		return '' === $this->vue_page || 'checkout' === $this->vue_page || 'wc-add-payment-method-page' === $this->vue_page || 'collection-checkout' === $this->vue_page;
 	}
 }

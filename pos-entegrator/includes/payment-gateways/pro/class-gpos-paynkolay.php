@@ -74,22 +74,22 @@ class GPOS_PayNKolay extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Sx', 'gurmepos' ),
+				'label' => 'Sx',
 				'model' => 'sx',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Cancel Sx', 'gurmepos' ),
+				'label' => 'Cancel Sx',
 				'model' => 'cancel_sx',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'List Sx', 'gurmepos' ),
+				'label' => 'List Sx',
 				'model' => 'list_sx',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Secret Key', 'gurmepos' ),
+				'label' => 'Merchant Secret Key',
 				'model' => 'merchant_secret_key',
 			),
 		);

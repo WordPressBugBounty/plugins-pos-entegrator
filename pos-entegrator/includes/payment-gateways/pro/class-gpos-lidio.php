@@ -68,22 +68,22 @@ class GPOS_Lidio extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Id', 'gurmepos' ),
+				'label' => 'Merchant Id',
 				'model' => 'merchant_code',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Authentication', 'gurmepos' ),
+				'label' => 'Merchant Authentication',
 				'model' => 'authorization',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Key', 'gurmepos' ),
+				'label' => 'Merchant Key',
 				'model' => 'merchant_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Api Password', 'gurmepos' ),
+				'label' => 'Api Password',
 				'model' => 'api_password',
 			),
 		);

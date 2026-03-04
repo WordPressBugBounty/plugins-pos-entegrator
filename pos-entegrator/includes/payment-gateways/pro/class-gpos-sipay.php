@@ -61,22 +61,22 @@ class GPOS_Sipay extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Id', 'gurmepos' ),
+				'label' => 'Merchant Id',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Key', 'gurmepos' ),
+				'label' => 'Merchant Key',
 				'model' => 'merchant_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'App Key', 'gurmepos' ),
+				'label' => 'App Key',
 				'model' => 'app_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'App Secret', 'gurmepos' ),
+				'label' => 'App Secret',
 				'model' => 'app_secret',
 			),
 		);

@@ -60,6 +60,37 @@ class GPOS_Post_Tables {
 	}
 
 	/**
+	 * WordPress 'post_row_actions' kancası - Satır aksiyonlarını (Hızlı Düzenle, Sil vb.) kaldırır.
+	 *
+	 * @param array   $actions Mevcut satır aksiyonları.
+	 * @param WP_Post $post    Post nesnesi.
+	 *
+	 * @return array
+	 */
+	public function post_row_actions( $actions, $post ) {
+		if ( 'gpos_transaction' === $post->post_type ) {
+			unset( $actions['edit'] );
+			unset( $actions['inline hide-if-no-js'] );
+		}
+		return $actions;
+	}
+
+	/**
+	 * WordPress 'list_table_primary_column' kancası - Mobilde her zaman görünecek birincil sütunu belirler.
+	 *
+	 * @param string $primary  Mevcut birincil sütun.
+	 * @param string $screen_id Ekran id'si.
+	 *
+	 * @return string
+	 */
+	public function list_table_primary_column( $primary, $screen_id ) {
+		if ( 'edit-gpos_transaction' === $screen_id ) {
+			return 'transaction';
+		}
+		return $primary;
+	}
+
+	/**
 	 * WordPress 'manage_edit-gpos_transaction_columns' kancası
 	 *
 	 * @param array $columns Kolonlar.

@@ -68,27 +68,27 @@ class GPOS_United_Payment extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'E-Mail', 'gurmepos' ),
+				'label' => 'E-Mail',
 				'model' => 'email',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Password', 'gurmepos' ),
+				'label' => 'Password',
 				'model' => 'password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Id', 'gurmepos' ),
+				'label' => 'Merchant Id',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Key', 'gurmepos' ),
+				'label' => 'Merchant Key',
 				'model' => 'api_key',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Base URL', 'gurmepos' ),
+				'label' => 'Base URL',
 				'model' => 'base_url',
 			),
 		);

@@ -192,9 +192,9 @@ return array(
 		'description' => __('You can access all necessary API information from the Vakıf Katılım Virtual POS panel.', 'gurmepos'),
 	),
 	'tami'           => array(
-		'description' => __('Portal.tami.com.tr adresinden tami için gerekli tüm API bilgilerine erişebilirsiniz. Edindiğiniz bilgileri sol taraftaki alanlara girerek entegrasyonu tamamlayabilirsiniz.', 'gurmepos'),
+		'description' => __('You can access all the necessary API information for Tami from portal.tami.com.tr. Enter the obtained information into the fields on the left to complete the integration.', 'gurmepos'),
 	),
 	'papel'           => array(
-		'description' => __('Papel satıcı panelinizden API bilgilerine erişebilirsiniz. API bilgilerinizi sol tarafta bulunan alanlara girerek entegrasyonu tamamlayabilirsiniz. Papel yalnızca 3D ödeme işlemlerini desteklemektedir.', 'gurmepos'),
+		'description' => __('You can access your API information from the Papel merchant panel. Enter your API information in the fields on the left to complete the integration. Papel only supports 3D payment transactions.', 'gurmepos'),
 	),
 );

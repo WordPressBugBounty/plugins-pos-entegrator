@@ -99,9 +99,9 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 	}
 
 	/**
-	 * GPOS_Paratika_Gateway kurucu fonksiyon değerindedir gerekli ayarlamaları yapar.
+	 * GPOS_Payten_Gateway kurucu fonksiyon değerindedir gerekli ayarlamaları yapar.
 	 *
-	 * @param GPOS_Paratika_Settings|stdClass $settings Ödeme geçidi ayarlarını içerir.
+	 * @param GPOS_Payten_Settings|stdClass $settings Ödeme geçidi ayarlarını içerir.
 	 *
 	 * @return void
 	 */
@@ -231,9 +231,9 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 		return $response;
 	}
 	/**
-	 * Paratikadan dönen cevap içerisinden başarılı işlemi bulur.
+	 * Paytendan dönen cevap içerisinden başarılı işlemi bulur.
 	 *
-	 * @param array $response Paratika cevabı
+	 * @param array $response Payten cevabı
 	 *
 	 * -@return GPOS_Gateway_Response
 	 */
@@ -290,7 +290,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 	/**
 	 * Ödeme iptal ve iade işlemi cevabını kontroleder.
 	 *
-	 * @param array $response Paratika cevabı.
+	 * @param array $response Payten cevabı.
 	 *
 	 * @return void
 	 */
@@ -305,7 +305,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 	}
 
 	/**
-	 * Paratika session token.
+	 * Payten session token.
 	 *
 	 * @param string $session_type Varsayılan PAYMENTSESSION (ödeme oturumu).
 	 */
@@ -408,9 +408,9 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 	}
 
 	/**
-	 * Paratika hata mesajlarını anlamlı şekilde dönmesini sağlar.
+	 * Payten hata mesajlarını anlamlı şekilde dönmesini sağlar.
 	 *
-	 * @param string $error_code Paratika hata kodu.
+	 * @param string $error_code Payten hata kodu.
 	 *
 	 * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
 	 */
@@ -603,7 +603,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			'ERR10129' => __( 'Partial point usage is not supported by this payment system', 'gurmepos' ),
 			'ERR10130' => __( 'Transaction rejected due to suspected fraud. For detailed information, you can contact the support team. (TMX rejected)', 'gurmepos' ),
 			'ERR10131' => __( 'Commission expenses cannot exceed the sellers commission amount.', 'gurmepos' ),
-			'ERR10132' => __( 'You do not have the authority to use marketplace parameters in the payment request. Please contact Paratika support line.', 'gurmepos' ),
+			'ERR10132' => __( 'You do not have the authority to use marketplace parameters in the payment request. Please contact Payten support line.', 'gurmepos' ),
 			'ERR10133' => __( 'The requested transaction cannot be updated.', 'gurmepos' ),
 			'ERR10134' => __( 'Payment system type or EFT code not found.', 'gurmepos' ),
 			'ERR10135' => __( 'EXTRA parameter cannot be decoded.', 'gurmepos' ),
@@ -618,13 +618,13 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			'ERR10144' => __( 'The member merchant is not authorized to process transactions with foreign bank cards', 'gurmepos' ),
 			'ERR10145' => __( 'Recurring payment not found.', 'gurmepos' ),
 			'ERR10146' => __( 'Recurring payment card not found.', 'gurmepos' ),
-			'ERR10147' => __( 'You do not have the authority to add a card without 3D verification. Please add a card using the HPP integration model or seek help from Paratika support team.', 'gurmepos' ),
+			'ERR10147' => __( 'You do not have the authority to add a card without 3D verification. Please add a card using the HPP integration model or seek help from Payten support team.', 'gurmepos' ),
 			'ERR10148' => __( 'The recurring payment plan has already been added with this card.', 'gurmepos' ),
 			'ERR10149' => __( 'Unsupported currency for this transaction', 'gurmepos' ),
 			'ERR10150' => __( 'Discount amount cannot be greater than the order amount.', 'gurmepos' ),
 			'ERR10151' => __( 'Seller not found', 'gurmepos' ),
 			'ERR10152' => __( 'A seller exists with this ID.', 'gurmepos' ),
-			'ERR10153' => __( 'Refund transaction has been rejected by Paratika Finance team', 'gurmepos' ),
+			'ERR10153' => __( 'Refund transaction has been rejected by Payten Finance team', 'gurmepos' ),
 			'ERR10154' => __( 'Transaction failed due to 3D restriction.', 'gurmepos' ),
 			'ERR10155' => __( 'Seller is in deactivated state. This transaction cannot be performed.', 'gurmepos' ),
 			'ERR10156' => __( 'Unsupported Currency Conversion', 'gurmepos' ),
@@ -641,7 +641,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			'ERR10167' => __( 'Invalid sellerId - do not use semicolon', 'gurmepos' ),
 			'ERR10168' => __( 'This card brand is not supported', 'gurmepos' ),
 			'ERR10169' => __( 'Installment is not suitable for this card brand', 'gurmepos' ),
-			'ERR10170' => __( 'Entered value is out of valid range. Minimum value must be 1, for maximum value please contact Paratika Operations Team.', 'gurmepos' ),
+			'ERR10170' => __( 'Entered value is out of valid range. Minimum value must be 1, for maximum value please contact Payten Operations Team.', 'gurmepos' ),
 			'ERR10171' => __( 'The specified MCC was not found.', 'gurmepos' ),
 			'ERR10172' => __( 'The specified MCC has already been added', 'gurmepos' ),
 			'ERR10173' => __( 'The product commission amounts do not match the commission amount specified in the TOTALSELLERCOMMISSIONAMOUNT parameter.', 'gurmepos' ),
@@ -658,7 +658,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			'ERR10184' => __( 'You need to specify the quantity or amount of the product', 'gurmepos' ),
 			'ERR10185' => __( 'Item quantity or amount exceeded', 'gurmepos' ),
 			'ERR10186' => __( 'Amount cannot be greater than the original request amount.', 'gurmepos' ),
-			'ERR10187' => __( 'You do not have the authority to use marketplace parameters in the payment request. Please contact Paratika support line.', 'gurmepos' ),
+			'ERR10187' => __( 'You do not have the authority to use marketplace parameters in the payment request. Please contact Payten support line.', 'gurmepos' ),
 			'ERR10188' => __( 'Payment date cannot be earlier than transaction date. Please check the request.', 'gurmepos' ),
 			'ERR10189' => __( 'Invalid or Missing EXTRA parameter value', 'gurmepos' ),
 			'ERR10190' => __( 'Manufacturer card template is not supported by this payment system.', 'gurmepos' ),

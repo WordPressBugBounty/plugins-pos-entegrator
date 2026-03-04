@@ -73,7 +73,7 @@ class GPOS_Refund {
 			);
 			$this->payment_transaction->set_refund_status( GPOS_Transaction_Utils::REFUND_STATUS_CANCELLED );
 			$this->payment_transaction->update_lines_status( GPOS_Transaction_Utils::LINE_REFUNDED );
-			$this->tracker( GPOS_Transaction_Utils::CANCEL, $response->get_gateway() );
+			$this->update_order_status();
 			do_action( "gpos_{$this->payment_transaction->get_plugin()}_transaction_canceled", $this->payment_transaction );
 			do_action( 'gpos_transaction_canceled', $this->refund_transaction );
 		} else {
@@ -103,6 +103,7 @@ class GPOS_Refund {
 			);
 			$this->payment_transaction->set_refund_status( GPOS_Transaction_Utils::REFUND_STATUS_REFUNDED );
 			$this->payment_transaction->update_lines_status( GPOS_Transaction_Utils::LINE_REFUNDED );
+			$this->update_order_status();
 			$this->tracker( GPOS_Transaction_Utils::REFUND, $response->get_gateway() );
 			do_action( "gpos_{$this->payment_transaction->get_plugin()}_transaction_refunded", $this->payment_transaction );
 			do_action( 'gpos_transaction_refunded', $this->refund_transaction );
@@ -214,5 +215,20 @@ class GPOS_Refund {
 		->set_payment_transaction_id( $this->payment_transaction->get_id() )
 		->set_use_saved_card( $this->payment_transaction->need_use_saved_card() );
 		$this->gateway = gpos_payment_gateways()->get_gateway_by_account_id( $this->payment_transaction->get_account_id(), $this->refund_transaction );
+	}
+
+	/**
+	 * İşlem tamamlandığında siparişin durumunu günceller.
+	 *
+	 * @return void
+	 */
+	private function update_order_status() {
+		$wc_settings = gpos_woocommerce_settings();
+		if ( $this->payment_transaction->get_plugin() === GPOS_Transaction_Utils::WOOCOMMERCE && $wc_settings->get_setting_by_key( 'update_refund_status' ) ) {
+			$order = wc_get_order( $this->payment_transaction->get_plugin_transaction_id() );
+			if ( $order ) {
+				$order->update_status( $wc_settings->get_setting_by_key( 'refund_status' ) );
+			}
+		}
 	}
 }

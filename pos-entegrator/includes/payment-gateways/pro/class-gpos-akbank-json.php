@@ -68,17 +68,17 @@ class GPOS_Akbank_Json extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant Safe ID', 'gurmepos' ),
+				'label' => 'Merchant Safe ID',
 				'model' => 'merchant_safe_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Terminal Safe ID', 'gurmepos' ),
+				'label' => 'Terminal Safe ID',
 				'model' => 'terminal_safe_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Secret Key', 'gurmepos' ),
+				'label' => 'Secret Key',
 				'model' => 'secret_key',
 			),
 			array(
@@ -87,7 +87,7 @@ class GPOS_Akbank_Json extends GPOS_Gateway {
 					'3D'     => '3D',
 					'3D_PAY' => '3D Pay',
 				),
-				'label'   => __( '3D Type', 'gurmepos' ),
+				'label'   => '3D Type',
 				'model'   => 'merchant_threed_type',
 			),
 		);

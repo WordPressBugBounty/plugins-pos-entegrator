@@ -74,22 +74,22 @@ class GPOS_Ziraat extends GPOS_Gateway {
 		return array(
 			array(
 				'type'  => 'text',
-				'label' => __( 'Merchant ID', 'gurmepos' ),
+				'label' => 'Merchant ID',
 				'model' => 'merchant_id',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Username', 'gurmepos' ),
+				'label' => 'Username',
 				'model' => 'merchant_user',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( 'Password', 'gurmepos' ),
+				'label' => 'Password',
 				'model' => 'merchant_password',
 			),
 			array(
 				'type'  => 'text',
-				'label' => __( '3D Key', 'gurmepos' ),
+				'label' => '3D Key',
 				'model' => 'merchant_threed_store_key',
 			),
 			array(
@@ -100,7 +100,7 @@ class GPOS_Ziraat extends GPOS_Gateway {
 					'3d_pay_hosting' => '3D Pay Hosting',
 					'3d_host'        => '3D Host',
 				),
-				'label'   => __( '3D Type', 'gurmepos' ),
+				'label'   => '3D Type',
 				'model'   => 'merchant_threed_type',
 			),
 		);
