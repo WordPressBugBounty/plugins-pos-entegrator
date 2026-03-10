@@ -7,6 +7,7 @@ import GatewaySelect from "@/components/Settings/Gate/RulesTable/GatewaySelect.v
 import ConditionList from "@/components/Settings/Gate/RulesTable/Conditions/ConditionList.vue";
 import BankSelect from "@/components/Settings/Gate/RulesTable/Conditions/BankSelect.vue";
 import FamilySelect from "@/components/Settings/Gate/RulesTable/Conditions/FamilySelect.vue";
+import UserRoleSelect from "@/components/Settings/Gate/RulesTable/Conditions/UserRoleSelect.vue";
 import TextField from "@/components/Inputs/TextField.vue";
 import Switch from "@/components/Inputs/Switch.vue";
 import draggable from "vuedraggable";
@@ -49,7 +50,11 @@ const rules = {
   card_family_in_list:{
     group: 'gate_card',
     component: FamilySelect,
-  }
+  },
+  user_role_in_list: {
+    group: 'gate_wordpress',
+    component: UserRoleSelect,
+  },
 };
 
 const deleteRule = (rule) => {

@@ -15,11 +15,21 @@ const show = ref(false);
 const aiModalShow = ref(false);
 
 const log = computed(() => {
-  const lastLog = transaction.logs.length
-    ? transaction.logs[transaction.logs.length - 1]
-    : null;
+  const lastLog = findLog();
   return lastLog ? JSON.parse(lastLog.response) : null;
 });
+
+const findLog = () => {
+  for (let i = 0; i < transaction.logs.length; i++) {
+    if (
+      transaction.logs[i].response === "[]" ||
+      transaction.logs[i].response === "" ||
+      transaction.logs[i].response === "{}"
+    ) {
+      return transaction.logs[i + 1];
+    }
+  }
+};
 
 const isValid = computed(() => {
   return window.gpos.is_form_active || window.gpos.is_pro_active;

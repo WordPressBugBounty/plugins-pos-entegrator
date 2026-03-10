@@ -16,7 +16,7 @@ const componentValue = computed({
 });
 
 const optGroups = [
-  'gate_card', 'gate_price', 'gate_installment', 'gate_woocommerce'
+  'gate_card', 'gate_price', 'gate_installment', 'gate_woocommerce', 'gate_wordpress'
 ]
 
 </script>
