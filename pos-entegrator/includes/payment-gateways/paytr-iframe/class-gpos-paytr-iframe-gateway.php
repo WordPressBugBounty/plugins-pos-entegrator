@@ -30,7 +30,7 @@ class GPOS_PayTR_IFrame_Gateway extends GPOS_Payment_Gateway {
 	 *
 	 * @var string
 	 */
-	public $gurmehub_ref_number = 'ad05b23df5438f3661bdf3298391ee46a1118d83bdfcfb0bbbc1942b55e3ec11';
+	public $gurmehub_ref_number = '92347114e8ad86231683a12c2fb19cec20c146c57cc28df25ea9212de02bc4a1';
 
 	/**
 	 * GPOS_PayTR_IFrame_Settings kurucu fonksiyon değerindedir gerekli ayarlamaları yapar.

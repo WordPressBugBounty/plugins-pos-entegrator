@@ -942,6 +942,8 @@ class SimpleXLSXGen
                             if ($FR) {
                                 $v = htmlspecialchars_decode($v);
                                 $vl = mb_strlen($v);
+                            } elseif ($NF) {
+                                $cv = ltrim($v, '+'); // Formatted Number
                             } elseif ($v === '0' || preg_match('/^[-+]?[1-9]\d{0,14}$/', $v)) { // Integer as General
                                 $cv = ltrim($v, '+');
                                 if ($vl > 10) {
@@ -950,6 +952,8 @@ class SimpleXLSXGen
                             } elseif (preg_match('/^[-+]?(0|[1-9]\d*)\.\d\d?$/', $v)) { // Decimal
                                 $cv = ltrim($v, '+');
                                 $N = self::N_DEC;
+                            } elseif (preg_match('/^[-+]?(0|[1-9]{1,8})\.\d\d{0,8}$/', $v)) { // Real as General
+                                $cv = ltrim($v, '+');
                             } elseif (preg_match('/^[0-9\.\-\+]+$/', $v)) { // Long Number (card, phone, serial)?
                                 $A += ($A & (self::A_LEFT | self::A_CENTER)) ? 0 : self::A_RIGHT;
                             } elseif (preg_match('/^\$[-+]?[0-9\.]+$/', $v)) { // currency $?
@@ -1226,6 +1230,11 @@ class SimpleXLSXGen
         return $this;
     }
 
+    /**
+     * @param $col int Column index starts with 1
+     * @param $width int Width in chars
+     * @return $this
+     */
     public function setColWidth($col, $width)
     {
         $this->sheets[$this->curSheet]['colwidth'][$col] = $width;

@@ -45,13 +45,13 @@ const wpRoles = { guest: t('guest'), ...(window.gpos.wp_roles || {}) };
     </button>
     <div
       v-if="open"
-      class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-1 absolute p-3 w-full bg-white rounded-lg shadow"
+      class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-2 absolute p-3 w-full min-w-[400px] bg-white rounded-lg shadow"
     >
       <label
         v-for="(label, slug) in wpRoles"
         :key="slug"
         :for="`role_${slug}`"
-        class="text-xs flex"
+        class="text-xs flex cursor-pointer items-center"
       >
         <input
           :id="`role_${slug}`"

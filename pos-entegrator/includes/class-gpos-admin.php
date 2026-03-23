@@ -253,7 +253,7 @@ class GPOS_Admin {
 		if ( 'gurmepos' === $page ) {
 			$localize['dashboard'] = gpos_dashboard();
 		}
-		if ( 'payment-methods' === $page || 'payment-method' === $page || 'add-payment-method' === $page || 'settings' === $page ) {
+		if ( in_array( $page, array( 'payment-methods', 'payment-method', 'add-payment-method', 'settings', 'transaction' ), true ) ) {
 			$localize['virtual_pos_accounts']         = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_VIRTUAL_POS );
 			$localize['alternative_payment_accounts'] = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_ALTERNATIVE );
 			$localize['common_form_accounts']         = gpos_gateway_accounts()->get_accounts( GPOS_Transaction_Utils::PAYMENT_METHOD_TYPE_COMMON );

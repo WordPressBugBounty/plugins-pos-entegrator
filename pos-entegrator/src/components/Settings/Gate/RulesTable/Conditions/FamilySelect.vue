@@ -43,7 +43,7 @@ const familyCodes = {
       {{
         componentValue.length > 0
           ? `${componentValue.length} ${$t("selected")}`
-          : $t("select_bank")
+          : $t("select_family")
       }}
       <ChevronUpIcon
         v-if="open"
@@ -56,7 +56,7 @@ const familyCodes = {
     </button>
     <div
       v-if="open"
-      class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-1 absolute p-3 w-full bg-white rounded-lg shadow"
+      class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-1 absolute p-3 w-full min-w-[400px] bg-white rounded-lg shadow"
     >
       <label
         v-for="(family, code) in familyCodes"

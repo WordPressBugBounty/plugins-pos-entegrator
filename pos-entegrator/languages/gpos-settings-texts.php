@@ -533,4 +533,5 @@ return array(
 	'email_not_sent'                            => __( 'Email Not Sent', 'gurmepos' ),
 	'sub_total'                                 => __( 'Sub Total', 'gurmepos' ),
 	'tax_total'                                 => __( 'Tax Total', 'gurmepos' ),
+	'and'                                       => __( 'And', 'gurmepos' ),
 );

@@ -9,6 +9,9 @@ export const useGatewayAccounts = defineStore("GatewayAccounts", {
     iFrameAccounts: window.gpos.iframe_accounts || [],
   }),
   actions: {
+    gatewayAccounts() {
+      return [...this.virtualPOSAccounts, ...this.alternativeAccounts, ...this.commonFormAccounts, ...this.iFrameAccounts];
+    },
     async addGatewayAccount(gateway) {
       return await ajax.post("add_gateway_account", { gateway });
     },

@@ -43,7 +43,7 @@ const bankCodes = window.gpos.bank_codes || [];
     </button>
     <div
       v-if="open"
-      class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-2 absolute p-3 w-full bg-white rounded-lg shadow"
+      class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-2 absolute p-3 w-full min-w-[400px] bg-white rounded-lg shadow"
     >
       <label
         v-for="(bank, code) in bankCodes"

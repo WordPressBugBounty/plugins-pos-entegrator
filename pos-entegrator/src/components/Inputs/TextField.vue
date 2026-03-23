@@ -10,6 +10,7 @@ const props = defineProps({
   maxlength: { type: [String, Number], default: "" },
   error: { type: String, default: "" },
 });
+
 const emit = defineEmits(["update:modelValue"]);
 
 const componentValue = computed({
@@ -47,7 +48,7 @@ const componentValue = computed({
       {{ error }}
     </p>
     <p
-      v-else
+      v-if="$slots.subtitle"
       class="text-xs font-normal text-gray-400 mt-2"
     >
       <slot name="subtitle" />
