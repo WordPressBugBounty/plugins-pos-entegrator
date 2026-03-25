@@ -155,6 +155,10 @@ trait GPOS_Plugin_Payment_Gateway {
 		$this->save_card      = isset( $this->post_data[ "{$this->gpos_prefix}-save-card" ] ) && 'on' === $this->post_data[ "{$this->gpos_prefix}-save-card" ];
 		$this->saved_card     = isset( $this->post_data[ "{$this->gpos_prefix}-saved-card" ] ) ? $this->post_data[ "{$this->gpos_prefix}-saved-card" ] : false;
 		$this->installment    = isset( $this->post_data[ "{$this->gpos_prefix}-installment" ] ) ? $this->post_data[ "{$this->gpos_prefix}-installment" ] : 0;
+
+		if ( 'force_threed' === $this->form_settings->get_setting_by_key( 'threed' ) ) {
+			$this->threed = true;
+		}
 	}
 
 	/**
