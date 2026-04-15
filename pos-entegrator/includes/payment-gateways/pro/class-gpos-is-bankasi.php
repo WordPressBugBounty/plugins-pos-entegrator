@@ -105,10 +105,11 @@ class GPOS_Is_Bankasi extends GPOS_Gateway {
 				'model'   => 'merchant_threed_type',
 			),
 			array(
-				'type'  => 'text',
-				'label' => 'Bölüm',
-				'model' => 'merchant_department',
-				'desc'  => 'Safir üye işyerleri için şubeyle görüşülen mali koşullara göre bu alana bölüm bilgisi girilebilir (örnek: 4 -5 -6). **Zorunlu değildir.',
+				'type'     => 'text',
+				'label'    => 'Bölüm',
+				'model'    => 'merchant_department',
+				'desc'     => 'Safir üye işyerleri için şubeyle görüşülen mali koşullara göre bu alana bölüm bilgisi girilebilir (örnek: 4 -5 -6). **Zorunlu değildir.',
+				'required' => false,
 			),
 		);
 	}

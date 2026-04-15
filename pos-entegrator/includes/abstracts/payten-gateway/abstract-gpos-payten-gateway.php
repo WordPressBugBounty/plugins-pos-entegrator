@@ -112,7 +112,7 @@ abstract class GPOS_Payten_Gateway extends GPOS_Payment_Gateway {
 			'MERCHANT'         => $is_test_mode ? $settings->test_merchant : $settings->merchant,
 			'MERCHANTUSER'     => $is_test_mode ? $settings->test_merchant_user : $settings->merchant_user,
 			'MERCHANTPASSWORD' => $is_test_mode ? $settings->test_merchant_password : $settings->merchant_password,
-			'MERCHANTNOTE'     => 'GURMESOFT',
+			'MERCHANTNOTE'     => 'GURMEHUB',
 		);
 		$this->http_request->set_headers(
 			array( 'Content-Type' => 'application/x-www-form-urlencoded; charset=utf-8' )

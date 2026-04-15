@@ -3,10 +3,13 @@ import { useCheckout } from "@/stores/CheckoutStore";
 import PaymentMethod from "@/components/Checkout/Alternatives/PaymentMethod.vue";
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
+import inputsChanged from "@/plugins/inputs-changed.js";
+
 const { alternativePayments } = useCheckout();
 const { accountId } = storeToRefs(useCheckout());
 onMounted(() => {
-    accountId.value = alternativePayments[0].account_id;
+  accountId.value = alternativePayments[0].account_id;
+  inputsChanged();
 });
 </script>
 <template>

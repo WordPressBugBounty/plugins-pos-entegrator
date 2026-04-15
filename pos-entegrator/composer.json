@@ -23,7 +23,7 @@
   "repositories": {
     "gurmehub": {
       "type": "composer",
-      "url": "https://gitlab.gurmesoft.com/api/v4/group/gurmehub/-/packages/composer/"
+      "url": "https://gitlab.gurmehub.com/api/v4/group/gurmehub/-/packages/composer/"
     }
   }
 }

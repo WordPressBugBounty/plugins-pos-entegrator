@@ -371,7 +371,13 @@ trait GPOS_Plugin_Payment_Gateway {
 			$this->transaction->add_log( GPOS_Transaction_Utils::LOG_PROCESS_CALLBACK, [], $post_data );
 			$this->gateway = gpos_payment_gateways()->get_gateway_by_account_id( $this->transaction->get_account_id(), $this->transaction );
 			$this->gateway->gateway_response->set_error_message( gpos_get_default_callback_error_message() );
-			$response = $this->gateway->process_callback( $post_data );
+
+			if ( class_exists( 'GPOSPRO_Akbank_Json_Gateway' ) && $this->gateway instanceof GPOSPRO_Akbank_Json_Gateway ) {
+				$response = $this->gateway->process_callback( $_REQUEST ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			} else {
+				$response = $this->gateway->process_callback( $post_data );
+			}
+
 			if ( $response->is_success() ) {
 				$this->transaction_success_process( $response );
 				$this->success_process( $response, false );

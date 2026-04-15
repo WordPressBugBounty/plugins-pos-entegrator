@@ -103,19 +103,10 @@ class GPOS_Akbank_Json extends GPOS_Gateway {
 			array(
 				'brand'        => 'visa',
 				'type'         => 'credit',
-				'bin'          => '4355 0930 0031 5232',
-				'expiry_year'  => '2035',
-				'expiry_month' => '11',
-				'cvv'          => '665',
-				'secure'       => '123456',
-			),
-			array(
-				'brand'        => 'mastercard',
-				'type'         => 'credit',
-				'bin'          => '5218  0760  0740  2834',
-				'expiry_year'  => '2040',
-				'expiry_month' => '11',
-				'cvv'          => '820',
+				'bin'          => '4355 0930 0077 7068',
+				'expiry_year'  => '2027',
+				'expiry_month' => '06',
+				'cvv'          => '941',
 				'secure'       => '123456',
 			),
 		);

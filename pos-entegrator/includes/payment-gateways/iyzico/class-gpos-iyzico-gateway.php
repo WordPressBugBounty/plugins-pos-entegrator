@@ -367,7 +367,7 @@ class GPOS_Iyzico_Gateway extends GPOS_Payment_Gateway {
 	 * İstek ortak özelliklerinin atamalarını yapar
 	 */
 	protected function prepare_request_properties() {
-		$this->payment_request->setPaymentSource( 'Gurmesoft' );
+		$this->payment_request->setPaymentSource( 'Gurmehub' );
 		$this->payment_request->setPaymentGroup( \Iyzipay\Model\PaymentGroup::PRODUCT );
 		$this->payment_request->setCurrency( $this->transaction->get_currency() );
 		$this->payment_request->setLocale( gpos_get_payment_locale() );

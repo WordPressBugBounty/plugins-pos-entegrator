@@ -4,6 +4,8 @@ import { storeToRefs } from "pinia";
 import { onMounted, shallowRef } from "vue";
 import IsBankGiroGateForm from "@/components/Checkout/Alternatives/Forms/IsBankGiroGateForm.vue";
 import WorldPAYInfo from "@/components/Checkout/Alternatives/Forms/WorldPAYInfo.vue";
+import inputsChanged from "@/plugins/inputs-changed.js";
+
 const { accountId } = storeToRefs(useCheckout());
 const props = defineProps({
   paymentMethod: {
@@ -23,6 +25,14 @@ onMounted(() => {
       break;
   }
 });
+
+const methodChanged = () => {
+  accountId.value = props.paymentMethod.account_id;
+  setTimeout(() => {
+    inputsChanged()
+  }, 100)
+};
+
 </script>
 <template>
   <div class="flex flex-col">
@@ -34,7 +44,7 @@ onMounted(() => {
           : 'border-l-gray-50 rounded' 
       }
      border-l-4 bg-[#fbfbfb] w-full px-3 py-4 cursor-pointer flex items-center font-semibold max-h-[70px] min-h-[70px]`"
-      @click="accountId = paymentMethod.account_id"
+      @click="methodChanged()"
     >
       <div class="w-3/5">
         {{ paymentMethod.title }}
