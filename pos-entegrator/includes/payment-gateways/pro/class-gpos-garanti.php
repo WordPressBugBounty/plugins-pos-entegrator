@@ -101,14 +101,16 @@ class GPOS_Garanti extends GPOS_Gateway {
 				'model'   => 'merchant_threed_type',
 			),
 			array(
-				'type'  => 'text',
-				'label' => 'Refund User',
-				'model' => 'refund_user',
+				'type'     => 'text',
+				'label'    => 'Refund User',
+				'model'    => 'refund_user',
+				'required' => false,
 			),
 			array(
-				'type'  => 'text',
-				'label' => 'Refund User Password',
-				'model' => 'refund_password',
+				'type'     => 'text',
+				'label'    => 'Refund User Password',
+				'model'    => 'refund_password',
+				'required' => false,
 			),
 		);
 	}

@@ -39,17 +39,17 @@
         },
         {
             "name": "iyzico/iyzipay-php",
-            "version": "v2.0.60",
-            "version_normalized": "2.0.60.0",
+            "version": "v2.0.61",
+            "version_normalized": "2.0.61.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iyzico/iyzipay-php.git",
-                "reference": "fda153102f4dc9ffdebc72a6ab47c83123e8333e"
+                "reference": "168839f9ccb2aebaa2cb9f07b883b1b2bb0cf87a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iyzico/iyzipay-php/zipball/fda153102f4dc9ffdebc72a6ab47c83123e8333e",
-                "reference": "fda153102f4dc9ffdebc72a6ab47c83123e8333e",
+                "url": "https://api.github.com/repos/iyzico/iyzipay-php/zipball/168839f9ccb2aebaa2cb9f07b883b1b2bb0cf87a",
+                "reference": "168839f9ccb2aebaa2cb9f07b883b1b2bb0cf87a",
                 "shasum": ""
             },
             "require": {
@@ -57,10 +57,10 @@
                 "php": ">=7.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~9.6",
+                "phpunit/phpunit": "^9.6.34",
                 "satooshi/php-coveralls": "~0.6.1"
             },
-            "time": "2026-02-11T10:44:12+00:00",
+            "time": "2026-04-28T11:31:34+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -92,23 +92,23 @@
             ],
             "support": {
                 "issues": "https://github.com/iyzico/iyzipay-php/issues",
-                "source": "https://github.com/iyzico/iyzipay-php/tree/v2.0.60"
+                "source": "https://github.com/iyzico/iyzipay-php/tree/v2.0.61"
             },
             "install-path": "../iyzico/iyzipay-php"
         },
         {
             "name": "shuchkin/simplexlsxgen",
-            "version": "1.5.15",
-            "version_normalized": "1.5.15.0",
+            "version": "1.5.17",
+            "version_normalized": "1.5.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shuchkin/simplexlsxgen.git",
-                "reference": "72df4c030f4c80e5d56408058e837a133630c08a"
+                "reference": "162a4a9b929611d69dbd6f1a7f42af483a87b537"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shuchkin/simplexlsxgen/zipball/72df4c030f4c80e5d56408058e837a133630c08a",
-                "reference": "72df4c030f4c80e5d56408058e837a133630c08a",
+                "url": "https://api.github.com/repos/shuchkin/simplexlsxgen/zipball/162a4a9b929611d69dbd6f1a7f42af483a87b537",
+                "reference": "162a4a9b929611d69dbd6f1a7f42af483a87b537",
                 "shasum": ""
             },
             "require": {
@@ -116,7 +116,7 @@
                 "ext-zlib": "*",
                 "php": ">=5.4"
             },
-            "time": "2026-03-12T16:44:27+00:00",
+            "time": "2026-05-03T13:04:04+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -148,7 +148,7 @@
             ],
             "support": {
                 "issues": "https://github.com/shuchkin/simplexlsxgen/issues",
-                "source": "https://github.com/shuchkin/simplexlsxgen/tree/1.5.15"
+                "source": "https://github.com/shuchkin/simplexlsxgen/tree/1.5.17"
             },
             "install-path": "../shuchkin/simplexlsxgen"
         },
@@ -224,8 +224,8 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.35.0",
-            "version_normalized": "1.35.0.0",
+            "version": "v1.37.0",
+            "version_normalized": "1.37.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -286,7 +286,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.35.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.37.0"
             },
             "funding": [
                 {
@@ -310,8 +310,8 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.35.0",
-            "version_normalized": "1.35.0.0",
+            "version": "v1.37.0",
+            "version_normalized": "1.37.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
@@ -373,7 +373,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.35.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.37.0"
             },
             "funding": [
                 {

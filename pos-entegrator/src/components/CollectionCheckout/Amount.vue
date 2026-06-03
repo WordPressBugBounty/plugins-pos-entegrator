@@ -39,22 +39,26 @@ onBeforeMount(() => {
 
 const calculate = () => {
   if (tax_settings.tax_enabled && tax_settings.tax_rate) {
-  checkout_data.value.tax_total =
+    checkout_data.value.tax_total =
       checkout_data.value.sub_total * (tax_settings.tax_rate / 100);
     checkout_data.value.total =
       checkout_data.value.sub_total + checkout_data.value.tax_total;
   } else {
     checkout_data.value.total = checkout_data.value.sub_total;
   }
+
+  window.gposDispatchAmount({
+    amount: checkout_data.value.total,
+    currency: checkout_data.value.currency,
+  });
+
   return checkout_data.value.total;
 };
 </script>
 <template>
   <div>
-    <label
-      v-if="currency_settings.type === 'selectable'"
-      for="currency"
-    >{{ $t("currency") }}
+    <label v-if="currency_settings.type === 'selectable'" for="currency"
+      >{{ $t("currency") }}
       <select
         v-model="checkout_data.currency"
         class="!bg-gray-50 !border !border-gray-300 !text-gray-900 !text-sm !rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full !p-3"
@@ -71,7 +75,7 @@ const calculate = () => {
     <div
       v-if="
         amount_settings.type === 'predefined_and_custom' ||
-          amount_settings.type === 'predefined'
+        amount_settings.type === 'predefined'
       "
       class="grid grid-cols-3 gap-2 mb-4"
     >
@@ -81,10 +85,7 @@ const calculate = () => {
         :class="`flex justify-center items-center rounded-lg bg-white p-2 cursor-pointer border-2 border-solid ${checkout_data.sub_total == amount && !custom ? 'border-blue-500' : 'border-white'}`"
         @click="((checkout_data.sub_total = amount), (custom = false))"
       >
-        <MoneyFormat
-          :number="amount"
-          :currency="checkout_data.currency"
-        />
+        <MoneyFormat :number="amount" :currency="checkout_data.currency" />
       </div>
 
       <div
@@ -109,18 +110,24 @@ const calculate = () => {
       <template v-if="tax_settings.tax_enabled && tax_settings.tax_rate">
         <div class="flex justify-between items-end border-gray-200">
           <span> Ara Toplam Tutar: </span>
-          <MoneyFormat :number="checkout_data.sub_total" />
+          <MoneyFormat
+            :number="checkout_data.sub_total"
+            :currency="checkout_data.currency"
+          />
         </div>
-        <hr class="!m-0 !p-0">
+        <hr class="!m-0 !p-0" />
         <div class="flex justify-between items-end border-gray-200">
           <span> Vergi ({{ tax_settings.tax_rate }}%): </span>
-          <MoneyFormat :number="checkout_data.tax_total" />
+          <MoneyFormat
+            :number="checkout_data.tax_total"
+            :currency="checkout_data.currency"
+          />
         </div>
-        <hr class="!m-0 !p-0">
+        <hr class="!m-0 !p-0" />
       </template>
       <div class="flex justify-between items-end">
         <span> Toplam Tutar: </span>
-        <MoneyFormat :number="calculate()" />
+        <MoneyFormat :number="calculate()" :currency="checkout_data.currency" />
       </div>
     </div>
   </div>

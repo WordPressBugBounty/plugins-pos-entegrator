@@ -1,0 +1,1 @@
+import{aJ as r,a as t,c as n,t as c}from"./vendor-3-7-102.js";const o=r(),i={__name:"MoneyFormat",props:{number:{type:[Number,String],default:0},currency:{type:String,default:"TRY"}},setup(e){return(a,s)=>(t(),n("span",null,c(a.vueNumberFormat(parseFloat(e.number),{suffix:` ${e.currency}`})),1))}};export{i as _,o as p};

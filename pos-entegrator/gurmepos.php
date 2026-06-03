@@ -3,7 +3,7 @@
  * Plugin Name: POS Entegratör
  * Plugin URI: https://posentegrator.com
  * Description: The most advanced payment plugin, compatible with 50+ payment institutions and 10+ plugins. Easily manage all your payment processes and ensure seamless operation. E-Commerce Payments, One Page Checkout, Recurring Payments, Installment Payments, Donation Payments, Custom Amount Payments, and much more are made easy with <strong>POS Entegratör</strong>.
- * Version: 3.7.101
+ * Version: 3.7.102
  * Author: GurmeHub
  * Author URI: https://gurmehub.com
  * Text Domain: gurmepos
@@ -11,7 +11,7 @@
  * Requires PHP: 7.4
  * WC requires at least: 7.6
  * WC tested up to: 9.1
- * Tested up to: 6.8
+ * Tested up to: 7.0
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -39,7 +39,7 @@ final class GurmePOS {
 	 *
 	 * @var string
 	 */
-	public $version = '3.7.101';
+	public $version = '3.7.102';
 
 	/**
 	 * Veritabanı versiyonu.
