@@ -89,6 +89,9 @@ return array(
 	'vakifbank'            => array(
 		'description' => __('We click on the "CONTRACTED MERCHANT TRANSACTIONS" section under the "MANAGEMENT" tab from the Vakıfbank Virtual Pos panel. The page that opens contains the necessary information for our company. We fill this information in the relevant places in POS Entegratör.', 'gurmepos'),
 	),
+	'ziraat-payflex'            => array(
+		'description' => __('We click on the "CONTRACTED MERCHANT TRANSACTIONS" section under the "MANAGEMENT" tab from the Ziraat Virtual Pos panel. The page that opens contains the necessary information for our company. We fill this information in the relevant places in POS Entegratör.', 'gurmepos'),
+	),
 	'yapikredi'            => array(
 		'description' => __('The information required for the Yapı Kredi Virtual POS integration will be obtained from the Yapı Kredi Virtual POS Screen.', 'gurmepos'),
 	),

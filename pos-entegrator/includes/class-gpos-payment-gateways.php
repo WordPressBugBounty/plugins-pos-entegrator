@@ -177,6 +177,7 @@ class GPOS_Payment_Gateways {
 			'GPOS_Wyld',
 			'GPOS_Yapi_Kredi',
 			'GPOS_Ziraat',
+			'GPOS_Ziraat_Payflex',
 			'GPOS_PayBull',
 			'GPOS_United_Payment',
 			'GPOS_Weepay',

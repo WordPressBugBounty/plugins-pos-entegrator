@@ -103,14 +103,14 @@ class GPOS_WooCommerce_Payment_Gateway extends WC_Payment_Gateway_CC implements 
 
 		$this->order = wc_get_order( $this->transaction->get_plugin_transaction_id() );
 
+		$this->set_fee();
+
 		if ( $response->get_payment_id() && $this->order->needs_payment() ) {
 			$this->order->payment_complete( $response->get_payment_id() );
 			$this->order->add_order_note( gpos_transaction_note( $response ) );
 		}
 
 		$received_url = $this->get_return_url( $this->order );
-
-		$this->set_fee();
 
 		if ( $on_checkout ) {
 			return array(

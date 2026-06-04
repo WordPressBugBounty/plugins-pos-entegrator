@@ -17,6 +17,7 @@ const rates = computed(() => {
       family = "cardfinans";
       break;
     case "kuveytturkcc":
+    case "kuveyttrkcc":
       family = "saglamkart";
       break;
     case "ziraatbankascc":

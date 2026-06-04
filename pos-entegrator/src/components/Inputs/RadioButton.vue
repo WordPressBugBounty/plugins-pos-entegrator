@@ -40,9 +40,9 @@ const componentValue = computed({
         :value="value"
         aria-describedby="helper-radio-text"
         type="radio"
-        class="!w-4 !h-4 !text-blue-600 !bg-gray-100 !border-gray-300 !focus:ring-blue-500"
+        class="!w-4 !h-4 !text-blue-600 !border-gray-300 !focus:ring-0"
         :disabled="disabled"
-      >
+      />
     </div>
     <div class="ml-2 text-sm">
       <label
@@ -51,11 +51,9 @@ const componentValue = computed({
           disabled ? 'text-gray-300' : 'text-gray-900'
         } flex items-center gap-2`"
       >
-        <slot /></label>
-      <p
-        id="helper-radio-text"
-        class="text-xs font-normal text-gray-400"
-      >
+        <slot
+      /></label>
+      <p id="helper-radio-text" class="text-xs font-normal text-gray-400">
         <slot name="subtitle" />
       </p>
     </div>
