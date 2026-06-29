@@ -34,6 +34,20 @@ class GPOS_Ajax {
 	private $endpoints;
 
 	/**
+	 * Güvenlik gerektirmeyen ajax aksiyonları.
+	 *
+	 * @var array $nopriv_endpoints
+	 */
+	private $nopriv_endpoints;
+
+	/**
+	 * Kullanıcıya göre güvenlik kontrolü yapılacak uç noktalar.
+	 *
+	 * @var array $saved_card_endpoints
+	 */
+	private $saved_card_endpoints;
+
+	/**
 	 * GPOS_Ajax kurucu method.
 	 */
 	public function __construct() {
@@ -46,54 +60,98 @@ class GPOS_Ajax {
 	 * @return void
 	 */
 	public function ajax_actions() {
-		$this->endpoints = apply_filters(
-			/**
-			 * Ajax uç noktalarına ekle/çıkar yapmak için kullanılır.
-			 *
-			 * @param array Varsayılan uç noktalar.
-			 */
-			"{$this->prefix}_ajax_endpoints",
+
+		$this->saved_card_endpoints = apply_filters(
+			"{$this->prefix}_saved_card_endpoints",
+			array()
+		);
+
+		$this->nopriv_endpoints = apply_filters(
+			"{$this->prefix}_nopriv_endpoints",
 			array(
-				'update_test_mode'              => array( $this, 'update_test_mode' ),
-				'update_active_status'          => array( $this, 'update_active_status' ),
-				'update_installment_status'     => array( $this, 'update_installment_status' ),
-				'update_installments'           => array( $this, 'update_installments' ),
-				'get_installments_from_api'     => array( $this, 'get_installments_from_api' ),
-				'update_default_status'         => array( $this, 'update_default_status' ),
-				'add_gateway_account'           => array( $this, 'add_gateway_account' ),
-				'get_gateway_accounts'          => array( $this, 'get_gateway_accounts' ),
-				'update_form_settings'          => array( $this, 'update_form_settings' ),
-				'update_woocommerce_settings'   => array( $this, 'update_woocommerce_settings' ),
-				'update_account_settings'       => array( $this, 'update_account_settings' ),
-				'update_other_settings'         => array( $this, 'update_other_settings' ),
-				'remove_gateway_account'        => array( $this, 'remove_gateway_account' ),
-				'check_connection'              => array( $this, 'check_connection' ),
-				'hide_notice'                   => array( $this, 'hide_notice' ),
 				'bin_retrieve'                  => array( $this, 'bin_retrieve' ),
-				'process_cancel'                => array( $this, 'process_cancel' ),
-				'process_refund'                => array( $this, 'process_refund' ),
-				'process_line_based_refund'     => array( $this, 'process_line_based_refund' ),
-				'update_tag_manager_settings'   => array( $this, 'update_tag_manager_settings' ),
-				'update_notification_settings'  => array( $this, 'update_notification_settings' ),
 				'wc_get_cart_total'             => array( $this, 'wc_get_cart_total' ),
-				'reinstall_tables'              => array( $this, 'reinstall_tables' ),
-				'recheck_status'                => array( $this, 'recheck_status' ),
-				'update_ins_display_settings'   => array( $this, 'update_ins_display_settings' ),
 				'get_installment_html'          => array( $this, 'get_installment_html' ),
 				'calculate_group_product_price' => array( $this, 'calculate_group_product_price' ),
-				'get_iyzipos_saved_cards'       => array( $this, 'get_iyzipos_saved_cards' ),
-				'iyzipos_save_card'             => array( $this, 'iyzipos_save_card' ),
-				'iyzipos_update_gateway'        => array( $this, 'iyzipos_update_gateway' ),
-				'consult_ai_assistant'          => array( $this, 'consult_ai_assistant' ),
+			)
+		);
+
+		$this->endpoints = apply_filters(
+			"{$this->prefix}_ajax_endpoints",
+			array(
+				'update_test_mode'             => array( $this, 'update_test_mode' ),
+				'update_active_status'         => array( $this, 'update_active_status' ),
+				'update_installment_status'    => array( $this, 'update_installment_status' ),
+				'update_installments'          => array( $this, 'update_installments' ),
+				'get_installments_from_api'    => array( $this, 'get_installments_from_api' ),
+				'update_default_status'        => array( $this, 'update_default_status' ),
+				'add_gateway_account'          => array( $this, 'add_gateway_account' ),
+				'get_gateway_accounts'         => array( $this, 'get_gateway_accounts' ),
+				'update_form_settings'         => array( $this, 'update_form_settings' ),
+				'update_woocommerce_settings'  => array( $this, 'update_woocommerce_settings' ),
+				'update_account_settings'      => array( $this, 'update_account_settings' ),
+				'update_other_settings'        => array( $this, 'update_other_settings' ),
+				'remove_gateway_account'       => array( $this, 'remove_gateway_account' ),
+				'check_connection'             => array( $this, 'check_connection' ),
+				'hide_notice'                  => array( $this, 'hide_notice' ),
+				'process_cancel'               => array( $this, 'process_cancel' ),
+				'process_refund'               => array( $this, 'process_refund' ),
+				'process_line_based_refund'    => array( $this, 'process_line_based_refund' ),
+				'update_tag_manager_settings'  => array( $this, 'update_tag_manager_settings' ),
+				'update_notification_settings' => array( $this, 'update_notification_settings' ),
+				'reinstall_tables'             => array( $this, 'reinstall_tables' ),
+				'recheck_status'               => array( $this, 'recheck_status' ),
+				'update_ins_display_settings'  => array( $this, 'update_ins_display_settings' ),
+				'get_iyzipos_saved_cards'      => array( $this, 'get_iyzipos_saved_cards' ),
+				'iyzipos_save_card'            => array( $this, 'iyzipos_save_card' ),
+				'iyzipos_update_gateway'       => array( $this, 'iyzipos_update_gateway' ),
+				'consult_ai_assistant'         => array( $this, 'consult_ai_assistant' ),
 			)
 		);
 
 		if ( false === empty( $this->endpoints ) ) {
 			foreach ( array_keys( $this->endpoints ) as $endpoint ) {
 				add_action( "wp_ajax_{$this->prefix}_{$endpoint}", array( $this, 'middleware' ) );
+			}
+		}
+
+		if ( false === empty( $this->nopriv_endpoints ) ) {
+			foreach ( array_keys( $this->nopriv_endpoints ) as $endpoint ) {
+				add_action( "wp_ajax_{$this->prefix}_{$endpoint}", array( $this, 'middleware' ) );
 				add_action( "wp_ajax_nopriv_{$this->prefix}_{$endpoint}", array( $this, 'middleware' ) );
 			}
 		}
+
+		if ( false === empty( $this->saved_card_endpoints ) ) {
+			foreach ( array_keys( $this->saved_card_endpoints ) as $endpoint ) {
+				add_action( "wp_ajax_{$this->prefix}_{$endpoint}", array( $this, 'middleware' ) );
+			}
+		}
+	}
+
+	/**
+	 * Ajax çağrılarının güvenlik kontrolünü yapar.
+	 *
+	 * @param string   $next_action Aksiyon adı.
+	 * @param stdClass $request İstek parametreleri.
+	 *
+	 * @return bool
+	 */
+	private function check_permission( $next_action, $request ) {
+
+		if ( in_array( $next_action, array_keys( $this->nopriv_endpoints ), true ) ) {
+			return true;
+		}
+
+		if ( in_array( $next_action, array_keys( $this->saved_card_endpoints ), true ) ) {
+			if ( ! $request || ! isset( $request->id ) ) {
+				return false;
+			}
+			$saved_card = gpospro_saved_card( $request->id );
+			return $saved_card && $saved_card->get_user_id() === get_current_user_id();
+		}
+
+		return current_user_can( gpos_capability() );
 	}
 
 	/**
@@ -107,6 +165,10 @@ class GPOS_Ajax {
 		if ( check_ajax_referer( GPOS_AJAX_ACTION ) && isset( $_REQUEST['action'] ) ) {
 			$_REQUEST    = gpos_clean( $_REQUEST ); // Güvenlik için isteğin içerisindeki script, html gibi tagları temizler.
 			$next_action = str_replace( "{$this->prefix}_", '', sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) );
+			$request     = json_decode( file_get_contents( 'php://input' ) );
+			if ( ! $this->check_permission( $next_action, $request ) ) {
+				wp_die( -1, 403 );
+			}
 
 			try {
 				/**
@@ -116,9 +178,15 @@ class GPOS_Ajax {
 				 * @param string|array $callback Çalıştırılacak fonksiyon.
 				 * @param mixed $next_action Uç nokta.
 				 */
-				$action = apply_filters( "{$this->prefix}_ajax_action", $this->endpoints[ $next_action ], $next_action );
+				$all_endpoints = array_merge(
+					$this->endpoints,
+					$this->nopriv_endpoints,
+					$this->saved_card_endpoints
+				);
+
+				$action = apply_filters( "{$this->prefix}_ajax_action", $all_endpoints[ $next_action ] ?? null, $next_action );
 				// $action tanımlanan fonksiyonu çağır.
-				$response = call_user_func( $action, json_decode( file_get_contents( 'php://input' ) ) );
+				$response = call_user_func( $action, $request );
 
 				// WP_Error kontrolü yapar.
 				if ( is_wp_error( $response ) ) {

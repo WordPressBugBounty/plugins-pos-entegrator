@@ -10,21 +10,21 @@ import { storeToRefs } from "pinia";
 const { isInstallmentsActive, installments, formSettings, card } = storeToRefs(
   useCheckout()
 );
+
 const rates = computed(() => {
   let family = card.value.family?.toLowerCase().replaceAll(/\s/g, "");
-  switch (family) {
-    case "qnbfinansbankcc":
-      family = "cardfinans";
-      break;
-    case "kuveytturkcc":
-    case "kuveyttrkcc":
-      family = "saglamkart";
-      break;
-    case "ziraatbankascc":
-      family = "bankkartcombo";
-      break;
+
+  if(family.includes("finans") || family.includes("qnb")) {
+    family = "cardfinans";
+  }else if(family.includes("kuveyt")) {
+    family = "saglamkart";
+  }else if(family.includes("ziraat")) {
+    family = "bankkartcombo";
+  }else if (family.includes("garanti") || family.includes("bbva") || family.includes("bonus")) {
+    family = "bonus";
   }
-  return installments.value[family];
+
+  return installments.value[family] ?? [];
 });
 
 const getInstallmentText = (rate) => {

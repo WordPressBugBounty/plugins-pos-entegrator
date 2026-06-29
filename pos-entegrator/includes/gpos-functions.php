@@ -568,6 +568,7 @@ function gpos_capability() {
 	return apply_filters( 'gpos_menu_capability', 'manage_options' );
 }
 
+
 /**
  * Para birimi ISO kodu
  *
