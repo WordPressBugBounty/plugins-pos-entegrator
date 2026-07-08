@@ -25,7 +25,6 @@ const getProperty = (account, property) => {
   return gateway[property];
 };
 
-
 </script>
 <template>
   <select
@@ -37,7 +36,7 @@ const getProperty = (account, property) => {
       :key="account.id"
       :value="account.id"
     >
-      {{ getProperty(account, "title") }}
+      {{ account.post_title || getProperty(account, "title") }}
     </option>
   </select>
 </template>
