@@ -33,6 +33,7 @@ const years = Array.from({ length: 17 }, (_, i) => (currentYear + i).toString())
         class="!border-0 !rounded-r !bg-white !m-0 !p-3 !focus:ring-0 !outline-0 !focus:ring-offset-0 !w-1/2"
         @focus="focus = !focus"
         @focusout="focus = !focus"
+        required
       >
         <option value="">
           {{ $t("mm") }}
@@ -64,6 +65,7 @@ const years = Array.from({ length: 17 }, (_, i) => (currentYear + i).toString())
         class="!border-0 !rounded-r !bg-white !m-0 !p-3 !focus:ring-0 !outline-0 !focus:ring-offset-0 !w-1/2"
         @focus="focus = !focus"
         @focusout="focus = !focus"
+        required
       >
         <option value="">
           {{ $t("yy") }}

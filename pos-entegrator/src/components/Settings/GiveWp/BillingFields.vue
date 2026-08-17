@@ -18,6 +18,7 @@ const { giveWpSettings } = storeToRefs(store);
     >
       {{ $t("activate")
       }}<template #subtitle>
+        GiveWPV3 öncesi versiyonlarda kullanılabilir.
         {{ $t("show_billing_fields_desc") }}
       </template>
     </Switch>

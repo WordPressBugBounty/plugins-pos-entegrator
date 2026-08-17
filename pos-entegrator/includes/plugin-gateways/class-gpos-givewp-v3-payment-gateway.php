@@ -29,13 +29,6 @@ class GPOS_GiveWP_V3_Payment_Gateway extends Give\Framework\PaymentGateways\Paym
 	public $donation_id;
 
 	/**
-	 * Form ayarları
-	 *
-	 * @var GPOS_Form_Settings $form_settings
-	 */
-	public $form_settings;
-
-	/**
 	 * Bağış objesi
 	 *
 	 * @var Donation $donation
@@ -83,6 +76,7 @@ class GPOS_GiveWP_V3_Payment_Gateway extends Give\Framework\PaymentGateways\Paym
 	public function createPayment( Donation $donation, $gateway_data ) {
 		$this->donation    = $donation;
 		$this->donation_id = $donation->id;
+		$this->validate_fields( $gateway_data );
 		return $this->process_payment( $gateway_data );
 	}
 
@@ -131,6 +125,32 @@ class GPOS_GiveWP_V3_Payment_Gateway extends Give\Framework\PaymentGateways\Paym
 	}
 
 	/**
+	 * Ödeme geçidi verilerini doğrular.
+	 *
+	 * @param array $gateway_data Ödeme geçidi verileri
+	 *
+	 * @return void
+	 *
+	 * @throws PaymentGatewayException Ödeme geçidi verileri doğrulanamadı
+	 */
+	private function validate_fields( array $gateway_data ): void {
+		$this->create_post_data( $gateway_data );
+		do_action( 'gpos_givewp_v3_validate_fields', $this->post_data, $this->donation );
+		$alerts = gpos_get_alert_texts();
+		foreach ( [
+			'card-bin',
+			'card-expiry-month',
+			'card-expiry-year',
+			'card-cvv',
+			'card-holder-name',
+		] as $field ) {
+			if ( isset( $this->post_data[ "{$this->gpos_prefix}-{$field}" ] ) && empty( $this->post_data[ "{$this->gpos_prefix}-{$field}" ] ) ) {
+				throw new PaymentGatewayException( esc_html( $alerts[ str_replace( '-', '_', $field ) ] ) );
+			}
+		}
+	}
+
+	/**
 	 * Ödeme alma işlemi.
 	 *
 	 * @param array $gateway_data Ödeme geçidi verisi
@@ -139,7 +159,7 @@ class GPOS_GiveWP_V3_Payment_Gateway extends Give\Framework\PaymentGateways\Paym
 	 */
 	public function process_payment( array $gateway_data ) {
 
-		$response = $this->create_new_payment_process( $_POST['gatewayData'], $this->donation_id, GPOS_Transaction_Utils::GIVEWP_V3 ); //phpcs:ignore 
+		$response = $this->create_new_payment_process( $_POST['gatewayData'], $this->donation_id, GPOS_Transaction_Utils::GIVEWP_V3 ); //phpcs:ignore
 		$this->transaction->add_meta( 'ok_url', urldecode( $gateway_data['successUrl'] ) );
 		$this->transaction->add_meta( 'fail_url', urldecode( $gateway_data['cancelUrl'] ) );
 		if ( $response->is_success() ) {
@@ -163,7 +183,7 @@ class GPOS_GiveWP_V3_Payment_Gateway extends Give\Framework\PaymentGateways\Paym
 		}
 
 		$this->transaction_error_process( $response );
-		$this->error_process( $response, true, true );
+		$this->error_process( $response, true );
 	}
 
 	/**

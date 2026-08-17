@@ -44,6 +44,7 @@ const focus = ref(false);
       autocomplete="cc-number"
       @focus="focus = !focus"
       @focusout="focus = !focus"
+      required
     >
   </div>
 </template>

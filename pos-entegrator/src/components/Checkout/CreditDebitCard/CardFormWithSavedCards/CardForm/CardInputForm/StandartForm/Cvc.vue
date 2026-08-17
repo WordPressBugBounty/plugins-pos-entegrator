@@ -31,6 +31,7 @@ const focus = ref(false);
       autocomplete="cc-csc"
       @focus="focus = !focus"
       @focusout="focus = !focus"
+      required
     >
     <span
       class="inline-flex relative !rounded z-10 items-center justify-center text-sm !bg-white !w-12 !min-w-max !px-2"
