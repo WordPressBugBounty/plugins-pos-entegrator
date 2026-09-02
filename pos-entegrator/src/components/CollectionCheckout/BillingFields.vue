@@ -14,6 +14,11 @@ onBeforeMount(() => {
   }
 });
 
+// Adres ve sipariş numarası alanları tahsilat formunun Alanlar sekmesinden yönetilir.
+// Eski kayıtlarda ayar grubu bulunmayabilir; o durumda mevcut davranış korunur.
+const addressEnabled = form_settings.address_field?.enabled ?? true;
+const orderNumberEnabled = form_settings.order_number_field?.enabled ?? false;
+
 const billingFields = computed(() => {
   const fields = [
     {
@@ -40,26 +45,43 @@ const billingFields = computed(() => {
       type: "text",
       model: "customer_phone",
     },
-    {
-      label: "Adres",
-      key: "customer_address",
-      type: "text",
-      model: "customer_address",
-      colspan: 2,
-    },
-    {
-      label: "İlçe",
-      key: "customer_city",
-      type: "text",
-      model: "customer_city",
-    },
-    {
-      label: "İl",
-      key: "customer_state",
-      type: "text",
-      model: "customer_state",
-    },
   ];
+
+  if (orderNumberEnabled) {
+    // Sipariş numarası her zaman opsiyoneldir; işlem satırının referansı olur.
+    fields.push({
+      label: "Sipariş No",
+      key: "order_number",
+      type: "text",
+      model: "order_number",
+      colspan: 2,
+      required: false,
+    });
+  }
+
+  if (addressEnabled) {
+    fields.push(
+      {
+        label: "Adres",
+        key: "customer_address",
+        type: "text",
+        model: "customer_address",
+        colspan: 2,
+      },
+      {
+        label: "İlçe",
+        key: "customer_city",
+        type: "text",
+        model: "customer_city",
+      },
+      {
+        label: "İl",
+        key: "customer_state",
+        type: "text",
+        model: "customer_state",
+      }
+    );
+  }
 
   if (checkout_data.value.tax_type === "company") {
     const company = [

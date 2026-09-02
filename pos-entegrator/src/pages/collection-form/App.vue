@@ -6,6 +6,9 @@ import TextField from "@/components/Inputs/TextField.vue";
 import PrimaryButton from "@/components/Inputs/PrimaryButton.vue";
 import PaymentSettings from "@/components/CollectionForm/PaymentSettings.vue";
 import FormSettings from "@/components/CollectionForm/FormSettings.vue";
+import EmailSettings from "@/components/CollectionForm/EmailSettings.vue";
+import SuccessPageSettings from "@/components/CollectionForm/SuccessPageSettings.vue";
+import FieldSettings from "@/components/CollectionForm/FieldSettings.vue";
 import { ClipboardDocumentIcon } from "@heroicons/vue/24/solid";
 import { ref } from "vue";
 import { useCollectionFormStore } from "@/stores/CollectionFormStore.js";
@@ -28,9 +31,25 @@ const tabs = ref([
     active: true,
   },
   {
+    title: "fields",
+    active: false,
+  },
+  {
     title: "payment",
     active: false,
   },
+  {
+    title: "success_page",
+    active: false,
+  },
+  ...(window.gpos.collection_form_email
+    ? [
+      {
+        title: "email",
+        active: false,
+      },
+    ]
+    : []),
 ]);
 
 const tabToActive = (title) => {
@@ -77,7 +96,10 @@ const isActiveTab = (title) => {
           </div>
           <div class="w-4/5 flex flex-col bg-white rounded-r-lg p-8 relative">
             <FormSettings v-if="isActiveTab('general')" />
+            <FieldSettings v-if="isActiveTab('fields')" />
             <PaymentSettings v-if="isActiveTab('payment')" />
+            <SuccessPageSettings v-if="isActiveTab('success_page')" />
+            <EmailSettings v-if="isActiveTab('email')" />
           </div>
         </div>
       </div>

@@ -191,6 +191,12 @@ return array(
 	'Setcard'           => array(
 		'description' => __('You can access all necessary API information from the Setcard Virtual POS panel.', 'gurmepos'),
 	),
+	'multinet'           => array(
+		'description' => __('App Token, user e-mail, password, Merchant ID, Terminal ID and Salt Key information required for Multinet integration is provided by the Multinet integration team. The merchant must have a SanalPos - 3D type terminal registered in the Multinet systems.', 'gurmepos'),
+	),
+	'multigift'           => array(
+		'description' => __('App Token, user e-mail, password, Merchant ID, Terminal ID and Salt Key information required for MultiGift integration is provided by the Multinet integration team. The merchant must have a SanalPos - 3D type terminal registered in the Multinet systems.', 'gurmepos'),
+	),
 	'vakif-katilim'           => array(
 		'description' => __('You can access all necessary API information from the Vakıf Katılım Virtual POS panel.', 'gurmepos'),
 	),

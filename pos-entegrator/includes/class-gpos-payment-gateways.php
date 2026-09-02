@@ -195,6 +195,8 @@ class GPOS_Payment_Gateways {
 			'GPOS_Rubikpara',
 			'GPOS_Erpapay',
 			'GPOS_Setcard',
+			'GPOS_Multinet',
+			'GPOS_MultiGift',
 			'GPOS_Vallet',
 			'GPOS_Moka',
 			'GPOS_Papel',

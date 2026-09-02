@@ -29,6 +29,7 @@ export const useCollectionCheckoutStore = defineStore("CollectionCheckoutStore",
       customer_tax_number: "",
       customer_tax_type: "",
       customer_tax_office: "",
+      order_number: "",
     }
   }),
   actions: {

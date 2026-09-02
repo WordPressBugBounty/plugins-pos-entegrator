@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-18T11:27:43+00:00\n"
+"POT-Creation-Date: 2026-09-02T09:49:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: gurmepos\n"
 
 #. Plugin Name of the plugin
@@ -45,8 +45,9 @@ msgid "https://gurmehub.com"
 msgstr ""
 
 #. translators: Plugin names, Min version
-#: gurmepos-pro.php:203
+#: gurmepos-pro.php:204
 #: gurmepos-form.php:183
+#, php-format
 msgid "<strong>%1$s</strong> is not working. The minimum lite version required for <strong>%2$s</strong> to work is <strong>%3$s</strong> please update the lite plugin."
 msgstr ""
 
@@ -91,6 +92,7 @@ msgstr ""
 #. translators: %s is the name of the plugin.
 #: hooks/class-gpospro-gph.php:45
 #: hooks/class-gpos-gph.php:45
+#, php-format
 msgid "I need more information about %s"
 msgstr ""
 
@@ -140,6 +142,7 @@ msgstr ""
 #. translators: %s is the name of the plugin.
 #: hooks/class-gpospro-gph.php:78
 #: hooks/class-gpos-gph.php:78
+#, php-format
 msgid "No thanks, i don't want the %s"
 msgstr ""
 
@@ -157,35 +160,35 @@ msgstr ""
 msgid "Pay With Credit Card"
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:206
+#: hooks/class-gpospro-gurmepos.php:207
 msgctxt "Post type general name"
 msgid "Saved Cards"
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:207
+#: hooks/class-gpospro-gurmepos.php:208
 msgctxt "Post type singular name"
 msgid "Saved Card"
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:208
+#: hooks/class-gpospro-gurmepos.php:209
 msgctxt "Admin Menu text"
 msgid "Saved Cards"
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:209
+#: hooks/class-gpospro-gurmepos.php:210
 msgid "Saved Cards"
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:210
+#: hooks/class-gpospro-gurmepos.php:211
 msgid "Search Saved Card"
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:211
+#: hooks/class-gpospro-gurmepos.php:212
 #: languages/gpos-settings-texts.php:270
 msgid "No Saved Card found."
 msgstr ""
 
-#: hooks/class-gpospro-gurmepos.php:212
+#: hooks/class-gpospro-gurmepos.php:213
 msgid "No Saved Card found in Trash."
 msgstr ""
 
@@ -228,6 +231,7 @@ msgid "Default Card"
 msgstr ""
 
 #: includes/abstracts/est-v3/abstract-gpospro-est-v3-gateway.php:64
+#: includes/abstracts/multinet-webpos/abstract-gpospro-multinet-webpos-gateway.php:318
 #: includes/abstracts/pay-smart/abstract-gpospro-pay-smart-gateway.php:81
 #: includes/payment-gateways/akode/class-gpospro-akode-gateway.php:52
 #: includes/payment-gateways/craftgate/class-gpospro-craftgate-gateway.php:46
@@ -255,6 +259,14 @@ msgstr ""
 #: includes/payment-gateways/moka/class-gpospro-moka-gateway.php:54
 #: includes/payment-gateways/papara/class-gpos-papara-gateway.php:87
 msgid "Please check your API information."
+msgstr ""
+
+#: includes/abstracts/multinet-webpos/abstract-gpospro-multinet-webpos-gateway.php:318
+#: includes/payment-gateways/papel/class-gpospro-papel-gateway.php:50
+#: includes/payment-gateways/united-payment/class-gpospro-united-payment-gateway.php:92
+#: includes/payment-gateways/weepay/class-gpospro-weepay-gateway.php:89
+#: includes/payment-gateways/papara-checkout/class-gpos-papara-checkout-gateway.php:46
+msgid "Connection Failed"
 msgstr ""
 
 #: includes/class-gpospro-notifications.php:42
@@ -324,8 +336,9 @@ msgstr ""
 #: includes/class-gpospro-post-tables.php:74
 #: includes/class-gposform-google-sheet-sync.php:236
 #: includes/class-gposform-google-sheet-sync.php:260
+#: templates/collection-email.php:117
 #: templates/collection-receipt.php:66
-#: templates/collection-success.php:96
+#: templates/collection-success.php:172
 #: includes/class-gpos-export.php:68
 #: includes/class-gpos-post-tables.php:113
 #: languages/gpos-settings-texts.php:111
@@ -334,11 +347,13 @@ msgstr ""
 
 #. translators: %s: Saved card ending.
 #: includes/class-gpospro-saved-card.php:243
+#, php-format
 msgid "Saved card with ending %s"
 msgstr ""
 
 #. translators: IP address.
 #: includes/payment-gateways/craftgate/class-gpospro-craftgate-gateway.php:167
+#, php-format
 msgid "Unauthorized operation attempted via ip address %s."
 msgstr ""
 
@@ -354,18 +369,21 @@ msgstr ""
 msgid "Expired"
 msgstr ""
 
-#: includes/payment-gateways/papel/class-gpospro-papel-gateway.php:50
-#: includes/payment-gateways/united-payment/class-gpospro-united-payment-gateway.php:92
-#: includes/payment-gateways/weepay/class-gpospro-weepay-gateway.php:89
-#: includes/payment-gateways/papara-checkout/class-gpos-papara-checkout-gateway.php:46
-msgid "Connection Failed"
-msgstr ""
-
 #: includes/payment-gateways/paytr/class-gpospro-paytr-gateway.php:179
 msgid "Regular payment failed. Please check your card and try again."
 msgstr ""
 
-#: includes/payment-gateways/worldpay/class-gpospro-worldpay-gateway.php:173
+#: includes/payment-gateways/worldpay/class-gpospro-worldpay-gateway.php:183
+msgid "Transaction failed during authorization and was not completed."
+msgstr ""
+
+#: includes/payment-gateways/worldpay/class-gpospro-worldpay-gateway.php:186
+msgid "Transaction failed at financialization stage and was cancelled by the system."
+msgstr ""
+
+#: includes/payment-gateways/worldpay/class-gpospro-worldpay-gateway.php:189
+#: includes/payment-gateways/worldpay/class-gpospro-worldpay-gateway.php:193
+#: includes/payment-gateways/worldpay/class-gpospro-worldpay-gateway.php:208
 msgid "Your transaction was not completed, please try again."
 msgstr ""
 
@@ -383,12 +401,12 @@ msgid "Unsupported currency"
 msgstr ""
 
 #: includes/plugin-gateways/class-gpospro-funnelkit-payment-gateway.php:95
-#: includes/plugin-gateways/class-gpospro-woocommerce-payment-gateway.php:194
+#: includes/plugin-gateways/class-gpospro-woocommerce-payment-gateway.php:193
 msgid "Payment not be received because the card to receive payment not be found."
 msgstr ""
 
 #: includes/plugin-gateways/class-gpospro-givewp-payment-gateway.php:208
-#: includes/plugin-gateways/class-gpos-givewp-v3-payment-gateway.php:281
+#: includes/plugin-gateways/class-gpos-givewp-v3-payment-gateway.php:301
 msgid "Donation"
 msgstr ""
 
@@ -408,6 +426,7 @@ msgstr ""
 #. translators: %s = POS Entegratör
 #: includes/plugin-gateways/class-gpospro-learn-press-payment-gateway.php:74
 #: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:41
+#, php-format
 msgid "%s - Multiple payment solutions"
 msgstr ""
 
@@ -426,6 +445,7 @@ msgstr ""
 
 #. translators: %s is the plugin name.
 #: includes/plugin-gateways/class-gpospro-the-events-calendar-payment-gateway.php:170
+#, php-format
 msgid "%s doesn't support your selected currency"
 msgstr ""
 
@@ -435,6 +455,7 @@ msgstr ""
 
 #. translators: % s => Ödeme geçidi başarılı mesajı .
 #: includes/plugin-gateways/class-gpospro-the-events-calendar-payment-gateway.php:196
+#, php-format
 msgid "Payment is success, transaction id: %s"
 msgstr ""
 
@@ -442,11 +463,13 @@ msgstr ""
 #: includes/plugin-gateways/class-gpospro-the-events-calendar-payment-gateway.php:200
 #: includes/plugin-gateways/class-gposform-ninja-forms-payment-gateway.php:337
 #: includes/plugin-gateways/class-gposform-wpforms-payment-gateway.php:145
+#, php-format
 msgid "Error while payment processing: %s"
 msgstr ""
 
 #. translators: ticket number
 #: includes/plugin-gateways/class-gpospro-the-events-calendar-payment-gateway.php:315
+#, php-format
 msgid "Ticket id: %s "
 msgstr ""
 
@@ -458,7 +481,7 @@ msgstr ""
 msgid "The default payment gateway does not support adding cards, Please contact admin."
 msgstr ""
 
-#: includes/plugin-gateways/class-gpospro-woocommerce-payment-gateway.php:143
+#: includes/plugin-gateways/class-gpospro-woocommerce-payment-gateway.php:142
 msgid "This payment gateway does not support Woo refund option. Beacause this payment provider is need line based refund process."
 msgstr ""
 
@@ -466,8 +489,9 @@ msgstr ""
 #: views/emails/transaction-info.php:117
 #: includes/class-gposform-google-sheet-sync.php:245
 #: includes/class-gposform-google-sheet-sync.php:284
+#: templates/collection-email.php:152
 #: templates/collection-receipt.php:82
-#: templates/collection-success.php:131
+#: templates/collection-success.php:207
 #: includes/class-gpos-export.php:74
 #: includes/class-gpos-post-tables.php:107
 #: languages/gpos-checkout-texts.php:14
@@ -482,7 +506,7 @@ msgstr ""
 #: views/emails/transaction-info.php:31
 #: languages/gpos-settings-texts.php:48
 #: languages/gpos-settings-texts.php:184
-#: languages/gpos-settings-texts.php:520
+#: languages/gpos-settings-texts.php:543
 msgid "Completed"
 msgstr ""
 
@@ -493,7 +517,7 @@ msgstr ""
 
 #: views/emails/transaction-info.php:41
 #: languages/gpos-settings-texts.php:183
-#: languages/gpos-settings-texts.php:519
+#: languages/gpos-settings-texts.php:542
 msgid "Failed"
 msgstr ""
 
@@ -532,15 +556,16 @@ msgstr ""
 
 #. translators: %s: Saat farkı için kullanılan saat örn. 10 Dakika Önce
 #: views/saved-card-columns/create-date.php:20
-#: includes/class-gposform-post-operations.php:179
+#: includes/class-gposform-post-operations.php:181
 #: includes/abstracts/abstract-gpos-post.php:198
 #: views/transaction-columns/create-date.php:22
+#, php-format
 msgctxt "%s = human-readable time difference"
 msgid "%s ago"
 msgstr ""
 
 #: views/saved-card-columns/create-date.php:24
-#: includes/class-gposform-post-operations.php:183
+#: includes/class-gposform-post-operations.php:185
 #: includes/abstracts/abstract-gpos-post.php:202
 #: views/transaction-columns/create-date.php:26
 msgid "j F Y"
@@ -553,11 +578,13 @@ msgstr ""
 
 #. translators: %s plugin name.
 #: views/the-events-calendar-admin-views.php:66
+#, php-format
 msgid "Accept online payments with %s"
 msgstr ""
 
 #. translators: %s plugin name.
 #: views/the-events-calendar-admin-views.php:79
+#, php-format
 msgid "Start selling tickets to your events today with %s. Attendees can purchase tickets directly on your site using debit or credit cards"
 msgstr ""
 
@@ -604,14 +631,15 @@ msgstr ""
 
 #. translators: %s POS Entegratör
 #: extensions/elementor-pro/class-gposform-payment-action.php:64
+#, php-format
 msgid "Don't forget to add %s form field to current form."
 msgstr ""
 
 #: extensions/elementor-pro/class-gposform-payment-field.php:48
 #: extensions/elementor-pro/class-gposform-payment-field.php:138
 #: extensions/elementor/class-gposform-payment-widget.php:160
-#: includes/class-gposform-post-operations.php:147
-#: languages/gpos-settings-texts.php:507
+#: includes/class-gposform-post-operations.php:148
+#: languages/gpos-settings-texts.php:524
 msgid "Amount"
 msgstr ""
 
@@ -650,7 +678,8 @@ msgid "Price Field Name (Price, Total, Amount etc.)"
 msgstr ""
 
 #: extensions/elementor/class-gposform-payment-widget.php:143
-#: languages/gpos-settings-texts.php:497
+#: languages/gpos-settings-texts.php:373
+#: languages/gpos-settings-texts.php:514
 msgid "Button Text"
 msgstr ""
 
@@ -727,7 +756,7 @@ msgstr ""
 
 #: extensions/elementor/class-gposform-transactions-widget.php:65
 #: includes/class-gpos-post-operations.php:105
-#: languages/gpos-settings-texts.php:400
+#: languages/gpos-settings-texts.php:417
 msgid "Transactions"
 msgstr ""
 
@@ -744,156 +773,163 @@ msgid "Users can print transactions"
 msgstr ""
 
 #: extensions/ninjaforms/class-gposform-ninja-forms-display-installment.php:55
-#: languages/gpos-settings-texts.php:436
+#: languages/gpos-settings-texts.php:453
 msgid "Installment Display"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:284
+#: hooks/class-gposform-gurmepos.php:193
+msgid "When a collection is completed, a summary email is sent to both the customer and the site administrator. The email has its own template; editing it does not affect the collection summary page."
+msgstr ""
+
+#: hooks/class-gposform-gurmepos.php:194
+msgid "How do I edit collection form emails?"
+msgstr ""
+
+#: hooks/class-gposform-gurmepos.php:311
 msgctxt "Post type general name"
 msgid "Collection Forms"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:285
+#: hooks/class-gposform-gurmepos.php:312
 msgctxt "Post type singular name"
 msgid "Collection Form"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:286
+#: hooks/class-gposform-gurmepos.php:313
 msgctxt "Admin Menu text"
 msgid "Collection Forms"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:287
+#: hooks/class-gposform-gurmepos.php:314
 msgctxt "Add New on Toolbar"
 msgid "Collection Form"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:288
-#: hooks/class-gposform-gurmepos.php:320
+#: hooks/class-gposform-gurmepos.php:315
+#: hooks/class-gposform-gurmepos.php:347
 #: includes/class-gpos-post-operations.php:100
 msgid "Add New"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:289
+#: hooks/class-gposform-gurmepos.php:316
 msgid "Add New Collection Form"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:290
+#: hooks/class-gposform-gurmepos.php:317
 msgid "New Collection Form"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:291
+#: hooks/class-gposform-gurmepos.php:318
 msgid "Edit Collection Form"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:292
+#: hooks/class-gposform-gurmepos.php:319
 msgid "View Collection Form"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:293
-#: hooks/class-gposform-gurmepos.php:361
+#: hooks/class-gposform-gurmepos.php:320
+#: hooks/class-gposform-gurmepos.php:388
 msgid "Collection Forms"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:294
+#: hooks/class-gposform-gurmepos.php:321
 msgid "Search Collection Forms"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:295
+#: hooks/class-gposform-gurmepos.php:322
 msgid "Parent Collection Forms:"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:296
+#: hooks/class-gposform-gurmepos.php:323
 msgid "No Collection Forms found."
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:297
+#: hooks/class-gposform-gurmepos.php:324
 msgid "No Collection Forms found in Trash."
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:316
+#: hooks/class-gposform-gurmepos.php:343
 msgctxt "Post type general name"
 msgid "Collections"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:317
+#: hooks/class-gposform-gurmepos.php:344
 msgctxt "Post type singular name"
 msgid "Collection"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:318
+#: hooks/class-gposform-gurmepos.php:345
 msgctxt "Admin Menu text"
 msgid "Collections"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:319
+#: hooks/class-gposform-gurmepos.php:346
 msgctxt "Add New on Toolbar"
 msgid "Collection"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:321
+#: hooks/class-gposform-gurmepos.php:348
 msgid "Add New Collection"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:322
+#: hooks/class-gposform-gurmepos.php:349
 msgid "New Collection"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:323
+#: hooks/class-gposform-gurmepos.php:350
 msgid "Edit Collection"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:324
+#: hooks/class-gposform-gurmepos.php:351
 msgid "View Collection"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:325
-#: hooks/class-gposform-gurmepos.php:366
+#: hooks/class-gposform-gurmepos.php:352
+#: hooks/class-gposform-gurmepos.php:393
 msgid "Collections"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:326
+#: hooks/class-gposform-gurmepos.php:353
 msgid "Search Collections"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:327
+#: hooks/class-gposform-gurmepos.php:354
 msgid "Parent Collection:"
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:328
+#: hooks/class-gposform-gurmepos.php:355
 msgid "No Collections found."
 msgstr ""
 
-#: hooks/class-gposform-gurmepos.php:329
+#: hooks/class-gposform-gurmepos.php:356
 msgid "No Collections found in Trash."
 msgstr ""
 
 #. translators: %s => Failed durumundaki post adedi.
-#: hooks/class-gposform-gurmepos.php:388
+#: hooks/class-gposform-gurmepos.php:416
 #: includes/class-gpos-post-operations.php:219
+#, php-format
 msgid "Failed <span class=\"count\">(%s)</span>"
 msgid_plural "Failed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s => Pending durumundaki post adedi.
-#: hooks/class-gposform-gurmepos.php:395
+#: hooks/class-gposform-gurmepos.php:423
+#, php-format
 msgid "Pending <span class=\"count\">(%s)</span>"
 msgid_plural "Pending <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s => Completed durumundaki post adedi.
-#: hooks/class-gposform-gurmepos.php:402
+#: hooks/class-gposform-gurmepos.php:430
 #: includes/class-gpos-post-operations.php:205
+#, php-format
 msgid "Completed <span class=\"count\">(%s)</span>"
 msgid_plural "Completed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
-
-#: hooks/class-gposform-gurmepos.php:421
-msgid "Collection Completed"
-msgstr ""
 
 #: hooks/class-gposform-ninja-forms.php:46
 #: hooks/class-gposform-wpforms.php:58
@@ -910,6 +946,7 @@ msgstr ""
 
 #. translators: tags name
 #: hooks/class-gposform-wpforms.php:143
+#, php-format
 msgid "Available tags: %s"
 msgstr ""
 
@@ -925,13 +962,13 @@ msgstr ""
 msgid "— Select Input —"
 msgstr ""
 
-#: includes/class-gposform-collection-forms.php:45
-#: includes/class-gposform-collection-forms.php:47
-#: languages/gpos-settings-texts.php:489
+#: includes/class-gposform-collection-forms.php:78
+#: includes/class-gposform-collection-forms.php:80
+#: languages/gpos-settings-texts.php:506
 msgid "Collection Form"
 msgstr ""
 
-#: includes/class-gposform-collection-forms.php:49
+#: includes/class-gposform-collection-forms.php:82
 #: templates/elementor/form.php:39
 #: includes/abstracts/abstract-gpos-options.php:82
 #: includes/class-gpos-post-operations.php:159
@@ -939,8 +976,8 @@ msgstr ""
 msgid "Payment"
 msgstr ""
 
-#: includes/class-gposform-collection-forms.php:56
-#: includes/class-gposform-post-operations.php:145
+#: includes/class-gposform-collection-forms.php:102
+#: includes/class-gposform-post-operations.php:146
 msgid "Collection"
 msgstr ""
 
@@ -948,7 +985,7 @@ msgstr ""
 msgid "You are not allowed to print this transaction."
 msgstr ""
 
-#: includes/class-gposform-collection-success.php:61
+#: includes/class-gposform-collection-success.php:63
 msgid "You are not allowed to display this collection."
 msgstr ""
 
@@ -971,7 +1008,8 @@ msgstr ""
 
 #: includes/class-gposform-google-sheet-sync.php:237
 #: includes/class-gposform-google-sheet-sync.php:262
-#: templates/collection-success.php:92
+#: templates/collection-email.php:113
+#: templates/collection-success.php:168
 #: includes/class-gpos-export.php:69
 msgid "Payment ID"
 msgstr ""
@@ -990,8 +1028,9 @@ msgstr ""
 
 #: includes/class-gposform-google-sheet-sync.php:241
 #: includes/class-gposform-google-sheet-sync.php:266
+#: templates/collection-email.php:172
 #: templates/collection-receipt.php:14
-#: templates/collection-success.php:151
+#: templates/collection-success.php:227
 #: includes/gpos-functions.php:552
 #: languages/gpos-settings-texts.php:175
 #: languages/gpos-settings-texts.php:261
@@ -1004,7 +1043,8 @@ msgid "Card Holder Name"
 msgstr ""
 
 #: includes/class-gposform-google-sheet-sync.php:243
-#: templates/collection-success.php:108
+#: templates/collection-email.php:129
+#: templates/collection-success.php:184
 #: includes/class-gpos-export.php:72
 #: includes/class-gpos-post-tables.php:108
 #: languages/gpos-checkout-texts.php:18
@@ -1017,7 +1057,7 @@ msgid "Installment"
 msgstr ""
 
 #: includes/class-gposform-google-sheet-sync.php:244
-#: includes/class-gposform-post-operations.php:146
+#: includes/class-gposform-post-operations.php:147
 #: includes/class-gpos-export.php:73
 #: includes/class-gpos-post-tables.php:110
 #: languages/gpos-settings-texts.php:61
@@ -1041,16 +1081,16 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: includes/class-gposform-post-operations.php:102
+#: includes/class-gposform-post-operations.php:103
 #: languages/gpos-settings-texts.php:256
 msgid "Form"
 msgstr ""
 
-#: includes/class-gposform-post-operations.php:103
+#: includes/class-gposform-post-operations.php:104
 msgid "Shortcode"
 msgstr ""
 
-#: includes/class-gposform-post-operations.php:148
+#: includes/class-gposform-post-operations.php:149
 msgid "Created At"
 msgstr ""
 
@@ -1066,6 +1106,10 @@ msgstr ""
 msgid "First try"
 msgstr ""
 
+#: includes/gposform-functions.php:131
+msgid "Collection Completed"
+msgstr ""
+
 #: includes/plugin-gateways/class-gposform-elementor-payment-gateway.php:136
 msgid "Please wait redirecting to 3D security page"
 msgstr ""
@@ -1075,6 +1119,7 @@ msgstr ""
 #: includes/plugin-gateways/class-gposform-elementor-pro-payment-gateway.php:103
 #: includes/plugin-gateways/class-gposform-ninja-forms-payment-gateway.php:304
 #: includes/plugin-gateways/class-gposform-wpforms-payment-gateway.php:116
+#, php-format
 msgid "Payment completed successfully.<br>Payment number: <strong>%s</strong>."
 msgstr ""
 
@@ -1107,22 +1152,77 @@ msgstr ""
 msgid "Ninja Form"
 msgstr ""
 
-#: includes/plugin-gateways/class-gposform-wpforms-payment-gateway.php:254
+#: includes/plugin-gateways/class-gposform-wpforms-payment-gateway.php:280
 msgid "WPForms Payment"
 msgstr ""
 
+#: templates/collection-email.php:105
+#: templates/collection-success.php:164
+msgid "Thank you for your payment!"
+msgstr ""
+
+#: templates/collection-email.php:106
+#: templates/collection-success.php:165
+msgid "Your payment has been successfully completed."
+msgstr ""
+
+#: templates/collection-email.php:121
+#: templates/collection-success.php:176
+msgid "Bank"
+msgstr ""
+
+#: templates/collection-email.php:125
+#: templates/collection-success.php:180
+msgid "4 Digit"
+msgstr ""
+
+#: templates/collection-email.php:137
+#: templates/collection-success.php:192
+msgid "Payment Details"
+msgstr ""
+
+#: templates/collection-email.php:143
+#: templates/collection-success.php:198
+msgid "Subtotal"
+msgstr ""
+
+#: templates/collection-email.php:147
+#: templates/collection-email.php:187
+#: templates/collection-success.php:202
+#: templates/collection-success.php:242
+msgid "Tax"
+msgstr ""
+
+#: templates/collection-email.php:159
+#: templates/collection-success.php:214
+msgid "Customer Details"
+msgstr ""
+
+#: templates/collection-email.php:164
 #: templates/collection-receipt.php:12
-#: templates/collection-success.php:143
+#: templates/collection-success.php:219
 #: includes/gpos-functions.php:550
 msgid "Name"
 msgstr ""
 
+#: templates/collection-email.php:168
+#: templates/collection-success.php:223
+msgid "Email"
+msgstr ""
+
+#: templates/collection-email.php:176
 #: templates/collection-receipt.php:15
-#: templates/collection-success.php:155
+#: templates/collection-success.php:231
 #: includes/gpos-functions.php:554
 #: languages/gpos-settings-texts.php:169
 #: languages/gpos-settings-texts.php:263
 msgid "Address"
+msgstr ""
+
+#: templates/collection-email.php:181
+#: templates/collection-success.php:236
+#: languages/gpos-settings-texts.php:537
+msgid "Company Name"
 msgstr ""
 
 #: templates/collection-receipt.php:16
@@ -1143,46 +1243,9 @@ msgstr ""
 msgid "It is not an official document, it is produced for informational purposes only."
 msgstr ""
 
-#: templates/collection-success.php:87
-msgid "Thank you for your payment! :)"
-msgstr ""
-
-#: templates/collection-success.php:88
-msgid "Your payment has been successfully completed."
-msgstr ""
-
-#: templates/collection-success.php:100
-msgid "Bank"
-msgstr ""
-
-#: templates/collection-success.php:104
-msgid "4 Digit"
-msgstr ""
-
-#: templates/collection-success.php:116
-msgid "Payment Details"
-msgstr ""
-
-#: templates/collection-success.php:122
-msgid "Subtotal"
-msgstr ""
-
-#: templates/collection-success.php:126
-#: templates/collection-success.php:166
-msgid "Tax"
-msgstr ""
-
-#: templates/collection-success.php:138
-msgid "Customer Details"
-msgstr ""
-
-#: templates/collection-success.php:147
-msgid "Email"
-msgstr ""
-
-#: templates/collection-success.php:160
-#: languages/gpos-settings-texts.php:514
-msgid "Company Name"
+#: templates/collection-success.php:29
+#: languages/gpos-settings-texts.php:375
+msgid "Download Order Summary (PDF)"
 msgstr ""
 
 #: templates/elementor/form.php:24
@@ -1235,6 +1298,7 @@ msgstr ""
 
 #. translators: %s: Ödeme geçidi ismi.
 #: includes/abstracts/abstract-gpos-gateway.php:206
+#, php-format
 msgid "When you click on the payment button, you will be directed to the %s payment form."
 msgstr ""
 
@@ -2434,7 +2498,7 @@ msgstr ""
 
 #: includes/class-gpos-export.php:76
 #: includes/class-gpos-post-tables.php:111
-#: languages/gpos-settings-texts.php:523
+#: languages/gpos-settings-texts.php:546
 msgid "Refund Status"
 msgstr ""
 
@@ -2449,6 +2513,7 @@ msgstr ""
 #. translators: %s = POS Entegratör Pro.
 #: includes/class-gpos-payment-gateways.php:67
 #: includes/class-gpos-payment-gateways.php:91
+#, php-format
 msgid "Invalid gateway, gateway removed or %s disabled."
 msgstr ""
 
@@ -2522,6 +2587,7 @@ msgstr ""
 
 #. translators: %s => Started durumundaki post adedi.
 #: includes/class-gpos-post-operations.php:191
+#, php-format
 msgid "Started <span class=\"count\">(%s)</span>"
 msgid_plural "Started <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -2534,6 +2600,7 @@ msgstr ""
 
 #. translators: %s => Redirected durumundaki post adedi.
 #: includes/class-gpos-post-operations.php:198
+#, php-format
 msgid "Redirected To Payment Page <span class=\"count\">(%s)</span>"
 msgid_plural "Redirected To Payment Page <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -2546,6 +2613,7 @@ msgstr ""
 
 #. translators: %s => Pending Payment durumundaki post adedi.
 #: includes/class-gpos-post-operations.php:212
+#, php-format
 msgid "Pending Payment <span class=\"count\">(%s)</span>"
 msgid_plural "Pending Payment <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -2587,12 +2655,14 @@ msgstr ""
 
 #. translators: %s => Ödeme geçidi benzersiz numarası.
 #: includes/class-gpos-refund.php:71
+#, php-format
 msgid "Cancel process completed successfully. Process Id: %s."
 msgstr ""
 
 #. translators: %s => Ödeme geçidi benzersiz numarası.
 #: includes/class-gpos-refund.php:101
 #: includes/class-gpos-refund.php:136
+#, php-format
 msgid "Refund process completed successfully. Process Id: %s."
 msgstr ""
 
@@ -2622,11 +2692,13 @@ msgstr ""
 
 #. translators: %1$s => Eski durum %2$s => Yeni durum.
 #: includes/class-gpos-transaction.php:593
+#, php-format
 msgid "Status updated %1$s to %2$s"
 msgstr ""
 
 #. translators: %1$s => Link, %2$s => Text
 #: includes/class-gpos-transaction.php:1159
+#, php-format
 msgid "Click to view the details of transaction <a href=\"%1$s\" target=\"_blank\">#%2$s</a>."
 msgstr ""
 
@@ -2764,16 +2836,18 @@ msgid "Country"
 msgstr ""
 
 #. translators: %s => Ödeme geçidi benzersiz numarası.
-#: includes/gpos-functions.php:740
+#: includes/gpos-functions.php:741
+#, php-format
 msgid "Payment completed successfully. Payment number: %s."
 msgstr ""
 
 #. translators: %s => Ödeme geçidi hatası.
-#: includes/gpos-functions.php:745
+#: includes/gpos-functions.php:746
+#, php-format
 msgid "Error in payment process: %s."
 msgstr ""
 
-#: includes/gpos-functions.php:757
+#: includes/gpos-functions.php:758
 msgid "3D Hash verification error, the reason for this error is that your key (3D Key, ENC Key, Store Key) that encrypts the communication between the bank and the system is incorrect. Please verify this key."
 msgstr ""
 
@@ -2786,7 +2860,7 @@ msgid "Example payment gateway; Test the application without using any payment i
 msgstr ""
 
 #: includes/payment-gateways/iyzico-iframe/class-gpos-iyzico-iframe.php:130
-#: languages/gpos-settings-texts.php:395
+#: languages/gpos-settings-texts.php:412
 msgid "Popup"
 msgstr ""
 
@@ -2824,7 +2898,7 @@ msgstr ""
 msgid "Your account information has been saved. In order for the POS Integrator to work properly, you need to define/define your notification address from the payment PayTR panel or by contacting PayTR. You can check the “POS Integrator -> Payment Methods -> PayTR” section to learn your notification address."
 msgstr ""
 
-#: includes/plugin-gateways/class-gpos-givewp-v3-payment-gateway.php:99
+#: includes/plugin-gateways/class-gpos-givewp-v3-payment-gateway.php:93
 msgid "Use transactions for online refund/cancel operations"
 msgstr ""
 
@@ -2841,22 +2915,25 @@ msgid "Receive Payment with POS Entegrator"
 msgstr ""
 
 #. translators: vade farkı
-#: includes/traits/trait-gpos-plugin-payment-gateway.php:266
+#: includes/traits/trait-gpos-plugin-payment-gateway.php:270
+#, php-format
 msgid "Installment Fee (%s Mounth)"
 msgstr ""
 
 #. translators: %s => Ödeme geçidindeki tekil kimlik.
-#: includes/traits/trait-gpos-plugin-payment-gateway.php:472
+#: includes/traits/trait-gpos-plugin-payment-gateway.php:482
+#, php-format
 msgid "Pending payment. Payment number: %s"
 msgstr ""
 
 #. translators: %s => Ödeme geçidindeki tekil kimlik.
-#: includes/traits/trait-gpos-plugin-payment-gateway.php:476
+#: includes/traits/trait-gpos-plugin-payment-gateway.php:486
+#, php-format
 msgid "Payment completed successfully. Payment number: %s"
 msgstr ""
 
 #. translators: %s => Ödeme geçidindeki tekil kimlik.
-#: includes/traits/trait-gpos-plugin-payment-gateway.php:476
+#: includes/traits/trait-gpos-plugin-payment-gateway.php:486
 msgid "Payment completed successfully."
 msgstr ""
 
@@ -2897,6 +2974,7 @@ msgstr ""
 #. translators: %s Site url.
 #: languages/gpos-bank-texts.php:44
 #: languages/gpos-bank-texts.php:48
+#, php-format
 msgid "For PayTR integration, API information and notification URL definition is required.<br><br>You can access API information from the <strong>Integration Information</strong> section under the <strong>Support & Setup</strong> menu on your panel.<br><br>Notification url: <strong> %s/gpos-paytr-callback</strong>"
 msgstr ""
 
@@ -2918,7 +2996,7 @@ msgstr ""
 
 #: languages/gpos-bank-texts.php:63
 #: languages/gpos-bank-texts.php:66
-#: languages/gpos-bank-texts.php:177
+#: languages/gpos-bank-texts.php:180
 msgid "For integration information after logging into your Finansbank panel: If you have not created one before, create an API user with the help of User Management from the Administration Menu. Fill in the API user information you created to the relevant places in the POS Entegratör."
 msgstr ""
 
@@ -2936,7 +3014,7 @@ msgid "The information required for ING Bank Pos integration will be obtained fr
 msgstr ""
 
 #: languages/gpos-bank-texts.php:81
-#: languages/gpos-bank-texts.php:129
+#: languages/gpos-bank-texts.php:132
 msgid "After logging into the İşbank virtual pos system, if no API user has been created before, an API user must be created by entering the \"Add New User\" section under the \"Management\" heading. Then, API user information should be filled in the relevant places."
 msgstr ""
 
@@ -2953,125 +3031,138 @@ msgid "We click on the \"CONTRACTED MERCHANT TRANSACTIONS\" section under the \"
 msgstr ""
 
 #: languages/gpos-bank-texts.php:93
-#: languages/gpos-bank-texts.php:135
-msgid "The information required for the Yapı Kredi Virtual POS integration will be obtained from the Yapı Kredi Virtual POS Screen."
+msgid "We click on the \"CONTRACTED MERCHANT TRANSACTIONS\" section under the \"MANAGEMENT\" tab from the Ziraat Virtual Pos panel. The page that opens contains the necessary information for our company. We fill this information in the relevant places in POS Entegratör."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:96
-msgid "After logging into Ziraat Bank Virtual Pos panel, if you have not created an API user before, first we click on the \"Management\" tab, we define a new user by selecting \"Role\" API User from the \"Add New User\" field. Then, we fill in the \"User Name\" and \"Password\" information you have defined in this field in the relevant fields in POS Entegratör."
+#: languages/gpos-bank-texts.php:138
+msgid "The information required for the Yapı Kredi Virtual POS integration will be obtained from the Yapı Kredi Virtual POS Screen."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:99
-msgid "API Integration Information is required for Paidora integration. This information: Paidora user panel: Information menu -> API Integration Information is located under the heading."
+msgid "After logging into Ziraat Bank Virtual Pos panel, if you have not created an API user before, first we click on the \"Management\" tab, we define a new user by selecting \"Role\" API User from the \"Add New User\" field. Then, we fill in the \"User Name\" and \"Password\" information you have defined in this field in the relevant fields in POS Entegratör."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:102
-msgid "API values generated by Lidio, which gives you access to all service methods. This values is produced by Lidio only and transmitted to you."
+msgid "API Integration Information is required for Paidora integration. This information: Paidora user panel: Information menu -> API Integration Information is located under the heading."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:105
-msgid "API values generated by United Payment, which gives you access to all service methods. This values is produced by United Payment only and transmitted to you."
+msgid "API values generated by Lidio, which gives you access to all service methods. This values is produced by Lidio only and transmitted to you."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:108
-msgid "Dummy Payment is a fake payment service created to show how payment processes are carried out without API information of payment institutions."
+msgid "API values generated by United Payment, which gives you access to all service methods. This values is produced by United Payment only and transmitted to you."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:111
-msgid "API values generated by Pay Bull, which gives you access to all service methods. This values is produced by Pay Bull only and transmitted to you."
+msgid "Dummy Payment is a fake payment service created to show how payment processes are carried out without API information of payment institutions."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:114
-msgid "API values generated by Pay N Kolay, which gives you access to all service methods. This values is produced by Pay N Kolay only and transmitted to you."
+msgid "API values generated by Pay Bull, which gives you access to all service methods. This values is produced by Pay Bull only and transmitted to you."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:117
-msgid "API values generated by Paycell provide access to all service methods. These values are exclusively produced by Paycell and securely transmitted to you"
+msgid "API values generated by Pay N Kolay, which gives you access to all service methods. This values is produced by Pay N Kolay only and transmitted to you."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:120
-msgid "The information required for the WYLD integration will be obtained from the WYLD screen."
+msgid "API values generated by Paycell provide access to all service methods. These values are exclusively produced by Paycell and securely transmitted to you"
 msgstr ""
 
 #: languages/gpos-bank-texts.php:123
+msgid "The information required for the WYLD integration will be obtained from the WYLD screen."
+msgstr ""
+
+#: languages/gpos-bank-texts.php:126
 msgid "You can access API information from the Integration & API information page in the Settings menu in your QNBpay merchant panel."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:132
+#: languages/gpos-bank-texts.php:135
 msgid "API values generated by Weepay, which gives you access to all service methods. This values is produced by Weepay only and transmitted to you."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:136
+#: languages/gpos-bank-texts.php:139
 msgid "Enter your installment rates. If left blank, the installment option will be disabled."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:139
+#: languages/gpos-bank-texts.php:142
 msgid "You can get the necessary api information for the integration of your Vepara Virtual POS: You can log in to the Vepara Virtual POS Panel and get it from the Settings -> Integration & API page."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:142
+#: languages/gpos-bank-texts.php:145
 msgid "You can obtain your API information by viewing your dealer information from your Moka admin panel.."
 msgstr ""
 
 #. translators: %s Site url.
-#: languages/gpos-bank-texts.php:147
+#: languages/gpos-bank-texts.php:150
+#, php-format
 msgid "API Integration Knowledge is required for Shopier integration. This information: Shopier user panel: You can add the site you will use the payment to in the Integrations->Module Management section, then enter the API information on the left in the Module Settings tab, and you must define <strong>%s/gpos-shopier-callback</strong> as the return address."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:152
+#: languages/gpos-bank-texts.php:155
 msgid "You can view your Erpapay API information from your profile via your seller panel."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:156
 #: languages/gpos-bank-texts.php:159
+#: languages/gpos-bank-texts.php:162
 msgid "For integration information after logging into your Papara panel: If you have not created one before, create an API user with the help of User Management from the Administration Menu. Fill in the API user information you created to the relevant places in the POS Entegratör."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:162
+#: languages/gpos-bank-texts.php:165
 msgid "Once your contracts for Hepsipay API information are completed, your sales representative will return the integration API information to you."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:165
+#: languages/gpos-bank-texts.php:168
 msgid "You can get your API information from Vakıfbank by contacting sanalposdestek@vakifkatilim.com.tr"
 msgstr ""
 
-#: languages/gpos-bank-texts.php:168
+#: languages/gpos-bank-texts.php:171
 msgid "You need to log in to the ZiraatPay panel with the username and password given to you by the bank, create an API user and fill in the necessary fields in our plugin."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:171
+#: languages/gpos-bank-texts.php:174
 msgid "You can access all information about Akbank integration at sanalpos.akbank.com. All the information that needs to be filled in on the left side is included in your company information."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:174
+#: languages/gpos-bank-texts.php:177
 msgid "Albaraka first sends you TEST API information via e-mail. You should enter this information while TEST MODE is open and try a transaction with the test card sent to you. If the transaction is completely successful, you can request LIVE API information from your bank and close the test mode. Note: TEST 3D Key (ENCKey) information: 10,10,10,10,10,10,10,10"
 msgstr ""
 
-#: languages/gpos-bank-texts.php:180
+#: languages/gpos-bank-texts.php:183
 msgid "You can complete the integration by entering the API information sent to you by e-mail from your bank. Note: The MRBID (Corporate Code) value must be \"12\"."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:183
+#: languages/gpos-bank-texts.php:186
 msgid "You can access all necessary API information from the İşyerimPOS Virtual POS panel."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:186
+#: languages/gpos-bank-texts.php:189
 msgid "You can access all necessary API information from the RubikPara Virtual POS panel."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:189
+#: languages/gpos-bank-texts.php:192
 msgid "You can access all necessary API information from the Setcard Virtual POS panel."
 msgstr ""
 
-#: languages/gpos-bank-texts.php:192
-msgid "You can access all necessary API information from the Vakıf Katılım Virtual POS panel."
-msgstr ""
-
 #: languages/gpos-bank-texts.php:195
-msgid "You can access all the necessary API information for Tami from portal.tami.com.tr. Enter the obtained information into the fields on the left to complete the integration."
+msgid "App Token, user e-mail, password, Merchant ID, Terminal ID and Salt Key information required for Multinet integration is provided by the Multinet integration team. The merchant must have a SanalPos - 3D type terminal registered in the Multinet systems."
 msgstr ""
 
 #: languages/gpos-bank-texts.php:198
+msgid "App Token, user e-mail, password, Merchant ID, Terminal ID and Salt Key information required for MultiGift integration is provided by the Multinet integration team. The merchant must have a SanalPos - 3D type terminal registered in the Multinet systems."
+msgstr ""
+
+#: languages/gpos-bank-texts.php:201
+msgid "You can access all necessary API information from the Vakıf Katılım Virtual POS panel."
+msgstr ""
+
+#: languages/gpos-bank-texts.php:204
+msgid "You can access all the necessary API information for Tami from portal.tami.com.tr. Enter the obtained information into the fields on the left to complete the integration."
+msgstr ""
+
+#: languages/gpos-bank-texts.php:207
 msgid "You can access your API information from the Papel merchant panel. Enter your API information in the fields on the left to complete the integration. Papel only supports 3D payment transactions."
 msgstr ""
 
@@ -3142,12 +3233,12 @@ msgid "Card name"
 msgstr ""
 
 #: languages/gpos-checkout-texts.php:32
-#: languages/gpos-settings-texts.php:370
+#: languages/gpos-settings-texts.php:387
 msgid "Bank Transfers"
 msgstr ""
 
 #: languages/gpos-checkout-texts.php:33
-#: languages/gpos-settings-texts.php:368
+#: languages/gpos-settings-texts.php:385
 msgid "Alternative Payments"
 msgstr ""
 
@@ -3156,12 +3247,12 @@ msgid "shopping_credit"
 msgstr ""
 
 #: languages/gpos-checkout-texts.php:35
-#: languages/gpos-settings-texts.php:375
+#: languages/gpos-settings-texts.php:392
 msgid "Common Form Payments"
 msgstr ""
 
 #: languages/gpos-checkout-texts.php:36
-#: languages/gpos-settings-texts.php:377
+#: languages/gpos-settings-texts.php:394
 msgid "iFrame Payments"
 msgstr ""
 
@@ -4252,7 +4343,7 @@ msgid "There are no logs."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:119
-#: languages/gpos-settings-texts.php:424
+#: languages/gpos-settings-texts.php:441
 msgid "Rate"
 msgstr ""
 
@@ -4606,7 +4697,7 @@ msgid "Payment Transaction Id"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:237
-#: languages/gpos-settings-texts.php:490
+#: languages/gpos-settings-texts.php:507
 msgid "General Settings"
 msgstr ""
 
@@ -4619,7 +4710,7 @@ msgid "Payment Settings"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:240
-#: languages/gpos-settings-texts.php:444
+#: languages/gpos-settings-texts.php:461
 msgid "Installment Rules"
 msgstr ""
 
@@ -5062,616 +5153,701 @@ msgstr ""
 msgid "Please write the e-mail addresses below where you want the notification to be sent."
 msgstr ""
 
+#: languages/gpos-settings-texts.php:368
+msgid "Collection Form Emails"
+msgstr ""
+
 #: languages/gpos-settings-texts.php:369
-msgid "Alternative Payment"
+msgid "Post Payment Page"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:370
+msgid "The collection summary page the customer sees after a successful payment."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:371
-msgid "Bank Transfer"
+msgid "Show PDF Download Button"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:372
-msgid "Shopping Credit"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:373
-msgid "Shopping Credits"
+msgid "Adds a button under the summary that lets the customer print the payment slip or save it as a PDF. Only the summary area is printed, the rest of the page is not."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:374
-msgid "Add Payment Method"
+msgid "Leave it blank to use the default text."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:376
-msgid "Common Form Payment"
+msgid "Custom Script"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:377
+msgid "JavaScript code to run on the page. Do not add the script tag."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:378
-msgid "iFrame Payment"
+msgid "The code is added inside a script tag at the end of the post payment page and runs exactly as written. It is used for conversion tracking and similar needs; enter code you trust only."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:379
-msgid "Installment tabs only avaliable in PRO and upper versions"
+msgid "Email Subject"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:380
-msgid "Installment Tabs"
+msgid "Enter the subject of the collection email"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:381
-msgid "Tab Order Priority"
+msgid "Leave it blank to use the default subject."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:382
-msgid "By entering the sequence value, you can specify in which field it will be placed in the tabs. Higher values move closer to the last part"
+msgid "Email Description"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:383
-msgid "Multi Table View"
+msgid "Enter the description text to be shown in the email"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:384
-msgid "Single Table View"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:385
-msgid "Default payment method cannot be deleted"
+msgid "This text is added to the collection email sent to the customer and the administrator. Leave it blank if you do not want a description."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:386
-msgid "In this view, a table is created for each card family and the installments are displayed one under the other."
-msgstr ""
-
-#: languages/gpos-settings-texts.php:387
-msgid "This view shows the card family and installments in a single table"
+msgid "Alternative Payment"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:388
-msgid "All methods that enable you to receive payments without redirecting to an external site or page by creating credit/debit card fields on the page where the payment will be made are included in this tab. All card-based features such as Gate can be used with this type of pennies."
+msgid "Bank Transfer"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:389
-msgid "When payment is initiated, you are directed to the next page on the site and the credit/debit card form designed and submitted by the payment institution is used."
+msgid "Shopping Credit"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:390
-msgid "Once the payment is initiated, the user leaves your site and is directed to the provider's payment page. Payment is made by credit/debit card on this page designed and managed by the payment institution."
+msgid "Shopping Credits"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:391
-msgid "Once the payment is initiated, the user leaves your site and is directed to the provider's payment page. On this page designed and managed by the payment institution, payments are received through the methods supported by the institution."
-msgstr ""
-
-#: languages/gpos-settings-texts.php:392
-msgid "Display Alert"
+msgid "Add Payment Method"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:393
-msgid "Don't Show Alerts"
+msgid "Common Form Payment"
 msgstr ""
 
-#: languages/gpos-settings-texts.php:394
-msgid "Show alerts only using payment plugin (WooCommerce, GiveWP etc.)"
+#: languages/gpos-settings-texts.php:395
+msgid "iFrame Payment"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:396
-msgid "Show alerts as acceptable popup message"
+msgid "Installment tabs only avaliable in PRO and upper versions"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:397
-msgid "Message"
+msgid "Installment Tabs"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:398
-msgid "Show alerts as message bottom of card form"
+msgid "Tab Order Priority"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:399
-msgid "Print"
+msgid "By entering the sequence value, you can specify in which field it will be placed in the tabs. Higher values move closer to the last part"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:400
+msgid "Multi Table View"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:401
-msgid "Language To Be Used At the Payment"
+msgid "Single Table View"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:402
-msgid "Auto Detect"
+msgid "Default payment method cannot be deleted"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:403
-msgid "This feature can only work with {0} plugins"
+msgid "In this view, a table is created for each card family and the installments are displayed one under the other."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:404
-msgid "Installment Tab Title"
+msgid "This view shows the card family and installments in a single table"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:405
-msgid "Admin Bar Menu"
+msgid "All methods that enable you to receive payments without redirecting to an external site or page by creating credit/debit card fields on the page where the payment will be made are included in this tab. All card-based features such as Gate can be used with this type of pennies."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:406
-msgid "Add us to admin bar menu"
+msgid "When payment is initiated, you are directed to the next page on the site and the credit/debit card form designed and submitted by the payment institution is used."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:407
-msgid "Hello Dear WordPress lovers."
+msgid "Once the payment is initiated, the user leaves your site and is directed to the provider's payment page. Payment is made by credit/debit card on this page designed and managed by the payment institution."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:408
-msgid "I noticed that you have installed and experimented with POS Entegratör, that`s great! Please do us a favor and help us spread our plugin and increase our motivation. Can you give us 5 stars and write a comment on WordPress?"
+msgid "Once the payment is initiated, the user leaves your site and is directed to the provider's payment page. On this page designed and managed by the payment institution, payments are received through the methods supported by the institution."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:409
-msgid "Yes, you deserve it"
+msgid "Display Alert"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:410
-msgid "No, maybe later"
+msgid "Don't Show Alerts"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:411
-msgid "I already commented"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:412
-msgid "Founder"
+msgid "Show alerts only using payment plugin (WooCommerce, GiveWP etc.)"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:413
-msgid "Show Billing Fields"
+msgid "Show alerts as acceptable popup message"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:414
-msgid "If you do not activate this setting, please fill in the default payer fields."
+msgid "Message"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:415
-msgid "Default Payer"
+msgid "Show alerts as message bottom of card form"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:416
-msgid "Default Payer Info"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:417
-msgid "You can fill in the fields that are not on your payment page but required by your payment gateway with this information."
+msgid "Print"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:418
-msgid "Currency Converter"
+msgid "Language To Be Used At the Payment"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:419
-msgid "Let us easily convert your site's currency to the currency you want to use in your payment gateway."
+msgid "Auto Detect"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:420
-msgid "Automatic Convert"
+msgid "This feature can only work with {0} plugins"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:421
-msgid "Manual Convert"
+msgid "Installment Tab Title"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:422
-msgid "Payment Currency"
+msgid "Admin Bar Menu"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:423
-msgid "Select the currency you want to use in the payment gateway. All currencies you add to the table will be converted to this unit along with their rates."
+msgid "Add us to admin bar menu"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:424
+msgid "Hello Dear WordPress lovers."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:425
-msgid "Convert Type"
+msgid "I noticed that you have installed and experimented with POS Entegratör, that`s great! Please do us a favor and help us spread our plugin and increase our motivation. Can you give us 5 stars and write a comment on WordPress?"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:426
-msgid "Select Currencies"
+msgid "Yes, you deserve it"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:427
-msgid "Add"
+msgid "No, maybe later"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:428
-msgid "Apply All"
+msgid "I already commented"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:429
-msgid "To offer your users the option of installments according to their card types during payment, activate the number of installments and enter the maturity difference."
+msgid "Founder"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:430
-msgid "Plus installment will be presented to your users only visually. If there is a plus installment campaign between your payment institution and your company, it is recommended that you use this setting."
+msgid "Show Billing Fields"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:431
-msgid "Video Tutorial"
+msgid "If you do not activate this setting, please fill in the default payer fields."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:432
-msgid "Why am I getting errors?"
+msgid "Default Payer"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:433
-msgid "The reasons why your users receive errors during payment are the payment institution,payment page errors, problems with the card to be paid, etc. It could be for many reasons."
+msgid "Default Payer Info"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:434
-msgid "Details of these reasons and what you can do to minimize them You can find what you need in our detailed guide."
+msgid "You can fill in the fields that are not on your payment page but required by your payment gateway with this information."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:435
-msgid "Click to go to the guide"
+msgid "Currency Converter"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:436
+msgid "Let us easily convert your site's currency to the currency you want to use in your payment gateway."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:437
-msgid "This description will be displayed before the table/tables"
+msgid "Automatic Convert"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:438
-msgid "Warning: In order for the installment table display to work error-free, it must be run on your payment page or with the price parameter."
+msgid "Manual Convert"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:439
-msgid "Product category in list"
+msgid "Payment Currency"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:440
-msgid "Cart Rules"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:441
-msgid "Customer Rules"
+msgid "Select the currency you want to use in the payment gateway. All currencies you add to the table will be converted to this unit along with their rates."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:442
-msgid "Card Rules"
+msgid "Convert Type"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:443
-msgid "Price Rules"
+msgid "Select Currencies"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:444
+msgid "Add"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:445
-msgid "WooCommerce Rules"
+msgid "Apply All"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:446
-msgid "WordPress Rules"
+msgid "To offer your users the option of installments according to their card types during payment, activate the number of installments and enter the maturity difference."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:447
-msgid "Installment family in list"
+msgid "Plus installment will be presented to your users only visually. If there is a plus installment campaign between your payment institution and your company, it is recommended that you use this setting."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:448
-msgid "User role in list"
+msgid "Video Tutorial"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:449
-msgid "Select Role"
+msgid "Why am I getting errors?"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:450
-msgid "Guest"
+msgid "The reasons why your users receive errors during payment are the payment institution,payment page errors, problems with the card to be paid, etc. It could be for many reasons."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:451
-msgid "Send Order Number to Payment Organisation"
+msgid "Details of these reasons and what you can do to minimize them You can find what you need in our detailed guide."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:452
-msgid "Send the plugin id as order number to the payment organisation"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:453
-msgid "Payment ID Separator (Required)"
+msgid "Click to go to the guide"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:454
-msgid "Using this feature you can define a separator for payment organisations/banks to be used to combine the plug-in number with the transaction number of the POS Integrator. The separator field can never be saved empty!"
+msgid "This description will be displayed before the table/tables"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:455
-msgid "This feature will allow you to send the payment organisation the order number generated by plugins like WooCommerce, LearnPress etc. According to the working rules of payment institutions and banks, we provide shipping by adding the separator into the number sent to avoid situations such as not being able to process more than once with the same order number. We recommend that you test this feature after switching it on."
+msgid "Warning: In order for the installment table display to work error-free, it must be run on your payment page or with the price parameter."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:456
-msgid "Add the maturity difference to the order"
+msgid "Product category in list"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:457
-msgid "In installment transactions, the payment gateway adds the maturity difference as a fee to the order."
+msgid "Cart Rules"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:458
-msgid "Google Sheet"
+msgid "Customer Rules"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:459
-msgid "When this feature is activated, all transactions and transaction lines produced by the POS Integrator can be transferred to the desired Google Sheet file. This feature will be valid for transactions made after switching on."
+msgid "Card Rules"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:460
-msgid "Credentials"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:461
-msgid "You should open Sheet Api from Google console, add a new service account and authorise this user to the excel file to be used. Open the created json file in the text editor and paste it in this section"
+msgid "Price Rules"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:462
-msgid "File ID"
+msgid "WooCommerce Rules"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:463
-msgid "Sync Refund Transaction"
+msgid "WordPress Rules"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:464
-msgid "When this setting is turned on, cancellation/refund information is transferred to a different sheet in the excel table."
+msgid "Installment family in list"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:465
-msgid "Action Logs"
+msgid "User role in list"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:466
-msgid "Add New Line to Worksheet"
+msgid "Select Role"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:467
-msgid "Send Webhook"
+msgid "Guest"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:468
-msgid "Add New Worksheet"
+msgid "Send Order Number to Payment Organisation"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:469
-msgid "WebHook"
+msgid "Send the plugin id as order number to the payment organisation"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:470
-msgid "With Webhook, you can communicate all transactions that occur in POS Integrator with a different service. Zapier, your own web service etc."
+msgid "Payment ID Separator (Required)"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:471
-msgid "Url"
+msgid "Using this feature you can define a separator for payment organisations/banks to be used to combine the plug-in number with the transaction number of the POS Integrator. The separator field can never be saved empty!"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:472
-msgid "Web url address where requests will be sent"
+msgid "This feature will allow you to send the payment organisation the order number generated by plugins like WooCommerce, LearnPress etc. According to the working rules of payment institutions and banks, we provide shipping by adding the separator into the number sent to avoid situations such as not being able to process more than once with the same order number. We recommend that you test this feature after switching it on."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:473
-msgid "Cancellation refunds are sent on all payment transactions. HTTP POST call is made and it is tried 3 times until 200 status code is received on the other side."
+msgid "Add the maturity difference to the order"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:474
-msgid "Reinstalls the transaction tables used by the POS Integrator. Movement data on the right side of the transaction data is reset. It is recommended to use this tool with different DB versions."
+msgid "In installment transactions, the payment gateway adds the maturity difference as a fee to the order."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:475
-msgid "Reinstall Database Tables"
+msgid "Google Sheet"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:476
-msgid "Tools"
+msgid "When this feature is activated, all transactions and transaction lines produced by the POS Integrator can be transferred to the desired Google Sheet file. This feature will be valid for transactions made after switching on."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:477
-msgid "Hex Converter: You should use the converted key as 3D Key in POS Integrator and Garanti Bank Panel. 24 characters are randomly generated and you can change them if you want."
+msgid "Credentials"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:478
-msgid "Convert to Hex"
+msgid "You should open Sheet Api from Google console, add a new service account and authorise this user to the excel file to be used. Open the created json file in the text editor and paste it in this section"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:479
-msgid "Enter 24 characters"
+msgid "File ID"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:480
-msgid "Hex Code:"
+msgid "Sync Refund Transaction"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:481
-msgid "Working Requirements"
+msgid "When this setting is turned on, cancellation/refund information is transferred to a different sheet in the excel table."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:482
-msgid "Re-Check"
+msgid "Action Logs"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:483
-msgid "Check Status"
+msgid "Add New Line to Worksheet"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:484
-msgid "In order to send notifications, please enter a valid email address for the notification settings you have activated."
+msgid "Send Webhook"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:485
-msgid "You can not seen refund actions because this transaction refund process managed by other plugin"
+msgid "Add New Worksheet"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:486
-msgid "Other Products"
+msgid "WebHook"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:487
-msgid "Activate for Installments"
+msgid "With Webhook, you can communicate all transactions that occur in POS Integrator with a different service. Zapier, your own web service etc."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:488
-msgid "When this setting is turned on, the currency converter will be applied to the installments."
+msgid "Url"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:489
+msgid "Web url address where requests will be sent"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:490
+msgid "Cancellation refunds are sent on all payment transactions. HTTP POST call is made and it is tried 3 times until 200 status code is received on the other side."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:491
-msgid "Form Name"
+msgid "Reinstalls the transaction tables used by the POS Integrator. Movement data on the right side of the transaction data is reset. It is recommended to use this tool with different DB versions."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:492
-msgid "Enter Form Name"
+msgid "Reinstall Database Tables"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:493
-msgid "Create"
+msgid "Tools"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:494
-msgid "Update"
+msgid "Hex Converter: You should use the converted key as 3D Key in POS Integrator and Garanti Bank Panel. 24 characters are randomly generated and you can change them if you want."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:495
-msgid "Form Title"
+msgid "Convert to Hex"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:496
-msgid "Enter Form Title"
+msgid "Enter 24 characters"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:497
+msgid "Hex Code:"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:498
-msgid "Enter Button Text"
+msgid "Working Requirements"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:499
-msgid "Form Description"
+msgid "Re-Check"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:500
-msgid "Enter Form Description"
+msgid "Check Status"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:501
-msgid "Fixed"
+msgid "In order to send notifications, please enter a valid email address for the notification settings you have activated."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:502
-msgid "Selectable"
+msgid "You can not seen refund actions because this transaction refund process managed by other plugin"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:503
-msgid "Predefined"
+msgid "Other Products"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:504
-msgid "Predefined and Custom"
+msgid "Activate for Installments"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:505
-msgid "Custom"
-msgstr ""
-
-#: languages/gpos-settings-texts.php:506
-msgid "Amount Settings"
+msgid "When this setting is turned on, the currency converter will be applied to the installments."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:508
-msgid "Enable Tax Fields"
+msgid "Form Name"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:509
-msgid "Required Tax Fields"
+msgid "Enter Form Name"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:510
-msgid "Enable Tax"
+msgid "Create"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:511
-msgid "Tax Rate"
+msgid "Update"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:512
-msgid "Payment Amount Name"
+msgid "Form Title"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:513
-msgid "Apartment Dues, Service Fee, etc."
+msgid "Enter Form Title"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:515
-msgid "Tax Type"
+msgid "Enter Button Text"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:516
-msgid "Tax Number"
+msgid "Form Description"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:517
-msgid "Tax Office"
+msgid "Enter Form Description"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:518
-msgid "Pending"
+msgid "Fixed"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:519
+msgid "Selectable"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:520
+msgid "Predefined"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:521
-msgid "Update Refund/Cancel Status"
+msgid "Predefined and Custom"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:522
-msgid "When transaction is refunded/canceled, update the order status"
+msgid "Custom"
 msgstr ""
 
-#: languages/gpos-settings-texts.php:524
-msgid "Consult AI assistant"
+#: languages/gpos-settings-texts.php:523
+msgid "Amount Settings"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:525
-msgid "Click the consult button to ask the AI assistant why you received an error, using the transaction log above."
+msgid "Fields"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:526
-msgid "Not Avaiable For Free Version"
+msgid "Choose which fields are shown on the payment form."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:527
-msgid "Consult"
+msgid "Enable Address Fields"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:528
-msgid "AI Assistant Error Description"
+msgid "Shows the address, district and city fields on the payment form. When turned off these fields are neither asked for nor recorded."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:529
-msgid "AI Assistant Resolve Suggestion"
+msgid "Enable Order Number Field"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:530
-msgid "Important Note"
+msgid "Adds an order number field to the payment form. The field is always optional; the number entered becomes the reference of the transaction line. When left blank the collection id is used."
 msgstr ""
 
 #: languages/gpos-settings-texts.php:531
-msgid "This response generated by AI assistant. Answers may contain error margins and mistakes. This is only a suggestion assistant. For detailed information, you can contact the support team."
+msgid "Enable Tax Fields"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:532
-msgid "Email Sent"
+msgid "Required Tax Fields"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:533
-msgid "Email Not Sent"
+msgid "Enable Tax"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:534
-msgid "Sub Total"
+msgid "Tax Rate"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:535
-msgid "Tax Total"
+msgid "Payment Amount Name"
 msgstr ""
 
 #: languages/gpos-settings-texts.php:536
+msgid "Apartment Dues, Service Fee, etc."
+msgstr ""
+
+#: languages/gpos-settings-texts.php:538
+msgid "Tax Type"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:539
+msgid "Tax Number"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:540
+msgid "Tax Office"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:541
+msgid "Pending"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:544
+msgid "Update Refund/Cancel Status"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:545
+msgid "When transaction is refunded/canceled, update the order status"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:547
+msgid "Consult AI assistant"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:548
+msgid "Click the consult button to ask the AI assistant why you received an error, using the transaction log above."
+msgstr ""
+
+#: languages/gpos-settings-texts.php:549
+msgid "Not Avaiable For Free Version"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:550
+msgid "Consult"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:551
+msgid "AI Assistant Error Description"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:552
+msgid "AI Assistant Resolve Suggestion"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:553
+msgid "Important Note"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:554
+msgid "This response generated by AI assistant. Answers may contain error margins and mistakes. This is only a suggestion assistant. For detailed information, you can contact the support team."
+msgstr ""
+
+#: languages/gpos-settings-texts.php:555
+msgid "Email Sent"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:556
+msgid "Email Not Sent"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:557
+msgid "Sub Total"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:558
+msgid "Tax Total"
+msgstr ""
+
+#: languages/gpos-settings-texts.php:559
 msgid "And"
 msgstr ""
 
 #. translators: Plugin name
 #: views/cannot-update-notice.php:21
+#, php-format
 msgid "Please complete the update of the <strong>%s</strong> plugin\\plugins first."
 msgstr ""
 
@@ -5702,11 +5878,13 @@ msgstr ""
 
 #. translators: %1$s Start date, %2$s End date.
 #: views/emails/parts/date-range-info.php:22
+#, php-format
 msgid "This data represents payment transactions between <strong>%1$s</strong> and <strong>%2$s</strong>"
 msgstr ""
 
 #. translators: %1$s Site name and link, %2$s Help link
 #: views/emails/parts/disable.php:17
+#, php-format
 msgid "This email was prepared and forwarded by %1$s. To learn how to disable %2$s."
 msgstr ""
 
@@ -5720,6 +5898,7 @@ msgstr ""
 
 #. translators: %1$s Plugin name,  %2$s period (today or this week)
 #: views/emails/parts/hello-title.php:23
+#, php-format
 msgid "We thought you might be interested, let's see how many transactions you received with %1$s %2$s."
 msgstr ""
 
@@ -5753,6 +5932,7 @@ msgstr ""
 
 #. translators: %s PRO Plugin name
 #: views/emails/transaction-info.php:83
+#, php-format
 msgid "Upgrade to <strong>%1$s</strong>; Unlock advanced emails and more. 25+ Banks and payment institutions, card storage, category-based installment blocking and many more features are in <strong>%2$s</strong>."
 msgstr ""
 
