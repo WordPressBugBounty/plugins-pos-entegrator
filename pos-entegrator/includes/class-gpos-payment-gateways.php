@@ -197,6 +197,7 @@ class GPOS_Payment_Gateways {
 			'GPOS_Setcard',
 			'GPOS_Multinet',
 			'GPOS_MultiGift',
+			'GPOS_Payporter',
 			'GPOS_Vallet',
 			'GPOS_Moka',
 			'GPOS_Papel',
