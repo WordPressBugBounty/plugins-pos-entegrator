@@ -51,6 +51,7 @@ class GPOS_WooCommerce {
 		add_action( 'gpos_woocommerce_transaction_canceled', array( $this, 'cancel_order' ) );
 		// İade işlemlerinde woocommerce sipariş durumununun tetiklenmesi
 		add_action( 'gpos_woocommerce_transaction_refunded', array( $this, 'cancel_order' ) );
+		add_action( 'gpos_transaction_line_refunded', array( $this, 'cancel_order' ) );
 		// REST Apiye işlem bilgisi eklemek
 		add_filter( 'woocommerce_rest_prepare_shop_order_object', array( $this, 'rest_api_object' ), 10, 2 );
 		// GurmePOS için woocommerce blocks özelliği kayıt eder

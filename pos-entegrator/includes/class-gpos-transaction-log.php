@@ -36,8 +36,8 @@ class GPOS_Transaction_Log {
 	 */
 	public function add( $log_data ) {
 
-		$request  = preg_replace( '/\b(\d{4})(\d{4})(\d{4})(\d{4})\b/', '**************$4', is_string( $log_data['request'] ) ? $log_data['request'] : wp_json_encode( $log_data['request'] ) );
-		$response = preg_replace( '/\b(\d{4})(\d{4})(\d{4})(\d{4})\b/', '**************$4', is_string( $log_data['response'] ) ? $log_data['response'] : wp_json_encode( $log_data['response'] ) );
+		$request  = gpos_mask_log_data( $log_data['request'] );
+		$response = gpos_mask_log_data( $log_data['response'] );
 
 		global $wpdb;
 		$wpdb->insert( //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery

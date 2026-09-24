@@ -506,6 +506,42 @@ function gpos_clear_non_alfa( $text ) {
 	);
 }
 
+/**
+ * Log kayıtlarındaki kart numarası ve kart güvenlik kodunu (CVV) maskeler.
+ *
+ * Kart numarası: 14-19 haneli sayılar, son 4 hanesi açık bırakılır.
+ * CVV: Adında cvv, cvc, cv2 veya securitycode geçen alanların 3-4 haneli değerleri.
+ * Sırasıyla JSON, 3D form HTML'i (name/value ve value/name sırası), XML ve query string biçimleri desteklenir.
+ *
+ * @param mixed $data Loglanacak veri.
+ *
+ * @return string
+ */
+function gpos_mask_log_data( $data ) {
+	$data = is_string( $data ) ? $data : wp_json_encode( $data );
+
+	if ( ! is_string( $data ) ) {
+		return '';
+	}
+
+	$key   = '[a-z_]*(?:cvv|cvc|cv2|securitycode)[a-z0-9_]*';
+	$quote = '\\\\?["\']';
+
+	$data = preg_replace(
+		array(
+			"/({$quote}{$key}{$quote}\s*:\s*(?:{$quote})?)\d{3,4}(?!\d)/i",
+			"/(name={$quote}{$key}{$quote}[^>]*?value={$quote})\d{3,4}(?!\d)/i",
+			"/(value={$quote})\d{3,4}({$quote}[^>]*?name={$quote}{$key}{$quote})/i",
+			"/(<(?:[a-z0-9_]+:)?{$key}>)\s*\d{3,4}\s*(?=<\/)/i",
+			"/((?:^|[?&]){$key}=)\d{3,4}(?!\d)/i",
+		),
+		array( '$1***', '$1***', '$1***$2', '$1***', '$1***' ),
+		$data
+	);
+
+	return (string) preg_replace( '/\b\d{10,15}(\d{4})\b/', '**************$1', (string) $data );
+}
+
 
 /**
  * Yönlendirme olmadan 3D yi iframe içerisinde kullanmayı sağlar.
