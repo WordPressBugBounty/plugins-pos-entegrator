@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-02T09:49:03+00:00\n"
+"POT-Creation-Date: 2026-10-01T11:19:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: gurmepos\n"
@@ -65,7 +65,7 @@ msgstr ""
 #: includes/plugin-gateways/class-gpospro-learn-press-payment-gateway.php:119
 #: includes/plugin-gateways/class-gpospro-travelerwp-payment-gateway.php:252
 #: views/the-events-calendar-admin-views.php:91
-#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:295
+#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:296
 msgid "These payment method settings are made through the admin menu."
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 #: hooks/class-gpospro-pmpro.php:132
 #: includes/plugin-gateways/class-gpospro-learn-press-payment-gateway.php:121
 #: views/the-events-calendar-admin-views.php:92
-#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:296
+#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:297
 msgid "Click to go to settings."
 msgstr ""
 
@@ -243,6 +243,7 @@ msgstr ""
 #: includes/payment-gateways/papel/class-gpospro-papel-gateway.php:50
 #: includes/payment-gateways/param/class-gpospro-param-gateway.php:62
 #: includes/payment-gateways/paycell/class-gpospro-paycell-gateway.php:105
+#: includes/payment-gateways/payporter/class-gpospro-payporter-gateway.php:114
 #: includes/payment-gateways/paytr/class-gpospro-paytr-gateway.php:46
 #: includes/payment-gateways/rubikpara/class-gpospro-rubikpara-gateway.php:162
 #: includes/payment-gateways/united-payment/class-gpospro-united-payment-gateway.php:92
@@ -327,7 +328,7 @@ msgstr ""
 #: includes/class-gposform-google-sheet-sync.php:240
 #: includes/class-gposform-google-sheet-sync.php:265
 #: templates/collection-receipt.php:13
-#: includes/gpos-functions.php:553
+#: includes/gpos-functions.php:589
 #: languages/gpos-settings-texts.php:168
 #: languages/gpos-settings-texts.php:262
 msgid "E-Mail"
@@ -353,6 +354,7 @@ msgstr ""
 
 #. translators: IP address.
 #: includes/payment-gateways/craftgate/class-gpospro-craftgate-gateway.php:167
+#: includes/payment-gateways/payporter/class-gpospro-payporter-gateway.php:234
 #, php-format
 msgid "Unauthorized operation attempted via ip address %s."
 msgstr ""
@@ -367,6 +369,18 @@ msgstr ""
 
 #: includes/payment-gateways/mollie/class-gpospro-mollie-gateway.php:78
 msgid "Expired"
+msgstr ""
+
+#: includes/payment-gateways/payporter/class-gpospro-payporter-gateway.php:241
+msgid "3D Secure authentication failed."
+msgstr ""
+
+#: includes/payment-gateways/payporter/class-gpospro-payporter-gateway.php:304
+msgid "The refund request has been queued for Payporter approval. The refund will be executed at the bank after approval; the final result is reported by webhook or status query."
+msgstr ""
+
+#: includes/payment-gateways/payporter/class-gpospro-payporter-gateway.php:393
+msgid "An unexpected error occurred, please contact admin."
 msgstr ""
 
 #: includes/payment-gateways/paytr/class-gpospro-paytr-gateway.php:179
@@ -1031,7 +1045,7 @@ msgstr ""
 #: templates/collection-email.php:172
 #: templates/collection-receipt.php:14
 #: templates/collection-success.php:227
-#: includes/gpos-functions.php:552
+#: includes/gpos-functions.php:588
 #: languages/gpos-settings-texts.php:175
 #: languages/gpos-settings-texts.php:261
 msgid "Phone"
@@ -1201,7 +1215,7 @@ msgstr ""
 #: templates/collection-email.php:164
 #: templates/collection-receipt.php:12
 #: templates/collection-success.php:219
-#: includes/gpos-functions.php:550
+#: includes/gpos-functions.php:586
 msgid "Name"
 msgstr ""
 
@@ -1213,7 +1227,7 @@ msgstr ""
 #: templates/collection-email.php:176
 #: templates/collection-receipt.php:15
 #: templates/collection-success.php:231
-#: includes/gpos-functions.php:554
+#: includes/gpos-functions.php:590
 #: languages/gpos-settings-texts.php:169
 #: languages/gpos-settings-texts.php:263
 msgid "Address"
@@ -1226,14 +1240,14 @@ msgid "Company Name"
 msgstr ""
 
 #: templates/collection-receipt.php:16
-#: includes/gpos-functions.php:556
+#: includes/gpos-functions.php:592
 #: languages/gpos-settings-texts.php:171
 #: languages/gpos-settings-texts.php:264
 msgid "State"
 msgstr ""
 
 #: templates/collection-receipt.php:17
-#: includes/gpos-functions.php:555
+#: includes/gpos-functions.php:591
 #: languages/gpos-settings-texts.php:170
 #: languages/gpos-settings-texts.php:265
 msgid "City"
@@ -1257,11 +1271,11 @@ msgstr ""
 msgid "The most advanced payment plugin, compatible with 50+ payment institutions and 10+ plugins. Easily manage all your payment processes and ensure seamless operation. E-Commerce Payments, One Page Checkout, Recurring Payments, Installment Payments, Donation Payments, Custom Amount Payments, and much more are made easy with <strong>POS Entegratör</strong>."
 msgstr ""
 
-#: hooks/class-gpos-woocommerce.php:69
+#: hooks/class-gpos-woocommerce.php:70
 msgid "Order canceled from transaction page."
 msgstr ""
 
-#: hooks/class-gpos-woocommerce.php:79
+#: hooks/class-gpos-woocommerce.php:80
 msgid "Order refunded from transaction page."
 msgstr ""
 
@@ -1298,6 +1312,7 @@ msgstr ""
 
 #. translators: %s: Ödeme geçidi ismi.
 #: includes/abstracts/abstract-gpos-gateway.php:206
+#: includes/payment-gateways/pro/class-gpos-multinet.php:81
 #, php-format
 msgid "When you click on the payment button, you will be directed to the %s payment form."
 msgstr ""
@@ -1307,6 +1322,7 @@ msgid "Make your payment by entering your card information."
 msgstr ""
 
 #: includes/abstracts/abstract-gpos-gateway.php:208
+#: includes/payment-gateways/pro/class-gpos-multinet.php:83
 msgid "When the payment process is completed, the payment completed page is displayed."
 msgstr ""
 
@@ -2825,29 +2841,29 @@ msgstr ""
 msgid "IP Address"
 msgstr ""
 
-#: includes/gpos-functions.php:551
+#: includes/gpos-functions.php:587
 msgid "Surname"
 msgstr ""
 
-#: includes/gpos-functions.php:557
+#: includes/gpos-functions.php:593
 #: languages/gpos-settings-texts.php:172
 #: languages/gpos-settings-texts.php:267
 msgid "Country"
 msgstr ""
 
 #. translators: %s => Ödeme geçidi benzersiz numarası.
-#: includes/gpos-functions.php:741
+#: includes/gpos-functions.php:777
 #, php-format
 msgid "Payment completed successfully. Payment number: %s."
 msgstr ""
 
 #. translators: %s => Ödeme geçidi hatası.
-#: includes/gpos-functions.php:746
+#: includes/gpos-functions.php:782
 #, php-format
 msgid "Error in payment process: %s."
 msgstr ""
 
-#: includes/gpos-functions.php:758
+#: includes/gpos-functions.php:794
 msgid "3D Hash verification error, the reason for this error is that your key (3D Key, ENC Key, Store Key) that encrypts the communication between the bank and the system is incorrect. Please verify this key."
 msgstr ""
 
@@ -2886,6 +2902,10 @@ msgstr ""
 msgid "Your account information has been saved. In order for POS Integrator to work properly, you need to define / define your IP address from the payment institution / bank panel or by contacting the payment institution / bank. You can check \"POS Integrator -> Settings -> Status\" to learn your IP address."
 msgstr ""
 
+#: includes/payment-gateways/pro/class-gpos-multinet.php:82
+msgid "Complete your payment with your Multinet card or mobile app on the page that opens."
+msgstr ""
+
 #: includes/payment-gateways/pro/class-gpos-paytr.php:96
 msgid "Off"
 msgstr ""
@@ -2906,11 +2926,11 @@ msgstr ""
 msgid "POS Entegratör Woo Blocks Desteği için PRO sürüme Yükseltin "
 msgstr ""
 
-#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:311
+#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:312
 msgid "Active"
 msgstr ""
 
-#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:312
+#: includes/plugin-gateways/class-gpos-woocommerce-payment-gateway.php:313
 msgid "Receive Payment with POS Entegrator"
 msgstr ""
 

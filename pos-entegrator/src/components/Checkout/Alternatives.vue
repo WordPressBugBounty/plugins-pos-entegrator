@@ -18,6 +18,7 @@ onMounted(() => {
       v-for="paymentMethod in alternativePayments"
       :key="paymentMethod.account_id"
       :payment-method="paymentMethod"
+      :single="1 === alternativePayments.length"
     />
   </div>
 </template>

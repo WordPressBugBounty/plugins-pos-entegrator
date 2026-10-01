@@ -1,12 +1,13 @@
 <script setup>
 import { useCheckout } from "@/stores/CheckoutStore";
-import { onMounted, ref, shallowRef } from "vue";
+import { onMounted, provide, ref, shallowRef } from "vue";
 import Single from "@/components/Checkout/CreditDebitCard.vue";
 import Alternatives from "@/components/Checkout/Alternatives.vue";
 import inputsChanged from "@/plugins/inputs-changed.js";
 
 const { alternativePayments, bankTransfers, shoppingCredits } = useCheckout();
 const component = shallowRef(Single);
+provide("inTabbedForm", true);
 const tabs = ref([
   {
     title: "credit_card",
@@ -34,6 +35,8 @@ onMounted(() => {
     tabs.value.push({
       title: "alternative_payments",
       component: shallowRef(Alternatives),
+      // Tek alternatif ödeme varsa sekmede genel başlık yerine yöntemin kendisi gösterilir.
+      method: 1 === alternativePayments.length ? alternativePayments[0] : false,
     });
   }
   if (bankTransfers.length) {
@@ -58,10 +61,27 @@ onMounted(() => {
         :key="tab.title"
         :class="`${
           tab.active ? '' : 'bg-slate-300'
-        } border border-slate-300 border-b-0 rounded-t p-2 break-word border-box cursor-pointer text-md font-semibold w-full`"
+        } border border-slate-300 border-b-0 rounded-t ${
+          tab.method ? 'px-2 py-2' : 'p-2'
+        } break-word border-box cursor-pointer text-md font-semibold w-full`"
         @click="tabToActive(tab.title)"
       >
-        {{ $t(tab.title) }}
+        <div
+          v-if="tab.method"
+          class="h-full flex items-center justify-center"
+        >
+          <img
+            v-if="tab.method.logo"
+            :src="tab.method.logo"
+            :alt="tab.method.title"
+            :title="tab.method.title"
+            class="h-auto w-auto max-h-[36px] max-w-[65%] object-contain"
+          >
+          <span v-else>{{ tab.method.title }}</span>
+        </div>
+        <template v-else>
+          {{ $t(tab.title) }}
+        </template>
       </div>
     </div>
     <div

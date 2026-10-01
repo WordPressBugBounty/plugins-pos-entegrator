@@ -208,6 +208,7 @@ class GPOS_WooCommerce_Payment_Gateway extends WC_Payment_Gateway_CC implements 
 			->set_customer_state( WC()->countries->get_states( $this->order->get_billing_country() )[ $this->order->get_billing_state() ] )
 			->set_customer_city( $this->order->get_billing_city() )
 			->set_customer_country( $this->order->get_billing_country() )
+			->set_customer_zipcode( $this->order->get_billing_postcode() )
 			->set_customer_phone( $this->order->get_billing_phone() )
 			->set_customer_email( $this->order->get_billing_email() )
 			->set_customer_ip_address( $this->order->get_customer_ip_address() );

@@ -69,6 +69,23 @@ class GPOS_Multinet extends GPOS_Gateway {
 	public $payment_method_type = 'alternative_payment';
 
 	/**
+	 * Ödeme adımları için açıklama alanı
+	 *
+	 * @return array
+	 */
+	public function get_payment_steps_description() {
+		return apply_filters(
+			"gpos_gateway_{$this->id}_payment_steps",
+			array(
+				// translators: %s: Ödeme geçidi ismi.
+				sprintf( __( 'When you click on the payment button, you will be directed to the %s payment form.', 'gurmepos' ), $this->title ),
+				__( 'Complete your payment with your Multinet card or mobile app on the page that opens.', 'gurmepos' ),
+				__( 'When the payment process is completed, the payment completed page is displayed.', 'gurmepos' ),
+			)
+		);
+	}
+
+	/**
 	 * Ödeme için gerekli alanların tanımı
 	 *
 	 * @return array
