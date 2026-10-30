@@ -29,7 +29,7 @@ class GPOS_MultiGift extends GPOS_Gateway {
 	 *
 	 * @var string $logo
 	 */
-	public $logo = GPOS_ASSETS_DIR_URL . '/images/logo/multigift.png';
+	public $logo = GPOS_ASSETS_DIR_URL . '/images/logo/multigift.svg';
 
 	/**
 	 * Desteklenen özellikler

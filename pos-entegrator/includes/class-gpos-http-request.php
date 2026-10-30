@@ -25,6 +25,24 @@ class GPOS_Http_Request {
 	private $http_version = '1.0';
 
 	/**
+	 * Http isteği zaman aşımı (saniye)
+	 *
+	 * @var int
+	 */
+	private $timeout = 60;
+
+	/**
+	 * Http isteği zaman aşımını ayarlar.
+	 *
+	 * @param int $timeout Zaman aşımı (saniye).
+	 * @return $this
+	 */
+	public function set_timeout( int $timeout ) {
+		$this->timeout = $timeout;
+		return $this;
+	}
+
+	/**
 	 * Http isteği başlığını ayarlar.
 	 *
 	 * @param array $headers Http isteği başlığı.
@@ -77,7 +95,7 @@ class GPOS_Http_Request {
 	public function request( $url, $method = 'POST', $body = array() ) {
 		$args = array(
 			'method'      => $method,
-			'timeout'     => 60,
+			'timeout'     => $this->timeout,
 			'httpversion' => $this->get_http_version(),
 			'headers'     => $this->get_headers(),
 			'body'        => $body,

@@ -3,7 +3,7 @@
  * Plugin Name: POS Entegratör
  * Plugin URI: https://posentegrator.com
  * Description: The most advanced payment plugin, compatible with 50+ payment institutions and 10+ plugins. Easily manage all your payment processes and ensure seamless operation. E-Commerce Payments, One Page Checkout, Recurring Payments, Installment Payments, Donation Payments, Custom Amount Payments, and much more are made easy with <strong>POS Entegratör</strong>.
- * Version: 3.8.8
+ * Version: 3.8.9
  * Author: GurmeHub
  * Author URI: https://gurmehub.com
  * Text Domain: gurmepos
@@ -39,7 +39,7 @@ final class GurmePOS {
 	 *
 	 * @var string
 	 */
-	public $version = '3.8.8';
+	public $version = '3.8.9';
 
 	/**
 	 * Veritabanı versiyonu.
@@ -231,6 +231,7 @@ final class GurmePOS {
 			'includes/payment-gateways/pro/class-gpos-vakif-katilim.php',
 			'includes/payment-gateways/pro/class-gpos-tami.php',
 			'includes/payment-gateways/pro/class-gpos-vakifpay.php',
+			'includes/payment-gateways/pro/class-gpos-halkode.php',
 			// Functions
 			'includes/gpos-class-functions.php',
 			'includes/gpos-functions.php',

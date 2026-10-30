@@ -7,7 +7,7 @@ Plugin URI: https://posentegrator.com/
 Tags: kredi kartı, sanal pos, ödeme, banka, pos
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 3.8.8
+Stable tag: 3.8.9
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,7 @@ https://www.youtube.com/watch?v=xj1uj1ETyhY
  - VakifPay
  - Tami 
  - Papel
+ - Halk Öde
  - ~~Shoiper~~ (Kaldırıldı)
  - ~~Ozan~~ (Kaldırıldı)
  - ~~Papara~~ (Kaldırıldı)

@@ -5859,6 +5859,10 @@ msgstr "Sipay Sanal Posunuzun entegre edilmesi için gerekli api bilgilerini:  S
 msgid "You can get the necessary api information for the integration of your Vepara Virtual POS: You can log in to the Vepara Virtual POS Panel and get it from the Settings -> Integration & API page."
 msgstr "Vepara Sanal POS'unuzun entegrasyonu için gerekli api bilgilerini; Vepara Sanal POS Paneline giriş yapıp Ayarlar -> Entegrasyon & API sayfasından alabilirsiniz."
 
+#: languages/gpos-bank-texts.php:145
+msgid "You can get the necessary api information for the integration of your Halk Öde Virtual POS: You can log in to the Halk Öde Merchant Panel and get it from the Integration & API page."
+msgstr "Halk Öde Sanal POS'unuzun entegrasyonu için gerekli api bilgilerini; Halk Öde Üye İşyeri Paneline giriş yapıp Entegrasyon & API sayfasından alabilirsiniz."
+
 #: languages/gpos-bank-texts.php:168
 msgid "You can get your API information from Vakıfbank by contacting sanalposdestek@vakifkatilim.com.tr"
 msgstr "sanalposdestek@vakifkatilim.com.tr mail adresi ile iletişime geçerek Vakıfbank tarafından apı bilgilerinizi alabilirsiniz."

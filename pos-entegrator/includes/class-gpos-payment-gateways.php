@@ -205,6 +205,7 @@ class GPOS_Payment_Gateways {
 			'GPOS_VakifPay',
 			'GPOS_Vakif_Katilim',
 			'GPOS_Tami',
+			'GPOS_HalkOde',
 		);
 
 		return apply_filters(

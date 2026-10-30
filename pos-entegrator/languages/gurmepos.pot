@@ -3112,6 +3112,10 @@ msgid "You can get the necessary api information for the integration of your Vep
 msgstr ""
 
 #: languages/gpos-bank-texts.php:145
+msgid "You can get the necessary api information for the integration of your Halk Öde Virtual POS: You can log in to the Halk Öde Merchant Panel and get it from the Integration & API page."
+msgstr ""
+
+#: languages/gpos-bank-texts.php:145
 msgid "You can obtain your API information by viewing your dealer information from your Moka admin panel.."
 msgstr ""
 

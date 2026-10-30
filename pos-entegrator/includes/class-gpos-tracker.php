@@ -25,6 +25,13 @@ class GPOS_Tracker {
 	private $url = 'https://us-central1-gurmepos.cloudfunctions.net';
 
 	/**
+	 * Gurmehub Ping API url
+	 *
+	 * @var string $ping_url
+	 */
+	private $ping_url = 'https://ping.gurmehub.com/api';
+
+	/**
 	 * Http istemcisi
 	 *
 	 * @var GPOS_Http_Request $http
@@ -59,29 +66,51 @@ class GPOS_Tracker {
 	 * @param string $card_bin Kartın ilk 8 hanesi.
 	 */
 	public function bin_retrieve( $card_bin ) {
+		$card_bin = substr( preg_replace( '/\D/', '', (string) $card_bin ), 0, 8 );
+		$empty    = $this->get_empty_bin_response( $card_bin );
+		$ping_url = apply_filters( 'gpos_ping_api_url', $this->ping_url );
+
 		try {
-			return $this->http->request(
-				"{$this->url}/binRetrieve?bin={$card_bin}",
-				'GET',
-			);
+			$response = $this->http
+				->set_headers( array( 'Accept' => 'application/json' ) )
+				->set_timeout( 10 )
+				->request( "{$ping_url}/gpos/bin?bin={$card_bin}", 'GET' );
 		} catch ( Exception $e ) {
-			return [
-				'country' => [
-					'code' => '',
-					'name' => '',
-				],
-				'bank'    => [
-					'code' => '',
-					'name' => '',
-				],
-				'bin'     => $card_bin,
-				'card'    => [
-					'type'   => '',
-					'family' => '',
-					'brand'  => '',
-				],
-			];
+			return $empty;
 		}
+
+		// Engelleme sayfası, hata mesajı vb. beklenmeyen yanıtlarda checkout bozulmasın.
+		if ( ! is_array( $response ) || ! is_array( $response['card'] ?? null ) || ! is_array( $response['bank'] ?? null ) || ! is_array( $response['country'] ?? null ) ) {
+			return $empty;
+		}
+
+		return array_replace_recursive( $empty, $response );
+	}
+
+	/**
+	 * BIN bilgisi alınamadığında dönülen boş yanıt.
+	 *
+	 * @param string $card_bin Kartın ilk 8 hanesi.
+	 *
+	 * @return array
+	 */
+	private function get_empty_bin_response( $card_bin ) {
+		return [
+			'country' => [
+				'code' => '',
+				'name' => '',
+			],
+			'bank'    => [
+				'code' => '',
+				'name' => '',
+			],
+			'bin'     => $card_bin,
+			'card'    => [
+				'type'   => '',
+				'family' => '',
+				'brand'  => '',
+			],
+		];
 	}
 
 	/**

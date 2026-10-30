@@ -29,7 +29,7 @@ class GPOS_Multinet extends GPOS_Gateway {
 	 *
 	 * @var string $logo
 	 */
-	public $logo = GPOS_ASSETS_DIR_URL . '/images/logo/multinet.png';
+	public $logo = GPOS_ASSETS_DIR_URL . '/images/logo/multinet.svg';
 
 	/**
 	 * Desteklenen özellikler

@@ -141,6 +141,9 @@ return array(
 	'vepara'               => array(
 		'description' => __('You can get the necessary api information for the integration of your Vepara Virtual POS: You can log in to the Vepara Virtual POS Panel and get it from the Settings -> Integration & API page.', 'gurmepos'),
 	),
+	'halkode'              => array(
+		'description' => __('You can get the necessary api information for the integration of your Halk Öde Virtual POS: You can log in to the Halk Öde Merchant Panel and get it from the Integration & API page.', 'gurmepos'),
+	),
 	'moka'               => array(
 		'description' => __('You can obtain your API information by viewing your dealer information from your Moka admin panel..', 'gurmepos'),
 	),
